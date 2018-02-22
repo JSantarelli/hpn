@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>  
+        <script src="/assets/js/jquery-2.2.3.min.js"></script>
+        <script> 
+        $(function(){
+            $("#head").load("/_includes/container.html");
+            $("#head").load("/_includes/head.html");
+            $("#header").load("/_includes/header.html");
+            // $("#navbar").load("/navbar.html"); 
+            $("#home").load("/_includes/content-home.html");
+            // $("#listado").load("/_includes/content-listado.html");
+            // $("#listado-sidebar").load("/_includes/content-listado-sidebar.html"); 
+            // $("#resultados").load("/_includes/content-resultados.html");
+            // $("#noticia").load("/_includes/content-noticia.html");
+            // $("#pagina").load("/_includes/content-pagina.html"); 
+            // $("#pagina-sidebar").load("/_includes/content-pagina-sidebar.html");
+            // $("#perfiles").load("/_includes/content-perfiles.html");
+            // $("#carga").load("/_includes/content-carga.html");
+            // $("#contacto").load("/_includes/content-contacto.html"); 
+            // $("#js").load("/_includes/js.html");
+            $("#footer").load("/_includes/footer.html");
+        });
+        </script> 
+    </head>
+    
+    <body class="hpn-container">
+        <div id="head" class="hpn-topbar"></div>
+        <div id="header" class="hpn-navbar"></div>
+        <div id="home" class="hpn-banner"></div>
+        <div class="hpn-bottombar"></div>
+        <div class="hpn-sidebar"></div>
+        <footer>
+            <div id="footer"></div>
+            <div id="js"></div>
+        </footer>
+    </body>
+</html>

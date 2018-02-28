@@ -16,6 +16,8 @@ Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-com
 ----------------------------------------------------------------
 # Normalize
 # Layout
+# Dimensiones
+# Colores
 # Tipografía
 # Elements
 # Forms
@@ -251,19 +253,17 @@ th {
 /*--------------------------------------------------------------
 # Layouting
 --------------------------------------------------------------*/
-div.test {
-  color: blue;
-}
 
 section#home {
 
 }
-	.hpn-container {
+	.hpn-container-home {
 		display: grid;
 		grid-template-columns: repeat(12, 1fr);
 		grid-template-rows: 5% 10% 65% 20%;
 		grid-gap: 0;
 		height: 100vh;
+		width: 100%;
 	}
 
 	.hpn-topbar {
@@ -279,34 +279,55 @@ section#home {
 	}
 
 	.hpn-banner {
-    background-color: darkblue;
+		background-color: darkblue;
 		grid-column: 1 / -1;
 		grid-row: 3;
 	}
 
 	.hpn-bottombar {
-    background-color:pink;
+		background-color:pink;
 		grid-column: 1 / -1;
 		grid-row: 4 / -1;
-	}
-
-	.hpn-sidebar {
-    background-color:rebeccapurple;
-		grid-column: 1 / 3;
-		grid-row: 4;
+		display: flex;
+		justify-content: space-between;
 	}
 
 section#second {
 
 }
 
-	.hpn-main {
-		
+	.hpn-container-second {
+		display: grid;
+		grid-template-columns: repeat(12, 1fr);
+		grid-template-rows: 85% 15%;
+		grid-gap: 0;
+		height: 100vh;
 	}
 
-	.hpn-main-sidebar {
-
+	.hpn-home-sidebar {
+		background-color: purple;
+		grid-column: 1 / 4;
+		grid-row: 1;
 	}
+
+	.hpn-home-faq {
+		background-color: lightgoldenrodyellow;
+		grid-column: 4 / 9;
+		grid-row: 1;
+	}
+
+	.hpn-home-contacto {
+		background-color: darkblue;
+		grid-column: 9 / -1;
+		grid-row: 1 / 2;
+	}
+
+	.hpn-home-footer {
+		background-color: black;
+		grid-column: 1 / -1;
+		/* grid-row: 2 / -1; */
+	}
+
 
 /* Header */
 .hpn-container-header {
@@ -335,40 +356,187 @@ section#second {
 /* BottomBar */
 .hpn-container-bottombar {
 	display: flex;
-	justify-content: space-around;
+	justify-content: space-between;
 	flex-direction: row;
 }
 
-	.hpn-container-bloque {
-		background-color: darkorange;
-		height: 100px;
-		width: 200px;
+/* -------------------------------------
+# Elementos
+-------------------------------------*/
+
+/* HPN Card */
+
+	.hpn-card-container {
+		background-color: white;
+		color: black;
+		display: flex;
+		justify-content: space-between;
+		padding: 2rem;
+		width: 100%;
 	}
 	
-	.hpn-container-bloque.dark {
-		background-color: darkmagenta;
-		height: 100px;
-		width: 200px;
+	.hpn-card-container.dark {
+		color: white;
 	}
 
-
-	/* .hpn-container-bottombar {
-		display: grid;
-		grid-template-columns: repeat(12, 1fr);
-		grid-template-rows: 1;
-		grid-gap: 0;
-		height: 100%;
+	.hpn-card-bloque-texto {
+		display: block;
+		margin-left: 1rem;
 	}
-	
-		.hpn-container-bloque {
-			background-color: darkorange;
-			grid-column: 3 / 12;
+
+		.margin-left {
+			margin-left: 1rem;
 		}
+
+	.hpn-card-img {
+		border-radius: 50%;
+		background-color: gray;
+		object-fit: cover;
+		height: 5rem;
+		width: 5rem;
+	}
+
+	.hpn-card-volanta {
+		text-transform: uppercase;
+	}
+
+	.hpn-card-titulo {
+		font-size: 1.5rem;
+	}
+
+	.hpn-card-texto {
+		font-size: 1rem;
+	}
+
+/* Dimensiones */
+.xs {
+	width: 25%;
+}
+
+.sm {
+	width: 50%;
+	
+}
+
+.md {
+	width: 100%;
+	
+}
+
+.lg {
+	width: 125%;
+	
+}
+
+.xl {
+	width: 150%;
+	
+}
+
+/*--------------------------------------------------------------
+# Cromaticidad 
+--------------------------------------------------------------*/
+	div.azul-oscuro [class*="borde"] {
+		border: solid 8px #243163; }
+  
+	div.azul-oscuro.fondo {
+		background: #243163; }
+
+	div.azul-oscuro [class*="titulo"] {
+		color: #982f98; }
 		
-		.hpn-container-bloque.dark {
-			background-color: darkmagenta;
-			grid-column: 1 / 3;
-		} */
+	div.azul-oscuro [class*="texto"]{
+		color: white; }
+  
+	div.azul [class*="borde"] {
+		border: solid 8px #2c4794; }
+  
+	div.azul.fondo {
+		background: #2c4794; }
+  
+	div.azul [class*="titulo"] {
+		color: #2c4794; }
+  
+	div.azul-claro div.borde {
+		border: solid 8px #00a1df; }
+  
+	div.azul-claro div.fondo {
+		background: #00a1df; }
+  
+	div.azul-claro div.texto {
+		color: #00a1df; }
+
+	div.celeste div.borde {
+		border: solid 8px #84cef0;}
+	
+	div.celeste div.fondo {
+		background: #84cef0; }
+	
+	div.celeste div.texto {
+		color: #84cef0; }
+  
+	div.verde [class*="borde"] {
+		border: solid 8px #00b9b1; }
+  
+	div.verde.fondo {
+		background: #00b9b1; }
+
+	div.verde [class*="titulo"]{
+		color: #00b9b1; }
+
+	div.verde-claro [class*="borde"] {
+		border: solid 8px #63c7b7; }
+	
+	div.verde-claro div.fondo {
+		background: #63c7b7; }
+	
+	div.verde-claro div.texto {
+		color: #63c7b7; }
+  
+	div.rojo [class*="borde"] {
+		border: solid 8px #cb0053; }
+	
+	div.rojo.fondo {
+		background: #cb0053; }
+
+	div.rojo [class*="titulo"] {
+		color: #cb0053; }
+
+  	div.violeta div.borde {
+		border: solid 8px #662480; }
+  
+  	div.violeta div.fondo {
+		background: #662480; }
+  
+  	div.violeta div.texto {
+		color: #662480; }
+
+  	div.violeta div.borde {
+		border: solid 8px #662480; }
+  
+  	div.violeta div.fondo {
+		background: #662480; }
+  
+  	div.violeta div.texto {
+		color: #662480; }
+
+	div.violeta-claro div.borde {
+		border: solid 8px #982f98; }
+	
+	div.violeta-claro div.fondo {
+		background: #982f98; }
+
+	div.violeta-claro div.texto {
+		color: #982f98; }
+
+	div.violeta-claro div.borde {
+		border: solid 8px #e3007e; }
+	
+	div.violeta-claro div.fondo {
+		background: #e3007e; }
+
+	div.violeta-claro div.texto {
+		color: #e3007e; }
 
 /*--------------------------------------------------------------
 # Typography

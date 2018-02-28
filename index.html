@@ -8,7 +8,7 @@
             $("#topbar").load("/_includes/head.html");
             $("#header").load("/_includes/header.html");
             // $("#navbar").load("/navbar.html"); 
-            $("#banner").load("/_includes/content-home.html");
+            $("#banner").load("/_includes/content-banner.html");
             // $("#listado").load("/_includes/content-listado.html");
             // $("#listado-sidebar").load("/_includes/content-listado-sidebar.html"); 
             // $("#resultados").load("/_includes/content-resultados.html");
@@ -20,20 +20,28 @@
             // $("#contacto").load("/_includes/content-contacto.html"); 
             // $("#js").load("/_includes/js.html");
             $("#bottombar").load("/_includes/bottombar.html");
-            // $("#footer").load("/_includes/footer.html");
+            $("#sidebar").load("/_includes/home-sidebar.html");
+            $("#faq").load("/_includes/home-faq.html");
+            $("#form").load("/_includes/home-form.html");
+            $("#footer").load("/_includes/footer.html");
         });
         </script> 
     </head>
     
     <body>
-          <div id="home"  class="hpn-container">
+          <div id="home"  class="hpn-container-home">
             <div id="topbar" class="hpn-topbar"></div>
             <div id="header" class="hpn-navbar"></div>
             <div id="banner" class="hpn-banner"></div>
-            <div id="bottombar" class=""></div>
+            <div id="bottombar" class="hpn-bottombar "></div>
+        </div>
+        <div id="second" class="hpn-container-second">
+            <div id="sidebar" class="hpn-home-sidebar"></div>
+            <div id="faq" class="hpn-home-faq"></div>
+            <div id="contacto" class="hpn-home-contacto"></div>
+            <div id="footer" class="hpn-home-footer"></div>
         </div>
         <footer>
-            <!-- <div id="footer"></div> -->
             <div id="js"></div>
         </footer>
     </body>

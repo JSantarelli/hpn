@@ -36,6 +36,10 @@ Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-com
 	## Captions
 	## Galleries
 --------------------------------------------------------------*/
+
+@import "variables-site/_colors";
+
+
 /*--------------------------------------------------------------
 # Normalize
 --------------------------------------------------------------*/
@@ -284,13 +288,14 @@ section#home {
 		grid-row: 3;
 	}
 
-	// .hpn-bottombar {
-	// 	background-color:pink;
-	// 	grid-column: 1 / -1;
-	// 	grid-row: 4 / -1;
-	// 	display: flex;
-	// 	justify-content: space-between;
-	// }
+	.hpn-bottombar {
+		grid-column: 1 / -1;
+		grid-row: 4 / -1;
+		display: grid;
+		grid-template-columns: repeat(12, 1fr);
+		grid-template-rows: repeat(1, 1fr);
+	}
+
 
 section#second {
 
@@ -298,7 +303,7 @@ section#second {
 
 	.hpn-container-second {
 		display: grid;
-		grid-template-columns: repeat(auto-fit, 1fr);
+		grid-template-columns: repeat(12, 1fr);
 		grid-template-rows: 85% 15%;
 		grid-gap: 0;
 		height: 100vh;
@@ -353,27 +358,109 @@ section#second {
 	}
 
 
-/* BottomBar */
-.hpn-container-bottombar {
-	display: flex;
-	justify-content: space-between;
-	flex-direction: row;
-}
-
 /* -------------------------------------
 # Elementos
 -------------------------------------*/
 
 /* HPN Card */
 	.hpn-card-container {
-		background-color: white;
 		color: black;
+		display: flex;
+		justify-content: space-around;
 		padding: 2rem;
 		width: 100%;
-	
+
+		&.card-01 {
+			grid-column: 1 / 4;
+			grid-row: 1;
+			background-color: $hpn-violeta;
+		}
+
+		&.card-02 {
+			grid-column: 4 / 7;
+			grid-row: 1;
+			background-color: $hpn-azul;
+		}
+
+		&.card-03 {
+			grid-column: 7 / 10;
+			grid-row: 1;
+			background-color: $hpn-azul-oscuro;
+		}
+
+		&.card-04 {
+			grid-column: 10 / -1;
+			grid-row: 1;
+			background-color: $hpn-celeste;
+		}
+
 		&.dark {
-		color: white;
+			color: white;
+		}
 	}
+
+	@media screen and (min-width: 320px) and (max-width: 680px) {
+
+		.hpn-card-container {
+			color: black;
+			display: flex;
+			padding: 1rem;
+			width: 100%;
+
+			&.card-01 {
+				display: none;
+			}
+	
+			&.card-02 {
+				grid-column: 1 / 5;
+				grid-row: 1 / 2;
+				background-color: $hpn-azul;
+			}
+	
+			&.card-03 {
+				grid-column: 5 / 9;
+				grid-row: 1 / 2;
+				background-color: $hpn-azul-oscuro;
+			}
+	
+			&.card-04 {
+				grid-column: 9 / -1;
+				grid-row: 1 / 2;
+				background-color: $hpn-celeste;
+			}
+		}
+	}
+
+	@media screen and (max-width: 320px) {
+
+		.hpn-card-container {
+			color: black;
+			display: flex;
+			padding: 1rem;
+			width: 100%;
+
+			&.card-01 {
+				display: none;
+			}
+	
+			&.card-02 {
+				grid-column: 1 / 5;
+				grid-row: 1 / 2;
+				background-color: $hpn-azul;
+			}
+	
+			&.card-03 {
+				grid-column: 5 / 9;
+				grid-row: 1 / 2;
+				background-color: $hpn-azul-oscuro;
+			}
+	
+			&.card-04 {
+				grid-column: 9 / -1;
+				grid-row: 1 / 2;
+				background-color: $hpn-celeste;
+			}
+		}
 	}
 
 	.hpn-card-bloque-texto {
@@ -412,17 +499,14 @@ section#second {
 
 .sm {
 	width: 50%;
-	
 }
 
 .md {
 	width: 100%;
-	
 }
 
 .lg {
 	width: 125%;
-	
 }
 
 .xl {
@@ -433,26 +517,43 @@ section#second {
 /*--------------------------------------------------------------
 # Cromaticidad 
 --------------------------------------------------------------*/
-	div.azul-oscuro {
-		[class*="borde"] {
-			border: solid 8px #243163; 
+	.azul-oscuro {
+		.borde {
+			border: solid 1px $hpn-azul; 
 		}
 
-		[class*="fondo"] {
-            background: #243163;
-        }
-
-		[class*="titulo"] {
-			color: #982f98;
+		&.fondo {
+			background: $hpn-azul;
 		}
-		
-		[class*="texto"] {
-			color: white;
+
+		.titulo {
+			color: $hpn-azul;
+		}
+
+		.texto {
+			color: $hpn-azul;
 		}
 	}
   
-	div.azul [class*="borde"] {
-		border: solid 8px #2c4794; }
+	.azul {
+
+		.borde {
+			border: solid 1px $hpn-azul; 
+		}
+
+		.fondo {
+			background: $hpn-azul;
+		}
+
+		.titulo {
+			color: $hpn-azul;
+		}
+
+		.texto {
+			color: $hpn-azul;
+		}
+
+	}
   
 	div.azul.fondo {
 		background: #2c4794; }

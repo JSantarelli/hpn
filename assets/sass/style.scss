@@ -284,13 +284,13 @@ section#home {
 		grid-row: 3;
 	}
 
-	.hpn-bottombar {
-		background-color:pink;
-		grid-column: 1 / -1;
-		grid-row: 4 / -1;
-		display: flex;
-		justify-content: space-between;
-	}
+	// .hpn-bottombar {
+	// 	background-color:pink;
+	// 	grid-column: 1 / -1;
+	// 	grid-row: 4 / -1;
+	// 	display: flex;
+	// 	justify-content: space-between;
+	// }
 
 section#second {
 
@@ -298,7 +298,7 @@ section#second {
 
 	.hpn-container-second {
 		display: grid;
-		grid-template-columns: repeat(12, 1fr);
+		grid-template-columns: repeat(auto-fit, 1fr);
 		grid-template-rows: 85% 15%;
 		grid-gap: 0;
 		height: 100vh;
@@ -365,18 +365,15 @@ section#second {
 -------------------------------------*/
 
 /* HPN Card */
-
 	.hpn-card-container {
 		background-color: white;
 		color: black;
-		display: flex;
-		justify-content: space-between;
 		padding: 2rem;
 		width: 100%;
-	}
 	
-	.hpn-card-container.dark {
+		&.dark {
 		color: white;
+	}
 	}
 
 	.hpn-card-bloque-texto {
@@ -436,20 +433,23 @@ section#second {
 /*--------------------------------------------------------------
 # Cromaticidad 
 --------------------------------------------------------------*/
-	div.azul-oscuro [class*="borde"] {
-		border: solid 8px #243163; }
-  
 	div.azul-oscuro {
-        .fondo {
+		[class*="borde"] {
+			border: solid 8px #243163; 
+		}
+
+		[class*="fondo"] {
             background: #243163;
         }
-	}
 
-	div.azul-oscuro [class*="titulo"] {
-		color: #982f98; }
+		[class*="titulo"] {
+			color: #982f98;
+		}
 		
-	div.azul-oscuro [class*="texto"]{
-		color: white; }
+		[class*="texto"] {
+			color: white;
+		}
+	}
   
 	div.azul [class*="borde"] {
 		border: solid 8px #2c4794; }

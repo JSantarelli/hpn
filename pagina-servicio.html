@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>  
+        <script src="/assets/js/jquery-2.2.3.min.js"></script>
+        <script> 
+        $(function(){
+            $("#topbar").load("/_includes/topbar.html");
+            $("#header").load("/_includes/header.html");
+            $("#servicio").load("/_includes/content-servicio.html"); 
+            $("#servicio-sidebar").load("/_includes/content-servicio-sidebar.html");
+        });
+        </script>
+    </head>
+    
+    <body>
+        <div id="home" class="hpn-container-seccion">
+            <div id="topbar" class="hpn-topbar"></div>
+            <div id="header" class="hpn-header"></div>
+            <div id="servicio" class="hpn-container-servicio"></div>
+            <div id="footer" class="hpn-seccion-footer"></div>
+        </div>
+        <footer>
+            <div id="js"></div>
+        </footer>
+    </body>
+</html>

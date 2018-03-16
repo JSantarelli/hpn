@@ -264,7 +264,7 @@ section#home {
 	.hpn-container-home {
 		display: grid;
 		grid-template-columns: repeat(12, 1fr);
-		grid-template-rows: 3% 10% 70% 17%;
+		grid-template-rows: 5% 10% 70% 15%;
 		grid-gap: 0;
 		height: 100vh;
 		width: 100%;
@@ -383,7 +383,7 @@ section#second {
 .hpn-container-seccion {
 	display: grid;
 	grid-template-columns: repeat(12, 1fr);
-	grid-template-rows: 5% 10% 75% 10%;
+	grid-template-rows: 5% 10% 70% 15%;
 	grid-gap: 0;
 	height: 100vh;
 	width: 100%;
@@ -394,6 +394,7 @@ section#second {
 
 .hpn-container-servicio {
 	grid-column: 1 / -1;
+	grid-row: 3;
 	display: grid;
 	grid-template-columns: repeat(6, 1fr);
 	grid-template-rows: 2fr; 
@@ -795,6 +796,7 @@ hr {
 	height: 5rem;
 	width: 5rem;
 	position: relative;
+	display: flex;
 
 	&.magenta {
 		border-color: $hpn-magenta;
@@ -1080,10 +1082,10 @@ div[class*="titulo"] {
 	font-weight: lighter;
 }
 
-
 // Iconos
 .hpn-icon {
-	font-size: 3rem;
+	align-self: center;
+	font-size: 4rem;
 	
 	&.magenta {
 		-webkit-text-fill-color: $hpn-magenta;
@@ -1098,7 +1100,7 @@ div[class*="titulo"] {
 	}
 
 	&.baseline {
-		padding-top: 16px;
+		padding: 25% 0 0 7%;
 	}
 
 }

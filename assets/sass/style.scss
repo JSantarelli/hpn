@@ -8,47 +8,37 @@ Version: 1.0.0
 License: GNU General Public License v2 or later
 License URI: LICENSE
 Text Domain: hpn
-Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
+Tags: minimalista
 
 */
 /*--------------------------------------------------------------
 >>> INDICE:
 ----------------------------------------------------------------
-# Normalize
 # Layout
 # Dimensiones
 # Colores
 # Tipografía
-# Elements
-# Forms
-# Navigation
-	## Links
-	## Menus
-# Accessibility
-# Alignments
-# Clearings
-# Widgets
-# Content
-	## Posts and pages
-	## Comments
-# Infinite scroll
-# Media
-	## Captions
-	## Galleries
+# Elementos
+
 --------------------------------------------------------------*/
 
 @import "variables-site/_colors";
+@import "variables-site/_typography";
 
 /*--------------------------------------------------------------
 # Layouting
 --------------------------------------------------------------*/
+body {
+	margin: 0;
+	font-family: 'Source Sans Pro';
+}
 
 section#home {
 
-	&.hpn-container-home {
+	&.hpn-container-home,&.hpn-container-seccion {
 		display: grid;
 		grid-template-columns: repeat(12, 1fr);
-		grid-template-rows: 3% 10% 70% 17%;
+		grid-template-rows: 3% 10% 77% 10%;
 		grid-gap: 0;
 		height: 100vh;
 		width: 100%;
@@ -191,6 +181,7 @@ section#home {
 				
 			}
 			
+			// Banner
 			.hpn-banner {
 				grid-column: 1 / -1;
 				grid-row: 2;
@@ -219,6 +210,7 @@ section#home {
 				}
 			}
 
+			// Bottombar
 			.hpn-bottombar {
 				grid-column: 1 / -1;
 				grid-row: 4 / -1;
@@ -262,6 +254,11 @@ section#home {
 		grid-template-columns: repeat(12, 1fr); 
 		grid-template-rows: 1;
 		
+		[class^="card-"] {
+			display: flex;
+			flex-direction: row;
+		}
+
 		.card-01 {
 			grid-column: 1 / 4;
 			grid-row: 1;
@@ -336,16 +333,6 @@ section#second {
 /*--------------------------------------------------------------
 # Contenidos secciones
 --------------------------------------------------------------*/
-.hpn-container-seccion {
-	display: grid;
-	grid-template-columns: repeat(12, 1fr);
-	grid-template-rows: 3% 10% 70% 17%;
-	grid-gap: 0;
-	height: 100vh;
-	width: 100%;
-}
-
-
 /* Servicio */
 .hpn-container-servicio {
 	grid-column: 1 / -1;
@@ -379,6 +366,91 @@ section#second {
 	background-color: black;
 	grid-column: 1 / -1;
 	grid-row: 4 / -1;
+}
+
+/* Servicio resposive */
+@media screen and (min-width: 320px) and (max-width: 1024px) {
+	.hpn-container-seccion {
+		grid-column: 1 / -1;
+		display: grid;
+		grid-template-columns: repeat(12, 1fr);
+		grid-template-rows: 10% 78% 12%;
+		grid-gap: 0;
+		height: 100vh;
+		width: 100%;
+
+		/* Header */
+		.hpn-header {
+			background-color: lightblue;
+			grid-column: 1 / -1;
+			grid-row: 1;
+			display: grid;
+			grid-template-columns: repeat(12, 1fr); 
+			grid-template-rows: 1;
+
+			// .hpn-container-logo {
+			// 	background-color: rebeccapurple;
+			// 	grid-column: 1 / 3;
+			// }
+
+			// .hpn-container-menu {
+			// 	background-color: darkcyan;
+			// 	grid-column: 12 / -1;
+			// 	display: flex;
+			// 	flex-direction: row;
+			// 	justify-content: space-between;
+			// 	height: 100%;
+			// 	overflow: hidden;
+
+			// 	.btn {
+			// 		align-self: center;
+			// 		color: $hpn-azul;
+			// 	}
+			// }
+
+			// .hpn-container-search {
+			// 	display: none;
+			// }
+		}
+
+		/* Contenedor seccion */
+		.hpn-container-servicio {
+			grid-column: 1 / -1;
+			grid-row: 3;
+			overflow-y: scroll;
+			height: 100vh;
+
+
+			.hpn-container-titulo {
+				background-color: $hpn-cyan;
+				grid-column: 1 / -1;
+				display: flex;
+				flex-direction: column;
+				justify-content: space-around;	
+				padding: 2rem;
+				text-align: center;
+				align-items: center;
+				height: 100%;
+			}
+		
+			.hpn-container-servicios {
+				background-color: $hpn-celeste;
+				grid-column: 1 /-1;
+				grid-row: 2;
+				padding: 3rem;
+				height: 100%;
+			}
+		}
+
+		// Tabs
+		.hpn-seccion-footer {
+			// grid-row: 3;
+			background-color: $hpn-magenta;
+			position: absolute;
+			bottom: 0%;
+			width: 100%;
+		}
+}
 }
 
 /* Noticia */
@@ -856,12 +928,22 @@ input {
 /*--------------------------------------------------------------
 # Tipografia
 --------------------------------------------------------------*/
+// Responsive
+@media screen and (min-width: 320px) and (max-width: 1024px) {
+	.hpn-container-titulo {
+		.hpn-titulo {
+			font-size: 2rem;
+		}
+	}
+}
 .uppercase {
 	text-transform: uppercase;
 }
 
 
 // Tipografia - Secciones (Servicios, noticias)
+
+
 .hpn-container-badges {
 	display: flex;
 	justify-content: flex-start;
@@ -911,6 +993,9 @@ input {
 
 // Variantes cromaticas
 div[class*="titulo"] {
+
+	font-family: 'Source Sans Pro';
+
 	&.azul {
 		color: $hpn-azul;
 	}

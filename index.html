@@ -1,50 +1,19 @@
 <!DOCTYPE html>
-<html>
-    <head>  
-        <script src="/assets/js/jquery-2.2.3.min.js"></script>
-        <script> 
-        $(function(){
-            $("#container").load("/_includes/container.html");
-            $("#topbar").load("/_includes/topbar.html");
-            $("#header").load("/_includes/header.html");
-            // $("#navbar").load("/navbar.html"); 
-            $("#banner").load("/_includes/content-banner.html");
-            // $("#listado").load("/_includes/content-listado.html");
-            // $("#listado-sidebar").load("/_includes/content-listado-sidebar.html"); 
-            // $("#resultados").load("/_includes/content-resultados.html");
-            // $("#noticia").load("/_includes/content-noticia.html");
-            // $("#servicio").load("/_includes/content-servicio.html"); 
-            // $("#servicio-sidebar").load("/_includes/content-servicio-sidebar.html");
-            // $("#perfiles").load("/_includes/content-perfiles.html");
-            // $("#carga").load("/_includes/content-carga.html");
-            // $("#contacto").load("/_includes/content-contacto.html"); 
-            // $("#js").load("/_includes/js.html");
-            $("#middlebar").load("/_includes/middlebar.html")
-            $("#bottombar").load("/_includes/bottombar.html");
-            $("#sidebar").load("/_includes/home-sidebar.html");
-            $("#faq").load("/_includes/home-faq.html");
-            $("#form").load("/_includes/home-form.html");
-            $("#footer").load("/_includes/footer.html");
-        });
-        </script>
+<html class="full home">
+    <head id="header" class="hpn-header">        
     </head>
-    
     <body>
-        <section id="home" class="hpn-container-home">
-            <div id="topbar" class="hpn-topbar"></div>
-            <div id="header" class="hpn-header"></div>
-            <div id="banner" class="hpn-banner"></div>
-            <div id="middlebar" class="hpn-middlebar"></div>
-            <div id="bottombar" class="hpn-bottombar"></div>
-        </section>
-        <section id="second" class="hpn-container-second">
-            <div id="sidebar" class="hpn-home-sidebar"></div>
-            <div id="faq" class="hpn-home-faq"></div>
-            <div id="contacto" class="hpn-home-contacto"></div>
-            <div id="footer" class="hpn-home-footer"></div>
-        </section>
-        <footer>
-            <div id="js"></div>
-        </footer>
+        <section id="primer-scroll" class="hpn-home-primer-scroll"></section>
+        <section id="segundo-scroll" class="hpn-home-segundo-scroll"></section>
     </body>
+    <footer id="footer" class="hpn-footer"></footer>
+    <script src="/assets/js/jquery-2.2.3.min.js"></script>
+    <script> 
+    $(function(){
+        $("#header").load("header.html");
+        $("#primer-scroll").load("page-home.html");
+        $("#segundo-scroll").load("page-home-scroll.html");
+        $("#footer").load("footer.html");
+    });
+    </script>
 </html>

@@ -1,0 +1,22 @@
+/*!
+Theme Name: HPN
+Theme URI: http://underscores.me/
+Author: Hospital Provincial Neuquén
+Author URI: http://www.hospitalneuquen.org.ar/
+Description: Sitio oficial del Hospital Provincial de Neuquén \"Dr. Eduardo Castro Rendón\"
+Version: 1.0.0
+License: GNU General Public License v2 or later
+License URI: LICENSE
+Text Domain: hpn
+Tags: minimalista
+
+*/
+
+// Variables
+@import "variables/_colors";
+@import "variables/_typography";
+
+// Aspectos
+@import "style";
+@import "layout";
+

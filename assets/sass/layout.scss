@@ -1,0 +1,603 @@
+/*--------------------------------------------------------------
+# Layouting
+--------------------------------------------------------------*/
+body {
+	margin: 0;
+	font-family: 'Source Sans Pro';
+}
+
+.full {
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-template-rows: 10% 1fr 10%;
+	height: 100vh;
+
+	&.home {
+		grid-template-rows: 10% 90%;
+	}
+
+	// Layout | Header
+	.hpn-header {
+		grid-column: 1 / -1;
+		grid-row: 1;
+		background-color: lightblue;
+		display: grid;
+		grid-template-columns: repeat(12, 1fr); 
+		grid-template-rows: 1;
+		height: 100%;
+
+		.hpn-container-logo {
+			background-color: rebeccapurple;
+			grid-column: 1 / 3;
+		}
+
+		.hpn-container-menu {
+			background-color: darkcyan;
+			grid-column: 3 / 12;
+			display: flex;
+			flex-direction: row;
+			justify-content: space-between;
+			height: 100%;
+
+			.btn {
+				align-self: center;
+				color: $hpn-azul;
+			}
+		}
+
+		.hpn-container-search {
+			background-color: $hpn-magenta;
+			grid-column: 12 / -1;
+		}
+
+		.hpn-topbar {
+			background-color: black;
+			grid-column: 1 / -1;
+		}
+	}
+
+
+	// Layout | Home
+	.hpn-home-primer-scroll {
+		grid-row: 2;
+		display: grid;
+		grid-template-columns: repeat(12, 1fr);
+		grid-template-rows: 80% 20%;
+		grid-gap: 0;
+		height: 100%;
+		width: 100%;
+
+		// Banner
+		.hpn-banner {
+			grid-column: 1 / -1;
+			grid-row: 1;
+			display: grid;
+			grid-template-rows: 1;
+			grid-template-columns: repeat(12, 1fr); 
+			grid-gap: 2px;
+			
+			// Subdivision Banner
+			.hpn-banner-01 {
+				background-color: blue;
+				grid-column: 1 / 9;
+				grid-row: 1 / 3;
+			}
+			
+			.hpn-banner-02 {
+				background-color: cyan;
+				grid-column: 9 / -1;
+				grid-row: 1;
+			}
+			
+			.hpn-banner-03 {
+				background-color: lightblue;
+				grid-column: 9 / -1;
+				grid-row: 2;
+			}
+		}
+
+		.hpn-middlebar {
+			display: none;
+		}
+
+		.hpn-bottombar {
+			grid-column: 1 / -1;
+			grid-row: 2;
+			display: grid;
+			grid-template-columns: repeat(12, 1fr); 
+			grid-template-rows: 1;
+			
+			[class^="card-"] {
+				display: flex;
+				flex-direction: row;
+			}
+	
+			.card-01 {
+				grid-column: 1 / 4;
+				grid-row: 1;
+				background-color: $hpn-violeta;
+			}
+		
+			.card-02 {
+				grid-column: 4 / 7;
+				grid-row: 1;
+				background-color: $hpn-azul;
+			}
+		
+			.card-03 {
+				grid-column: 7 / 10;
+				grid-row: 1;
+				background-color: $hpn-rojo;
+			}
+		
+			.card-04 {
+				grid-column: 10 / -1;
+				grid-row: 1;
+				background-color: $hpn-celeste;
+			}
+		}
+}
+
+#segundo-scroll {
+	// HOME | Segundo scroll
+	&.hpn-home-segundo-scroll {
+		grid-column: 1 / -1;
+		display: grid;
+		grid-template-columns: repeat(12, 1fr);
+		grid-template-rows: 1fr;
+		grid-gap: 0;
+		// height: 100%;
+
+		.hpn-home-sidebar {
+			background-color: purple;
+			grid-column: 1 / 4;
+			grid-row: 1;
+		}
+	
+		.hpn-home-faq {
+			background-color: lightgoldenrodyellow;
+			grid-column: 4 / 9;
+			grid-row: 1;
+		}
+	
+		.hpn-home-contacto {
+			background-color: darkblue;
+			grid-column: 9 / -1;
+			grid-row: 1 / 2;
+			display: flex;
+			justify-content: space-around;
+			flex-direction: column;
+			min-height: 20rem;
+			padding: 5rem;
+		}
+	}
+}
+
+	// Layout | Seccion
+	/* Servicio */
+	.hpn-container-servicio {
+		grid-column: 1 / -1;
+		grid-row: 3;
+		display: grid;
+		grid-template-columns: repeat(6, 1fr);
+		grid-template-rows: 2fr;
+		height: 100vh; 
+
+		.hpn-container-titulo {
+			grid-column: 1 / 3;
+			grid-row: 1;
+			background-color: $hpn-cyan;
+			display: flex;
+			flex-direction: column;
+			justify-content: space-around;	
+			padding: 8rem 6rem 6rem 6rem;
+			text-align: center;
+			align-items: center;
+		}
+
+		.hpn-container-servicios {
+			grid-column: 3 /-1;
+			grid-row: 1;
+			padding: 3rem;
+			max-height: 100%;
+			overflow-y: scroll;
+		}
+	}
+
+	// Layout | Noticia
+	.hpn-container-noticia {
+		grid-column: 1 / -1;
+		display: grid;
+		grid-template-columns: repeat(6, 1fr);
+		grid-template-rows: 2fr;
+		height: 100vh;
+
+
+		.hpn-container-titulo {
+			grid-column: 1 / 3;
+			grid-row: 1;
+			background-color: $hpn-cyan;
+			display: flex;
+			flex-direction: column;
+			justify-content: space-around;
+			padding: 3rem 3rem 6rem 3rem;
+			text-align: center;
+		}
+
+		.hpn-container-data {
+			grid-column: 3 / 3;
+			grid-row: 1;
+			background-color: $hpn-celeste;
+		}
+
+		.hpn-container-nota {
+			grid-column: 4 /-1;
+			grid-row: 1;
+			padding: 3rem;
+			max-height: 100%;
+			overflow-y: scroll;
+		}
+	}
+	// Layout | Listado
+	// Listado (resultados de busqueda, concursos)
+	.hpn-listado {
+		grid-row: 2;
+		grid-column: 1 / -1;
+		display: grid;
+		grid-template-columns: repeat(12, 1fr);
+		grid-template-rows: 15% 15% 1fr;
+		height: 100%;
+		
+		.hpn-subheader-container {
+			background-color: $hpn-azul;
+			grid-column: 1 / -1;
+			grid-row: 1;
+			display: flex;
+			padding: 2rem;
+		}
+
+		ul.hpn-container-listado {
+			background-color: $hpn-magenta;
+			overflow-y: scroll;
+			display: grid;
+			grid-gap: 0.25rem;
+			padding: 0;
+			list-style: none;
+			margin: 0;
+
+			&.horizontal {
+				grid-column: 1 / 9;
+				grid-template-columns: repeat(2, 1fr);
+				grid-template-rows: repeat(10, 1fr);
+
+				.hpn-list-item {
+					background-color: $hpn-violeta;
+					height: 20rem;		
+				}
+			}
+
+			&.vertical {
+				background-color: $hpn-verde;
+				grid-column: 9 / -1;
+				grid-row: 3;
+				grid-template-columns: repeat(1, 1fr);
+				grid-template-rows: repeat(10, 1fr);
+
+				.hpn-list-item {
+					background-color: $hpn-violeta;
+					height: 3rem;
+				}
+			}
+		}
+
+	// Item listado
+		.hpn-list-item {
+			padding: 1rem;
+		}
+
+		// Item listado - Tipografia
+		.hpn-container-subtitulo {
+			display: flex;
+			flex-direction: row;
+			justify-content: space-between;
+			padding: 2rem;
+
+			&.principal {
+				background-color: $hpn-cyan;
+				grid-column: 1 / 9;
+				grid-row: 2;
+			}
+
+			&.sidebar {
+				grid-column: 9 / -1;
+				grid-row: 2;
+				background-color: $hpn-rojo;
+			}
+		}
+
+		ul.hpn-sidebar-listado {
+			background-color: $hpn-celeste;
+			grid-column: 9 / -1;
+			grid-row: 3;
+			overflow-y: scroll;
+			display: flex;
+			flex-direction: column;
+			justify-content: flex-start;
+			align-content: center;
+			list-style: none;
+
+				li.hpn-list-item {
+					background-color: $hpn-verde;
+					height: 1rem;
+					display: flex;
+					border: solid 2px white;
+					justify-content: space-between;
+					align-items: center;
+					padding: 2rem;
+				}
+		}
+	}
+
+
+	}
+
+
+
+
+	// Layout | Cards
+
+	// Layout |	Mapa 
+
+	// Layout | Upload
+
+	// Layout | Formulario
+
+	// Layout | Footer
+
+
+footer.hpn-footer {
+	grid-column: 1 / -1;
+	grid-row: 3;
+	display: grid;
+	grid-template-columns: repeat(12, 1fr); 
+	grid-template-rows: 1;
+	background-color: black;
+	height: auto;
+	padding: 3rem;
+}
+
+/* ------------------------------------------------------------
+#RESPONSIVENESS
+------------------------------------------------------------ */
+
+	@media screen and (min-width: 320px) and (max-width: 1024px) {
+		
+		.full {
+			display: grid;
+			grid-template-columns: 1fr;
+			// grid-template-rows: 10% 1fr;
+			// height: 100vh;
+
+			/* Header */
+			.hpn-header {
+				background-color: lightblue;
+				grid-column: 1 / -1;
+				grid-row: 1;
+				display: grid;
+				grid-template-columns: repeat(12, 1fr); 
+				grid-template-rows: 1;
+
+				.hpn-container-logo {
+					background-color: rebeccapurple;
+					grid-column: 1 / 3;
+				}
+
+				.hpn-container-menu {
+					background-color: darkcyan;
+					grid-column: 3 / -1;
+					display: flex;
+					flex-direction: row;
+					justify-content: space-between;
+					height: 100%;
+					overflow: hidden;
+
+					.btn {
+						align-self: center;
+						color: $hpn-azul;
+					}
+				}
+
+				.hpn-container-search {
+					display: none;
+				}
+
+				.hpn-topbar {
+					display: none;	
+				}	
+			}
+
+		.hpn-home-primer-scroll {
+			display: grid;
+			grid-template-columns: repeat(12, 1fr);
+			grid-template-rows: auto 15% 15%;
+			grid-gap: 0;
+			height: 100%;
+			width: 100%;
+
+			// Banner
+			.hpn-banner {
+				grid-column: 1 / -1;
+				grid-row: 1;
+				display: grid;
+				grid-template-rows: 1;
+				grid-template-columns: repeat(12, 1fr); 
+				grid-gap: 2px;
+				
+				// Subdivision Banner
+				.hpn-banner-01 {
+					background-color: blue;
+					grid-column: 1 / -1;
+					grid-row: 1 / 2;
+				}
+				
+				.hpn-banner-02 {
+					background-color: cyan;
+					grid-column: 1 / 7;
+					grid-row: 2 / 3;
+				}
+				
+				.hpn-banner-03 {
+					background-color: lightblue;
+					grid-column: 7 / -1;
+					grid-row: 2 / 3;
+				}
+			}
+
+			// middlebar
+			.hpn-middlebar {
+				background-color: $hpn-azul-oscuro;
+				grid-column: 1 / -1;
+				grid-row: 2;
+				grid-template-columns: repeat(12, 1fr); 
+				grid-template-rows: 1;
+				display: flex;
+				flex-direction: row;
+				justify-content: space-between;
+
+				.hpn-search-input {
+					background-color: $hpn-blanco;
+					width: 65%;
+				}
+				
+				.hpn-search-icon {
+					background-color: $hpn-magenta;
+					width: 35%;
+				}
+				
+			}
+
+
+			// Bottombar
+			.hpn-bottombar {
+				grid-column: 1 / -1;
+				grid-row: 3;
+				grid-template-columns: repeat(12, 1fr); 
+				grid-template-rows: 1;
+				height: 100%;
+		
+				.hpn-card-titulo {
+					display: none;
+				}
+
+				p {
+					display: none;
+				}
+		
+				.card-01 {
+					display: none;
+				}
+			
+				.card-02 {
+					grid-column: 1 / 5;
+					grid-row: 1;
+					background-color: $hpn-azul;
+				}
+			
+				.card-03 {
+					grid-column: 5 / 9;
+					grid-row: 1;
+					background-color: $hpn-rojo;
+				}
+			
+				.card-04 {
+					grid-column: 9 / -1;
+					grid-row: 1;
+					background-color: $hpn-celeste;
+				}
+			}
+		}
+	
+		#segundo-scroll {
+			&.hpn-home-segundo-scroll {
+				display: none;
+			}
+		}
+	}
+
+	footer.hpn-footer {
+		display: none;
+	}
+}
+
+
+/*--------------------------------------------------------------
+# Contenidos secciones
+--------------------------------------------------------------*/
+
+.hpn-seccion-footer {
+	background-color: black;
+	grid-column: 1 / -1;
+	grid-row: 4 / -1;
+}
+
+/* Servicio responsive */
+@media screen and (min-width: 320px) and (max-width: 1024px) {
+	.hpn-container-seccion {
+		grid-column: 1 / -1;
+		display: grid;
+		grid-template-columns: repeat(12, 1fr);
+		grid-template-rows: 10% 78% 12%;
+		grid-gap: 0;
+		height: 100vh;
+		width: 100%;
+
+		/* Header */
+		.hpn-header {
+			background-color: lightblue;
+			grid-column: 1 / -1;
+			grid-row: 1;
+			display: grid;
+			grid-template-columns: repeat(12, 1fr); 
+			grid-template-rows: 1;
+		}
+
+		/* Contenedor seccion */
+		.hpn-container-servicio {
+			grid-column: 1 / -1;
+			grid-row: 3;
+			overflow-y: scroll;
+			height: 100vh;
+
+
+			.hpn-container-titulo {
+				background-color: $hpn-cyan;
+				grid-column: 1 / -1;
+				display: flex;
+				flex-direction: column;
+				justify-content: space-around;	
+				padding: 2rem;
+				text-align: center;
+				align-items: center;
+				height: 100%;
+			}
+		
+			.hpn-container-servicios {
+				background-color: $hpn-celeste;
+				grid-column: 1 /-1;
+				grid-row: 2;
+				padding: 3rem;
+				height: 100%;
+			}
+		}
+
+		// Tabs
+		.hpn-seccion-footer {
+			// grid-row: 3;
+			background-color: $hpn-magenta;
+			position: absolute;
+			bottom: 0%;
+			width: 100%;
+		}
+	}
+}
+

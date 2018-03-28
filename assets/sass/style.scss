@@ -1,6 +1,260 @@
+/*--------------------------------------------------------------
+>>> INDICE:
+// 1. Tipografía
+// 2. Elementos formales
+----------------------------------------------------------------*/
+
+// 1. Tipografia
+h1,h2,h3,h4,h5,h6 {
+	// Variantes de tamaño
+	&.txt-xxxs {
+		width: 1rem;
+	}
+
+	&.txt-xxs {
+	
+		width: 1.5rem;
+	}
+
+	&.txt-xs {
+	
+		width: 2.5rem;
+	}
+
+	&.txt-md {
+		width: 5rem;
+	}
+
+	&.txt-lg {
+	
+		width: 7.5rem;
+	}
+
+	&.txt-xl {
+		width: 10rem;
+	}
+
+	&.txt-xxl {
+		width: 15rem;
+	}
+
+	&.txt-xxxl {
+		width: 25rem;
+	}
+
+	// Variantes formales
+	&.bolder {
+		font-weight: bolder;
+	}
+
+	&.lighter {
+		font-weight: lighter;
+	}
+
+	.uppercase {
+		text-transform: uppercase;
+	}
+	
+
+   &.border {
+		border-bottom: 2px solid 25%;
+
+		&.blanco {
+			border-color: white;
+		}
+	
+		&.magenta {
+			border-color: $hpn-magenta;
+		}
+	
+		&.cyan {
+			border-color: $hpn-cyan;
+		}
+	
+		&.celeste {
+			border-color: $hpn-celeste;
+		}
+
+		// Variantes de longitud
+		&.xxs {
+			width: 10%;
+		}
+		
+		&.xs {
+			width: 20%;
+		}
+		
+		&.sm {
+			width: 35%;
+		}
+		
+		&.md {
+			width: 50%;
+		}
+		
+		&.lg {
+			width: 75%;
+		}
+		
+		&.xl {
+			width: 100%;
+		}
+   }
+
+	// Variantes cromáticas
+	&.blanco {
+		color: white;
+	}
+		
+	&.negro {
+		color: black;
+	}
+	
+	&.gris {
+		color: $hpn-gris;
+	}
+
+	&.cyan {
+		color: $hpn-cyan;
+	}
+
+	&.magenta {
+		color: $hpn-magenta;
+	}
+
+	&.rojo {
+		color: $hpn-rojo;
+	}
+
+	&.azul {
+		color: $hpn-azul;
+	}
+
+	&.azul-oscuro {
+		color: $hpn-azul-oscuro;
+	}
+
+	&.celeste {
+		color: $hpn-celeste;
+	}
+
+	&.violeta {
+		color: $hpn-violeta;
+	}
+
+	&.violeta-claro {
+		color: $hpn-violeta-claro;
+	}
+
+	&.verde {
+		color: $hpn-verde;
+	}
+
+	&.verde-claro {
+		color: $hpn-verde-claro;
+	}
+
+	// Variantes de posicionamiento
+	&.right {
+		float: right;
+	}
+
+	&.left {
+		float: left;
+		text-align: left;
+	}
+
+}
+
+// Jerarquias
+.titulo,.subtitulo,.prefix,.subfix,.texto,.numero {
+	// Variantes cromáticas
+	&.blanco {
+		color: white;
+	}
+		
+	&.negro {
+		color: black;
+	}
+	
+	&.gris {
+		color: $hpn-gris;
+	}
+
+	&.cyan {
+		color: $hpn-cyan;
+	}
+
+	&.magenta {
+		color: $hpn-magenta;
+	}
+
+	&.rojo {
+		color: $hpn-rojo;
+	}
+
+	&.azul {
+		color: $hpn-azul;
+	}
+
+	&.azul-oscuro {
+		color: $hpn-azul-oscuro;
+	}
+
+	&.celeste {
+		color: $hpn-celeste;
+	}
+
+	&.violeta {
+		color: $hpn-violeta;
+	}
+
+	&.violeta-claro {
+		color: $hpn-violeta-claro;
+	}
+
+	&.verde {
+		color: $hpn-verde;
+	}
+
+	&.verde-claro {
+		color: $hpn-verde-claro;
+	}
+}
+
+.prefix {
+	font-size: 2rem;
+	font-weight: 700;
+	text-transform: uppercase;
+}
+
+.titulo {
+	font-size: 3.5rem;
+}
+
+.subfix {
+
+}
+
+.subtitulo {
+	font-size: 2.5rem;
+	font-weight: 900;
+}
+
+.texto {
+	font-size: 1rem;
+}
+
+.numero {
+	font-size: 7rem; 
+	font-weight: 700;
+}
+
+
 /* -------------------------------------
 # Elementos
 -------------------------------------*/
+
 // Botones
 .container-input-btn {
 	display: flex;
@@ -96,6 +350,18 @@ hr {
 
 	&.blanco {
 		border-color: white;
+	}
+
+	&.magenta {
+		border-color: $hpn-magenta;
+	}
+
+	&.cyan {
+		border-color: $hpn-cyan;
+	}
+
+	&.celeste {
+		border-color: $hpn-celeste;
 	}
 
 	// Variantes de tamaño

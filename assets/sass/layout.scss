@@ -6,6 +6,10 @@ body {
 	font-family: 'Source Sans Pro';
 }
 
+.wrapper {
+	padding: 5rem;
+}
+
 .full {
 	display: grid;
 	grid-template-columns: 1fr;
@@ -246,7 +250,7 @@ body {
 		display: grid;
 		grid-template-columns: repeat(12, 1fr);
 		grid-template-rows: 15% 15% 1fr;
-		height: 100%;
+		height: 100vh;
 		
 		.hpn-subheader-container {
 			background-color: $hpn-azul;
@@ -254,40 +258,6 @@ body {
 			grid-row: 1;
 			display: flex;
 			padding: 2rem;
-		}
-
-		ul.hpn-container-listado {
-			background-color: $hpn-magenta;
-			overflow-y: scroll;
-			display: grid;
-			grid-gap: 0.25rem;
-			padding: 0;
-			list-style: none;
-			margin: 0;
-
-			&.horizontal {
-				grid-column: 1 / 9;
-				grid-template-columns: repeat(2, 1fr);
-				grid-template-rows: repeat(10, 1fr);
-
-				.hpn-list-item {
-					background-color: $hpn-violeta;
-					height: 20rem;		
-				}
-			}
-
-			&.vertical {
-				background-color: $hpn-verde;
-				grid-column: 9 / -1;
-				grid-row: 3;
-				grid-template-columns: repeat(1, 1fr);
-				grid-template-rows: repeat(10, 1fr);
-
-				.hpn-list-item {
-					background-color: $hpn-violeta;
-					height: 3rem;
-				}
-			}
 		}
 
 	// Item listado
@@ -335,16 +305,43 @@ body {
 					align-items: center;
 					padding: 2rem;
 				}
+			}
 		}
 	}
 
 
-	}
-
-
-
-
 	// Layout | Cards
+	ul.hpn-container-listado {
+		overflow-y: scroll;
+		display: grid;
+		grid-gap: 0.25rem;
+		padding: 0;
+		list-style: none;
+		margin: 0;
+
+		&.horizontal {
+			grid-column: 1 / 9;
+			grid-template-columns: repeat(2, 1fr);
+			grid-template-rows: repeat(10, 1fr);
+
+			.hpn-list-item {
+				background-color: $hpn-violeta;
+				height: 20rem;		
+			}
+		}
+
+		&.vertical {
+			grid-column: 9 / -1;
+			grid-row: 3;
+			grid-template-columns: repeat(1, 1fr);
+			grid-template-rows: repeat(10, 1fr);
+
+			.hpn-list-item {
+				background-color: $hpn-violeta;
+				height: auto;
+			}
+		}
+	}
 
 	// Layout |	Mapa 
 
@@ -414,6 +411,18 @@ footer.hpn-footer {
 				.hpn-topbar {
 					display: none;	
 				}	
+
+
+			// Tabs
+			.hpn-seccion-footer {
+				// grid-row: 3;
+				background-color: $hpn-magenta;
+				position: absolute;
+				bottom: 0%;
+				width: 100%;
+			}
+		}
+
 			}
 
 		.hpn-home-primer-scroll {
@@ -524,53 +533,27 @@ footer.hpn-footer {
 		}
 	}
 
-	footer.hpn-footer {
-		display: none;
-	}
-}
 
 
-/*--------------------------------------------------------------
-# Contenidos secciones
---------------------------------------------------------------*/
-
-.hpn-seccion-footer {
-	background-color: black;
-	grid-column: 1 / -1;
-	grid-row: 4 / -1;
-}
-
-/* Servicio responsive */
-@media screen and (min-width: 320px) and (max-width: 1024px) {
-	.hpn-container-seccion {
+	/*--------------------------------------------------------------
+	# Contenidos secciones
+	--------------------------------------------------------------*/
+	@media screen and (min-width: 320px) and (max-width: 1024px) {
+	.full {
+	/* Servicio responsive */
+	.hpn-container-servicio {
 		grid-column: 1 / -1;
 		display: grid;
 		grid-template-columns: repeat(12, 1fr);
-		grid-template-rows: 10% 78% 12%;
+		grid-template-rows: 1fr;
 		grid-gap: 0;
 		height: 100vh;
 		width: 100%;
 
-		/* Header */
-		.hpn-header {
-			background-color: lightblue;
-			grid-column: 1 / -1;
-			grid-row: 1;
-			display: grid;
-			grid-template-columns: repeat(12, 1fr); 
-			grid-template-rows: 1;
-		}
-
-		/* Contenedor seccion */
-		.hpn-container-servicio {
-			grid-column: 1 / -1;
-			grid-row: 3;
-			overflow-y: scroll;
-			height: 100vh;
-
-
 			.hpn-container-titulo {
 				background-color: $hpn-cyan;
+				grid-row: 1;
+				overflow-y: scroll;
 				grid-column: 1 / -1;
 				display: flex;
 				flex-direction: column;
@@ -578,7 +561,7 @@ footer.hpn-footer {
 				padding: 2rem;
 				text-align: center;
 				align-items: center;
-				height: 100%;
+				height: 100vh;
 			}
 		
 			.hpn-container-servicios {
@@ -589,15 +572,10 @@ footer.hpn-footer {
 				height: 100%;
 			}
 		}
+	}
 
-		// Tabs
-		.hpn-seccion-footer {
-			// grid-row: 3;
-			background-color: $hpn-magenta;
-			position: absolute;
-			bottom: 0%;
-			width: 100%;
-		}
+	footer.hpn-footer {
+		display: none;
 	}
 }
-
+	/** Seccion Responsive **/

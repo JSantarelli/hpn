@@ -1,62 +1,115 @@
 /*--------------------------------------------------------------
 >>> INDICE:
 // 1. Tipografía
+	a. Titulos, subtitulos...
+	b. Badges
 // 2. Elementos formales
 ----------------------------------------------------------------*/
 
 // 1. Tipografia
 h1,h2,h3,h4,h5,h6 {
+	margin: 0;
+	font-weight: lighter;
+}
+
+h1 {
+	font-size: 3em;
+}
+h2 {
+	font-size: 2.5em;
+}
+h3 {
+	font-size: 2em;
+}
+h4 {
+	font-size: 1.75em;
+}
+h5 {
+	font-size: 1.25em;
+}
+h6 {
+	font-size: 1em;
+}
+
+@media screen and (min-width: 320px) and (max-width: 1024px) {
+	h1 {
+		font-size: 2em;
+	}
+	h2 {
+		font-size: 1.75em;
+	}
+	h3 {
+		font-size: 1.5em;
+	}
+	h4 {
+		font-size: 1.25em;
+	}
+	h5 {
+		font-size: 1em;
+	}
+	h6 {
+		font-size: 0.75em;
+	}
+}
+
 	// Variantes de tamaño
-	&.txt-xxxs {
-		width: 1rem;
+	.txt-xxxs {
+		font-size: 0.75rem;
 	}
 
-	&.txt-xxs {
+	.txt-xxs {
 	
-		width: 1.5rem;
+		font-size: 1rem;
 	}
 
-	&.txt-xs {
+	.txt-xs {
 	
-		width: 2.5rem;
+		font-size: 1.5rem;
 	}
 
-	&.txt-md {
-		width: 5rem;
-	}
-
-	&.txt-lg {
+	.txt-sm {
 	
-		width: 7.5rem;
+		font-size: 1.75rem;
 	}
 
-	&.txt-xl {
-		width: 10rem;
+	.txt-md {
+		font-size: 2.5rem;
 	}
 
-	&.txt-xxl {
-		width: 15rem;
+	.txt-lg {
+		font-size: 5rem;
 	}
 
-	&.txt-xxxl {
-		width: 25rem;
+	.txt-xl {
+		font-size: 7.5rem;
+	}
+
+	.txt-xxl {
+		font-size: 10rem;
+	}
+
+	.txt-xxxl {
+		font-size: 12.5rem;
 	}
 
 	// Variantes formales
-	&.bolder {
+	.bolder {
 		font-weight: bolder;
 	}
 
-	&.lighter {
-		font-weight: lighter;
+	.lighter {
+		font-weight: 200;
 	}
 
 	.uppercase {
 		text-transform: uppercase;
 	}
 	
+	.shadow {
+		text-shadow: 1px 1px 1px #000;
+	}
 
-   &.border {
+   .border {
 		border-bottom: 2px solid 25%;
 
 		&.blanco {
@@ -102,69 +155,68 @@ h1,h2,h3,h4,h5,h6 {
    }
 
 	// Variantes cromáticas
-	&.blanco {
+	.txt-blanco {
 		color: white;
 	}
 		
-	&.negro {
+	.txt-negro {
 		color: black;
 	}
 	
-	&.gris {
+	.txt-gris {
 		color: $hpn-gris;
 	}
 
-	&.cyan {
+	.txt-cyan {
 		color: $hpn-cyan;
 	}
 
-	&.magenta {
+	.txt-magenta {
 		color: $hpn-magenta;
 	}
 
-	&.rojo {
+	.txt-rojo {
 		color: $hpn-rojo;
 	}
 
-	&.azul {
+	.txt-azul {
 		color: $hpn-azul;
 	}
 
-	&.azul-oscuro {
+	.txt-azul-oscuro {
 		color: $hpn-azul-oscuro;
 	}
 
-	&.celeste {
+	.txt-celeste {
 		color: $hpn-celeste;
 	}
 
-	&.violeta {
+	.txt-violeta {
 		color: $hpn-violeta;
 	}
 
-	&.violeta-claro {
+	.txt-violeta-claro {
 		color: $hpn-violeta-claro;
 	}
 
-	&.verde {
+	.txt-verde {
 		color: $hpn-verde;
 	}
 
-	&.verde-claro {
+	.txt-verde-claro {
 		color: $hpn-verde-claro;
 	}
 
 	// Variantes de posicionamiento
-	&.right {
+	.right {
 		float: right;
 	}
 
-	&.left {
+	.left {
 		float: left;
 		text-align: left;
 	}
 
-}
 
 // Jerarquias
 .titulo,.subtitulo,.prefix,.subfix,.texto,.numero {
@@ -250,6 +302,35 @@ h1,h2,h3,h4,h5,h6 {
 	font-weight: 700;
 }
 
+.badge {
+	color: white;
+	font-size: 12px;
+	text-transform: uppercase;
+
+	&.bg-azul {
+		background-color: $hpn-azul;
+	}
+	
+	&.bg-azul-oscuro {
+		background-color: $hpn-azul-oscuro;
+	}
+	
+	&.bg-celeste {
+		background-color: $hpn-celeste;
+	}
+	
+	&.bg-magenta {
+		background-color: $hpn-magenta;
+	}
+	
+	&.bg-rojo {
+		background-color: $hpn-rojo;
+	}
+	
+	&.bg-verde {
+		background-color: $hpn-verde;
+	}
+}
 
 /* -------------------------------------
 # Elementos
@@ -392,10 +473,33 @@ hr {
 
 }
 
+// HPN Banner
+.hpn-banner {
+	[class^="hpn-banner-0"]	{
+		display: flex;
+		flex-direction: column;
+		justify-content: flex-end;
+		position: relative;
+		z-index: 3;
+		// Degrade
+		background: linear-gradient(0deg, rgba(0,0,0,0.65) 0%,rgba(0,0,0,0) 50%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	}
+
+	[class^="hpn-banner-bloque-texto"] {
+		color: white;
+		text-align: left;
+		position: absolute;
+		width: 75%;
+		left: 5%;
+		top: 65%;
+		z-index: 4;
+		}
+	}
+
+
 /* HPN Card */
 .hpn-card-bloque-texto {
 	display: inline-block;
-	width: 75%;
 	align-self: center;
 }
 
@@ -406,40 +510,43 @@ hr {
 // Card - imagenes
 .hpn-card-img {
 	align-self: center;
-	border: solid 3px;
-	border-radius: 50%;
 	object-fit: cover;
 	height: 5rem;
 	width: 5rem;
 	position: relative;
 	display: flex;
 
-	&.magenta {
-		border-color: $hpn-magenta;
-	}
+	&.outline {
+		border: solid 3px;
+		border-radius: 50%;
 
-	&.cyan {
-		border-color: $hpn-cyan;
-	}
-
-	&.celeste {
-		border-color: $hpn-celeste;
+		&.magenta {
+			border-color: $hpn-magenta;
+		}
+	
+		&.cyan {
+			border-color: $hpn-cyan;
+		}
+	
+		&.celeste {
+			border-color: $hpn-celeste;
+		}
 	}
 }
 
 // Card - Tipografía
 .hpn-card-prefix {
-	font-size: 2rem;
+	font-size: 1rem;
 	font-weight: 700;
+	text-transform: uppercase;
 }
 
 .hpn-card-titulo {
-	font-size: 3.5rem;
-	
+	font-size: 1.5rem;
 }
 
 .hpn-card-subtitulo {
-	font-size: 2.5rem;
+	font-size: 1.25rem;
 	font-weight: 900;
 }
 
@@ -452,54 +559,45 @@ hr {
 	font-weight: 700;
 }
 
-
 // HPN Listados
 
-
 // HPN - Imagenes
-	.hpn-img {
-		object-fit: cover;
-		background-color: $hpn-azul;
+.hpn-img {
+	height: 100%;
+	object-fit: cover;
+	z-index: 2;
 
 // Img - Variantes dimensiones
 		&.xxxs {
-			height: 1rem;
-			width: 1rem;
+			width: 50px;
 		}
 
 		&.xxs {
-			height: 1.5rem;
-			width: 1.5rem;
+			width: 100px;
 		}
 
 		&.xs {
-			height: 2.5rem;
-			width: 2.5rem;
+			width: 150px;
 		}
 
 		&.md {
-			height: 5rem;
-			width: 5rem;
+			width: 1200px;
 		}
 
 		&.lg {
-			height: 7.5rem;
-			width: 7.5rem;
+			width: 1250px;
 		}
 
 		&.xl {
-			height: 10rem;
-			width: 10rem;
+			width: 1300px;
 		}
 
 		&.xxl {
-			height: 15rem;
-			width: 15rem;
+			width: 1350px;
 		}
 
 		&.xxxl {
-			height: 25rem;
-			width: 25rem;
+			width: 1500px;
 		}
 
 // Img - Variantes formales
@@ -510,18 +608,6 @@ hr {
 		&.circular {
 			border-radius: 50%;
 		}
-	}
-
-	.hpn-card-volanta {
-		text-transform: uppercase;
-	}
-
-	.hpn-card-titulo {
-		font-size: 1.5rem;
-	}
-
-	.hpn-card-texto {
-		font-size: 1rem;
 	}
 
 // HPN - Inputs
@@ -693,16 +779,13 @@ input {
 }
 
 .hpn-titulo {
-	align-self: center;
-	font-size: 3rem;
-	font-weight: 100;
-	text-shadow: #111 5px;
-
+	// font-size: 3rem;
+	// font-weight: 100;
 }
 
 .hpn-subtitulo {
-	font-size: 1.5rem;
-	font-weight: 500;
+	// font-size: 1.5rem;
+	// font-weight: 500;
 }
 
 .hpn-bajada {
@@ -765,12 +848,24 @@ div[class*="titulo"] {
 	}
 
 	&.baseline {
-		padding: 25% 0 0 7%;
+		padding-top: 25%;
 	}
 
 }
 
 .margin-left {
-	margin-right: 0.5rem;
+	margin-right: 0.25rem;
 }
 
+/* ------------------------------------------------------------
+#RESPONSIVENESS
+------------------------------------------------------------ */
+@media screen and (min-width:320px) and (max-width:1024px) {
+	.hpn-banner-bloque-texto {
+		text-align: center;
+
+	.hpn-subtitulo {
+		display: none;
+	}
+	}
+}

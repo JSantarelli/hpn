@@ -45,24 +45,6 @@ h5 {
 h6 {
   font-size: 1em; }
 
-@media screen and (min-width: 320px) and (max-width: 1024px) {
-  h1 {
-    font-size: 2em; }
-
-  h2 {
-    font-size: 1.75em; }
-
-  h3 {
-    font-size: 1.5em; }
-
-  h4 {
-    font-size: 1.25em; }
-
-  h5 {
-    font-size: 1em; }
-
-  h6 {
-    font-size: 0.75em; } }
 .txt-xxxs {
   font-size: 0.75rem; }
 
@@ -323,6 +305,15 @@ hr {
   top: 65%;
   z-index: 4; }
 
+@media screen and (min-width: 320px) and (max-width: 1024px) {
+  [class^="hpn-banner-img-"]
+  > [class^="hpn-banner-bloque-texto"] {
+    color: white;
+    text-align: center;
+    position: absolute;
+    width: 75%;
+    top: 50%;
+    z-index: 4; } }
 /* HPN Card */
 .hpn-card-bloque-texto {
   display: inline-block;
@@ -367,29 +358,32 @@ hr {
   font-size: 7rem;
   font-weight: 700; }
 
-.hpn-img {
-  height: 100%;
+.hpn-banner-img-secundaria {
   object-fit: cover;
   z-index: 2; }
-  .hpn-img.xxxs {
+
+.hpn-banner-img-principal {
+  object-fit: cover;
+  z-index: 2; }
+  .hpn-banner-img-principal.xxxs {
     width: 50px; }
-  .hpn-img.xxs {
+  .hpn-banner-img-principal.xxs {
     width: 100px; }
-  .hpn-img.xs {
+  .hpn-banner-img-principal.xs {
     width: 150px; }
-  .hpn-img.md {
+  .hpn-banner-img-principal.md {
     width: 1200px; }
-  .hpn-img.lg {
+  .hpn-banner-img-principal.lg {
     width: 1250px; }
-  .hpn-img.xl {
+  .hpn-banner-img-principal.xl {
     width: 1300px; }
-  .hpn-img.xxl {
+  .hpn-banner-img-principal.xxl {
     width: 1350px; }
-  .hpn-img.xxxl {
+  .hpn-banner-img-principal.xxxl {
     width: 1500px; }
-  .hpn-img.rounded {
+  .hpn-banner-img-principal.rounded {
     border-radius: 15%; }
-  .hpn-img.circular {
+  .hpn-banner-img-principal.circular {
     border-radius: 50%; }
 
 input {
@@ -458,6 +452,24 @@ input {
 /*--------------------------------------------------------------
 # Tipografia
 --------------------------------------------------------------*/
+@media screen and (min-width: 320px) and (max-width: 1024px) {
+  h1 {
+    font-size: 2em; }
+
+  h2 {
+    font-size: 1.5em; }
+
+  h3 {
+    font-size: 1.25em; }
+
+  h4 {
+    font-size: 1em; }
+
+  h5 {
+    font-size: 0.75em; }
+
+  h6 {
+    font-size: 0.5em; } }
 @media screen and (min-width: 320px) and (max-width: 1024px) {
   .hpn-container-titulo .hpn-titulo {
     font-size: 2rem; } }
@@ -574,7 +586,10 @@ body {
       grid-column: 12 / -1; }
     .full .hpn-header .hpn-topbar {
       background-color: black;
-      grid-column: 1 / -1; }
+      grid-column: 1 / -1;
+      display: flex;
+      justify-content: space-around;
+      flex-direction: row; }
   .full .hpn-home-primer-scroll {
     grid-row: 2;
     display: grid;

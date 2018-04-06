@@ -57,6 +57,17 @@ body {
 		.hpn-topbar {
 			background-color: black;
 			grid-column: 1 / -1;
+			display: flex;
+			justify-content: space-around;
+			flex-direction: row;
+
+			// Contenido topbar
+			.hpn-topbar-contacto {
+
+				.hpn-element-text {
+
+				}
+			}
 		}
 	}
 

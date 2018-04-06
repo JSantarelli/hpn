@@ -31,191 +31,170 @@ h6 {
 	font-size: 1em;
 }
 
-@media screen and (min-width: 320px) and (max-width: 1024px) {
-	h1 {
-		font-size: 2em;
+// Variantes de tamaño
+.txt-xxxs {
+	font-size: 0.75rem;
+}
+
+.txt-xxs {
+
+	font-size: 1rem;
+}
+
+.txt-xs {
+
+	font-size: 1.5rem;
+}
+
+.txt-sm {
+
+	font-size: 1.75rem;
+}
+
+.txt-md {
+	font-size: 2.5rem;
+}
+
+.txt-lg {
+	font-size: 5rem;
+}
+
+.txt-xl {
+	font-size: 7.5rem;
+}
+
+.txt-xxl {
+	font-size: 10rem;
+}
+
+.txt-xxxl {
+	font-size: 12.5rem;
+}
+
+// Variantes formales
+.bolder {
+	font-weight: bolder;
+}
+
+.lighter {
+	font-weight: 200;
+}
+
+.uppercase {
+	text-transform: uppercase;
+}
+
+.shadow {
+	text-shadow: 1px 1px 1px #000;
+}
+
+.border {
+	border-bottom: 2px solid 25%;
+
+	&.blanco {
+		border-color: white;
 	}
-	h2 {
-		font-size: 1.75em;
+
+	&.magenta {
+		border-color: $hpn-magenta;
 	}
-	h3 {
-		font-size: 1.5em;
+
+	&.cyan {
+		border-color: $hpn-cyan;
 	}
-	h4 {
-		font-size: 1.25em;
+
+	&.celeste {
+		border-color: $hpn-celeste;
 	}
-	h5 {
-		font-size: 1em;
+
+	// Variantes de longitud
+	&.xxs {
+		width: 10%;
 	}
-	h6 {
-		font-size: 0.75em;
+	
+	&.xs {
+		width: 20%;
+	}
+	
+	&.sm {
+		width: 35%;
+	}
+	
+	&.md {
+		width: 50%;
+	}
+	
+	&.lg {
+		width: 75%;
+	}
+	
+	&.xl {
+		width: 100%;
 	}
 }
 
-	// Variantes de tamaño
-	.txt-xxxs {
-		font-size: 0.75rem;
-	}
-
-	.txt-xxs {
+// Variantes cromáticas
+.txt-blanco {
+	color: white;
+}
 	
-		font-size: 1rem;
-	}
+.txt-negro {
+	color: black;
+}
 
-	.txt-xs {
-	
-		font-size: 1.5rem;
-	}
+.txt-gris {
+	color: $hpn-gris;
+}
 
-	.txt-sm {
-	
-		font-size: 1.75rem;
-	}
+.txt-cyan {
+	color: $hpn-cyan;
+}
 
-	.txt-md {
-		font-size: 2.5rem;
-	}
+.txt-magenta {
+	color: $hpn-magenta;
+}
 
-	.txt-lg {
-		font-size: 5rem;
-	}
+.txt-rojo {
+	color: $hpn-rojo;
+}
 
-	.txt-xl {
-		font-size: 7.5rem;
-	}
+.txt-azul {
+	color: $hpn-azul;
+}
 
-	.txt-xxl {
-		font-size: 10rem;
-	}
+.txt-azul-oscuro {
+	color: $hpn-azul-oscuro;
+}
 
-	.txt-xxxl {
-		font-size: 12.5rem;
-	}
+.txt-celeste {
+	color: $hpn-celeste;
+}
 
-	// Variantes formales
-	.bolder {
-		font-weight: bolder;
-	}
+.txt-violeta {
+	color: $hpn-violeta;
+}
 
-	.lighter {
-		font-weight: 200;
-	}
+.txt-violeta-claro {
+	color: $hpn-violeta-claro;
+}
 
-	.uppercase {
-		text-transform: uppercase;
-	}
-	
-	.shadow {
-		text-shadow: 1px 1px 1px #000;
-	}
+.txt-verde {
+	color: $hpn-verde;
+}
 
-   .border {
-		border-bottom: 2px solid 25%;
+.txt-verde-claro {
+	color: $hpn-verde-claro;
+}
 
-		&.blanco {
-			border-color: white;
-		}
-	
-		&.magenta {
-			border-color: $hpn-magenta;
-		}
-	
-		&.cyan {
-			border-color: $hpn-cyan;
-		}
-	
-		&.celeste {
-			border-color: $hpn-celeste;
-		}
+// Variantes de posicionamiento
+.right {
+	float: right;
+}
 
-		// Variantes de longitud
-		&.xxs {
-			width: 10%;
-		}
-		
-		&.xs {
-			width: 20%;
-		}
-		
-		&.sm {
-			width: 35%;
-		}
-		
-		&.md {
-			width: 50%;
-		}
-		
-		&.lg {
-			width: 75%;
-		}
-		
-		&.xl {
-			width: 100%;
-		}
-   }
-
-	// Variantes cromáticas
-	.txt-blanco {
-		color: white;
-	}
-		
-	.txt-negro {
-		color: black;
-	}
-	
-	.txt-gris {
-		color: $hpn-gris;
-	}
-
-	.txt-cyan {
-		color: $hpn-cyan;
-	}
-
-	.txt-magenta {
-		color: $hpn-magenta;
-	}
-
-	.txt-rojo {
-		color: $hpn-rojo;
-	}
-
-	.txt-azul {
-		color: $hpn-azul;
-	}
-
-	.txt-azul-oscuro {
-		color: $hpn-azul-oscuro;
-	}
-
-	.txt-celeste {
-		color: $hpn-celeste;
-	}
-
-	.txt-violeta {
-		color: $hpn-violeta;
-	}
-
-	.txt-violeta-claro {
-		color: $hpn-violeta-claro;
-	}
-
-	.txt-verde {
-		color: $hpn-verde;
-	}
-
-	.txt-verde-claro {
-		color: $hpn-verde-claro;
-	}
-
-	// Variantes de posicionamiento
-	.right {
-		float: right;
-	}
-
-	.left {
-		float: left;
-		text-align: left;
-	}
+.left {
+	float: left;
+	text-align: left;
+}
 
 
 // Jerarquias
@@ -496,6 +475,20 @@ hr {
 		}
 	}
 
+@media screen and (min-width: 320px) and (max-width: 1024px) {
+	
+	[class^="hpn-banner-img-"]
+		>[class^="hpn-banner-bloque-texto"] {
+			color: white;
+			text-align: center;
+			position: absolute;
+			width: 75%;
+			// left: 5%;
+			top: 50%;
+			z-index: 4;
+			}
+}
+
 
 /* HPN Card */
 .hpn-card-bloque-texto {
@@ -562,8 +555,14 @@ hr {
 // HPN Listados
 
 // HPN - Imagenes
-.hpn-img {
-	height: 100%;
+.hpn-banner-img-secundaria {
+	// height: 100%;
+	object-fit: cover;
+	z-index: 2;
+}
+
+.hpn-banner-img-principal {
+	// height: 100%;
 	object-fit: cover;
 	z-index: 2;
 
@@ -741,6 +740,28 @@ input {
 /*--------------------------------------------------------------
 # Tipografia
 --------------------------------------------------------------*/
+// Headings
+@media screen and (min-width: 320px) and (max-width: 1024px) {
+	h1 {
+		font-size: 2em;
+	}
+	h2 {
+		font-size: 1.5em;
+	}
+	h3 {
+		font-size: 1.25em;
+	}
+	h4 {
+		font-size: 1em;
+	}
+	h5 {
+		font-size: 0.75em;
+	}
+	h6 {
+		font-size: 0.5em;
+	}
+}
+
 // Responsive
 @media screen and (min-width: 320px) and (max-width: 1024px) {
 	.hpn-container-titulo {

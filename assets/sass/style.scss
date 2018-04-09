@@ -31,6 +31,10 @@ h6 {
 	font-size: 1em;
 }
 
+small {
+	font-size: 0.5em;
+}
+
 // Variantes de tamaño
 .txt-xxxs {
 	font-size: 0.75rem;
@@ -468,9 +472,9 @@ hr {
 		color: white;
 		text-align: left;
 		position: absolute;
-		width: 75%;
+		width: 85%;
 		left: 5%;
-		top: 65%;
+		top: 50%;
 		z-index: 4;
 		}
 	}
@@ -680,8 +684,21 @@ input {
 }
 
 /*--------------------------------------------------------------
-# VARIANTES
+# VARIANTES GLOBALES
 --------------------------------------------------------------*/
+.rounded {
+	border-radius: 50px;
+}
+
+.rounded-right {
+	border-top-right-radius: 50px;
+	border-bottom-right-radius: 50px;
+}
+
+.rounded-left {
+	border-top-left-radius: 50px;
+	border-bottom-left-radius: 50px;
+}
 
 .text-gris {
 	color: $hpn-gris;
@@ -701,19 +718,19 @@ input {
 --------------------------------------------------------------*/
 	.azul-oscuro {
 		.borde {
-			border: solid 1px $hpn-azul; 
+			border: solid 1px $hpn-azul-oscuro; 
 		}
 
 		&.fondo {
-			background: $hpn-azul;
+			background: $hpn-azul-oscuro;
 		}
 
 		.titulo {
-			color: $hpn-azul;
+			color: $hpn-azul-oscuro;
 		}
 
 		.texto {
-			color: $hpn-azul;
+			color: $hpn-azul-oscuro;
 		}
 	}
   
@@ -723,7 +740,7 @@ input {
 			border: solid 1px $hpn-azul; 
 		}
 
-		.fondo {
+		&.fondo {
 			background: $hpn-azul;
 		}
 
@@ -786,16 +803,24 @@ input {
 
 .hpn-badge {
 	align-self: center;
-	border: solid 2px;
 	border-radius: 25px;
 	font-size: 0.75rem;
 	text-transform: uppercase;
 	padding: 0.25rem;
 	margin-right: 0.5rem;
+	max-width: auto;
+
+	&.outline {
+		border: solid 2px;
+	}
 
 	&.verde {
 		border-color: $hpn-verde;
 		color: $hpn-verde;
+	}
+	&.magenta {
+		background-color: $hpn-magenta;
+		color: white;
 	}
 }
 

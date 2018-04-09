@@ -2,9 +2,9 @@
 /*!
 Theme Name: HPN
 Theme URI: http://underscores.me/
-Author: Hospital Provincial Neuqu├®n
+Author: Hospital Provincial Neuquén
 Author URI: http://www.hospitalneuquen.org.ar/
-Description: Sitio oficial del Hospital Provincial de Neuqu├®n \"Dr. Eduardo Castro Rend├│n\"
+Description: Sitio oficial del Hospital Provincial de Neuquén \"Dr. Eduardo Castro Rendón\"
 Version: 1.0.0
 License: GNU General Public License v2 or later
 License URI: LICENSE
@@ -18,7 +18,7 @@ Tags: minimalista
 @import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro");
 /*--------------------------------------------------------------
 >>> INDICE:
-// 1. Tipograf├¡a
+// 1. Tipografía
 	a. Titulos, subtitulos...
 	b. Badges
 // 2. Elementos formales
@@ -44,6 +44,9 @@ h5 {
 
 h6 {
   font-size: 1em; }
+
+small {
+  font-size: 0.5em; }
 
 .txt-xxxs {
   font-size: 0.75rem; }
@@ -300,9 +303,9 @@ hr {
   color: white;
   text-align: left;
   position: absolute;
-  width: 75%;
+  width: 85%;
   left: 5%;
-  top: 65%;
+  top: 50%;
   z-index: 4; }
 
 @media screen and (min-width: 320px) and (max-width: 1024px) {
@@ -417,8 +420,19 @@ input {
     height: 100px; }
 
 /*--------------------------------------------------------------
-# VARIANTES
+# VARIANTES GLOBALES
 --------------------------------------------------------------*/
+.rounded {
+  border-radius: 50px; }
+
+.rounded-right {
+  border-top-right-radius: 50px;
+  border-bottom-right-radius: 50px; }
+
+.rounded-left {
+  border-top-left-radius: 50px;
+  border-bottom-left-radius: 50px; }
+
 .text-gris {
   color: #7d7d7d; }
 
@@ -432,17 +446,17 @@ input {
 # Cromaticidad 
 --------------------------------------------------------------*/
 .azul-oscuro .borde {
-  border: solid 1px #2c4794; }
+  border: solid 1px #243163; }
 .azul-oscuro.fondo {
-  background: #2c4794; }
+  background: #243163; }
 .azul-oscuro .titulo {
-  color: #2c4794; }
+  color: #243163; }
 .azul-oscuro .texto {
-  color: #2c4794; }
+  color: #243163; }
 
 .azul .borde {
   border: solid 1px #2c4794; }
-.azul .fondo {
+.azul.fondo {
   background: #2c4794; }
 .azul .titulo {
   color: #2c4794; }
@@ -483,15 +497,20 @@ input {
 
 .hpn-badge {
   align-self: center;
-  border: solid 2px;
   border-radius: 25px;
   font-size: 0.75rem;
   text-transform: uppercase;
   padding: 0.25rem;
-  margin-right: 0.5rem; }
+  margin-right: 0.5rem;
+  max-width: auto; }
+  .hpn-badge.outline {
+    border: solid 2px; }
   .hpn-badge.verde {
     border-color: #00b9b1;
     color: #00b9b1; }
+  .hpn-badge.magenta {
+    background-color: #e3007e;
+    color: white; }
 
 .hpn-bajada {
   font-size: 1.25rem;
@@ -545,9 +564,11 @@ div[class*="titulo"] {
 /*--------------------------------------------------------------
 # Layouting
 --------------------------------------------------------------*/
-body {
-  margin: 0;
+html {
   font-family: 'Source Sans Pro'; }
+
+body {
+  margin: 0; }
 
 .wrapper {
   padding: 5rem; }
@@ -563,17 +584,17 @@ body {
   .full .hpn-header {
     grid-column: 1 / -1;
     grid-row: 1;
-    background-color: lightblue;
+    background-color: white;
     display: grid;
     grid-template-columns: repeat(12, 1fr);
     grid-template-rows: 1;
     height: 100%; }
     .full .hpn-header .hpn-container-logo {
       background-color: rebeccapurple;
-      grid-column: 1 / 3; }
+      grid-column: 1 / 4; }
     .full .hpn-header .hpn-container-menu {
-      background-color: darkcyan;
-      grid-column: 3 / 12;
+      background-color: white;
+      grid-column: 4 / 12;
       display: flex;
       flex-direction: row;
       justify-content: space-between;
@@ -585,11 +606,25 @@ body {
       background-color: #e3007e;
       grid-column: 12 / -1; }
     .full .hpn-header .hpn-topbar {
-      background-color: black;
       grid-column: 1 / -1;
       display: flex;
       justify-content: space-around;
-      flex-direction: row; }
+      flex-direction: row;
+      color: white;
+      background-color: #2c4794; }
+      .full .hpn-header .hpn-topbar .hpn-topbar-subcontainer {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        grid-template-columns: repeat(12, 1fr);
+        padding: 0 1.5em 0 1.5em; }
+        .full .hpn-header .hpn-topbar .hpn-topbar-subcontainer .hpn-element-txt {
+          display: flex;
+          flex-direction: row;
+          justify-content: space-around;
+          align-items: center; }
+          .full .hpn-header .hpn-topbar .hpn-topbar-subcontainer .hpn-element-txt.sm {
+            width: 25%; }
   .full .hpn-home-primer-scroll {
     grid-row: 2;
     display: grid;

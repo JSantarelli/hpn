@@ -16,7 +16,7 @@ body {
 .full {
 	display: grid;
 	grid-template-columns: 1fr;
-	grid-template-rows: 10% 1fr 10%;
+	grid-template-rows: 15% 1fr 10%;
 	height: 100vh;
 
 	&.home {
@@ -34,8 +34,14 @@ body {
 		height: 100%;
 
 		.hpn-container-logo {
-			background-color: rebeccapurple;
 			grid-column: 1 / 4;
+			display: flex;
+			align-items: center;
+			padding: 0.5rem;
+
+			.logo {
+				align-self: center;
+			}
 		}
 
 		.hpn-container-menu {
@@ -125,10 +131,6 @@ body {
 				grid-column: 9 / -1;
 				grid-row: 2;
 			}
-		}
-
-		.hpn-middlebar {
-			display: none;
 		}
 
 		.hpn-bottombar {
@@ -488,7 +490,7 @@ footer.hpn-footer {
 
 			// middlebar
 			.hpn-middlebar {
-				background-color: $hpn-azul-oscuro;
+				background-color: transparent;
 				grid-column: 1 / -1!important;
 				grid-row: 2!important;
 				grid-template-columns: repeat(12, 1fr)!important; 

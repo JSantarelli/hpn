@@ -2,9 +2,9 @@
 /*!
 Theme Name: HPN
 Theme URI: http://underscores.me/
-Author: Hospital Provincial Neuquén
+Author: Hospital Provincial Neuqu├®n
 Author URI: http://www.hospitalneuquen.org.ar/
-Description: Sitio oficial del Hospital Provincial de Neuquén \"Dr. Eduardo Castro Rendón\"
+Description: Sitio oficial del Hospital Provincial de Neuqu├®n \"Dr. Eduardo Castro Rend├│n\"
 Version: 1.0.0
 License: GNU General Public License v2 or later
 License URI: LICENSE
@@ -18,7 +18,7 @@ Tags: minimalista
 @import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro");
 /*--------------------------------------------------------------
 >>> INDICE:
-// 1. Tipografía
+// 1. Tipograf├¡a
 	a. Titulos, subtitulos...
 	b. Badges
 // 2. Elementos formales
@@ -43,7 +43,7 @@ h5 {
   font-size: 1.25em; }
 
 h6 {
-  font-size: 1em; }
+  font-size: 0.75em; }
 
 small {
   font-size: 0.5em; }
@@ -366,28 +366,47 @@ hr {
   z-index: 2; }
 
 .hpn-banner-img-principal {
+  height: 100%;
   object-fit: cover;
   z-index: 2; }
-  .hpn-banner-img-principal.xxxs {
-    width: 50px; }
-  .hpn-banner-img-principal.xxs {
-    width: 100px; }
-  .hpn-banner-img-principal.xs {
-    width: 150px; }
-  .hpn-banner-img-principal.md {
-    width: 1200px; }
-  .hpn-banner-img-principal.lg {
-    width: 1250px; }
-  .hpn-banner-img-principal.xl {
-    width: 1300px; }
-  .hpn-banner-img-principal.xxl {
-    width: 1350px; }
-  .hpn-banner-img-principal.xxxl {
-    width: 1500px; }
-  .hpn-banner-img-principal.rounded {
-    border-radius: 15%; }
-  .hpn-banner-img-principal.circular {
-    border-radius: 50%; }
+
+.img.w-xxxs {
+  width: 50px; }
+.img.w-xxs {
+  width: 100px; }
+.img.w-xs {
+  width: 150px; }
+.img.md {
+  width: 50%;
+  height: 50%; }
+.img.w-lg {
+  width: 1250px; }
+.img.w-xl {
+  width: 1300px; }
+.img.w-xxl {
+  width: 1350px; }
+.img.w-xxxl {
+  height: 1500px; }
+.img.h-xxxs {
+  height: 50px; }
+.img.h-xxs {
+  height: 100px; }
+.img.h-xs {
+  height: 150px; }
+.img.h-md {
+  height: 1200px; }
+.img.h-lg {
+  height: 1250px; }
+.img.h-xl {
+  height: 1300px; }
+.img.h-xxl {
+  height: 1350px; }
+.img.h-xxxl {
+  height: 1500px; }
+.img.rounded {
+  border-radius: 15%; }
+.img.circular {
+  border-radius: 50%; }
 
 input {
   align-self: center;
@@ -500,9 +519,9 @@ input {
   border-radius: 25px;
   font-size: 0.75rem;
   text-transform: uppercase;
-  padding: 0.25rem;
+  padding: 0.25rem 0.5rem;
   margin-right: 0.5rem;
-  max-width: auto; }
+  width: fit-content; }
   .hpn-badge.outline {
     border: solid 2px; }
   .hpn-badge.verde {
@@ -538,9 +557,17 @@ div[class*="titulo"] {
   font-size: 2.5rem;
   font-weight: lighter; }
 
+.hpn-icon-container {
+  display: flex; }
+  .hpn-icon-container.horizontal {
+    flex-direction: column; }
+  .hpn-icon-container.vertical {
+    flex-direction: row; }
+
 .hpn-icon {
-  align-self: center;
-  font-size: 4rem; }
+  align-self: center; }
+  .hpn-icon.lg {
+    font-size: 4rem; }
   .hpn-icon.magenta {
     -webkit-text-fill-color: #e3007e; }
   .hpn-icon.cyan {
@@ -576,7 +603,7 @@ body {
 .full {
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: 10% 1fr 10%;
+  grid-template-rows: 15% 1fr 10%;
   height: 100vh;
   /* Servicio */ }
   .full.home {
@@ -590,8 +617,12 @@ body {
     grid-template-rows: 1;
     height: 100%; }
     .full .hpn-header .hpn-container-logo {
-      background-color: rebeccapurple;
-      grid-column: 1 / 4; }
+      grid-column: 1 / 4;
+      display: flex;
+      align-items: center;
+      padding: 0.5rem; }
+      .full .hpn-header .hpn-container-logo .logo {
+        align-self: center; }
     .full .hpn-header .hpn-container-menu {
       background-color: white;
       grid-column: 4 / 12;
@@ -652,8 +683,6 @@ body {
         background-color: lightblue;
         grid-column: 9 / -1;
         grid-row: 2; }
-    .full .hpn-home-primer-scroll .hpn-middlebar {
-      display: none; }
     .full .hpn-home-primer-scroll .hpn-bottombar {
       grid-column: 1 / -1;
       grid-row: 2;
@@ -893,7 +922,7 @@ footer.hpn-footer {
         grid-column: 7/-1 !important;
         grid-row: 2/3 !important; }
     .hpn-home-primer-scroll .hpn-middlebar {
-      background-color: #243163;
+      background-color: transparent;
       grid-column: 1/-1 !important;
       grid-row: 2 !important;
       grid-template-columns: repeat(12, 1fr) !important;

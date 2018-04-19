@@ -28,7 +28,7 @@ h5 {
 	font-size: 1.25em;
 }
 h6 {
-	font-size: 1em;
+	font-size: 0.75em;
 }
 
 small {
@@ -566,52 +566,90 @@ hr {
 }
 
 .hpn-banner-img-principal {
-	// height: 100%;
+	height: 100%;
 	object-fit: cover;
 	z-index: 2;
+	}
 
+.img {
 // Img - Variantes dimensiones
-		&.xxxs {
-			width: 50px;
-		}
+	// Ancho
+	&.w-xxxs {
+		width: 50px;
+	}
 
-		&.xxs {
-			width: 100px;
-		}
+	&.w-xxs {
+		width: 100px;
+	}
 
-		&.xs {
-			width: 150px;
-		}
+	&.w-xs {
+		width: 150px;
+	}
 
-		&.md {
-			width: 1200px;
-		}
+	&.md {
+		width: 50%;
+		height: 50%;
+	}
 
-		&.lg {
-			width: 1250px;
-		}
+	&.w-lg {
+		width: 1250px;
+	}
 
-		&.xl {
-			width: 1300px;
-		}
+	&.w-xl {
+		width: 1300px;
+	}
 
-		&.xxl {
-			width: 1350px;
-		}
+	&.w-xxl {
+		width: 1350px;
+	}
 
-		&.xxxl {
-			width: 1500px;
-		}
+	&.w-xxxl {
+		height: 1500px;
+	}
+
+	// Largo
+	&.h-xxxs {
+		height: 50px;
+	}
+
+	&.h-xxs {
+		height: 100px;
+	}
+
+	&.h-xs {
+		height: 150px;
+	}
+
+	&.h-md {
+		height: 1200px;
+	}
+
+	&.h-lg {
+		height: 1250px;
+	}
+
+	&.h-xl {
+		height: 1300px;
+	}
+
+	&.h-xxl {
+		height: 1350px;
+	}
+
+	&.h-xxxl {
+		height: 1500px;
+	}
+	
 
 // Img - Variantes formales
-		&.rounded {
-			border-radius: 15%;
-		}
-
-		&.circular {
-			border-radius: 50%;
-		}
+	&.rounded {
+		border-radius: 15%;
 	}
+
+	&.circular {
+		border-radius: 50%;
+	}
+}
 
 // HPN - Inputs
 input {
@@ -806,9 +844,9 @@ input {
 	border-radius: 25px;
 	font-size: 0.75rem;
 	text-transform: uppercase;
-	padding: 0.25rem;
+	padding: 0.25rem 0.5rem;
 	margin-right: 0.5rem;
-	max-width: auto;
+	width: fit-content;
 
 	&.outline {
 		border: solid 2px;
@@ -877,9 +915,25 @@ div[class*="titulo"] {
 }
 
 // Iconos
+.hpn-icon-container {
+	display: flex;
+
+	&.horizontal {
+		flex-direction: column;
+	}
+
+	&.vertical {
+		flex-direction: row;
+	}
+}
+
 .hpn-icon {
 	align-self: center;
-	font-size: 4rem;
+
+	&.lg {
+		font-size: 4rem;
+	}
+	
 	
 	&.magenta {
 		-webkit-text-fill-color: $hpn-magenta;

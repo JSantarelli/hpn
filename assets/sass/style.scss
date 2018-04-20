@@ -93,7 +93,7 @@ small {
 }
 
 .border {
-	border-bottom: 2px solid 25%;
+	border-bottom: 2px solid;
 
 	&.blanco {
 		border-color: white;
@@ -348,17 +348,19 @@ small {
 	// Boton - Variantes dimensiones
 
 		&.xxxs {
-			width: 1rem;
+			height: 5px;
 		}
 
 		&.xxs {
-		
-			width: 1.5rem;
+			height: 10px;
 		}
 
 		&.xs {
-		
-			width: 2.5rem;
+			height: 20px;
+		}
+
+		&.sm {
+			height: 10px;
 		}
 
 		&.md {
@@ -573,55 +575,56 @@ hr {
 
 .img {
 // Img - Variantes dimensiones
-	// Ancho
-	&.w-xxxs {
-		width: 50px;
+	&.xxxs {
+		width: 12.5%;
+		height: 12.5%;
 	}
 
-	&.w-xxs {
-		width: 100px;
+	&.xxs {
+		width: 200px;
+		height: 200px;
 	}
 
-	&.w-xs {
-		width: 150px;
+	&.xs {
+		width: 35%;
+		height: 35%;
 	}
 
 	&.md {
 		width: 50%;
-		height: 50%;
 	}
 
-	&.w-lg {
-		width: 1250px;
+	&.lg {
+		width: 60%;
 	}
 
-	&.w-xl {
-		width: 1300px;
+	&.xl {
+		width: 85%;
 	}
 
-	&.w-xxl {
-		width: 1350px;
+	&.xxl {
+		width: 100%;
 	}
 
-	&.w-xxxl {
-		height: 1500px;
+	&.xxxl {
+		height: 100vh;
 	}
 
 	// Largo
 	&.h-xxxs {
-		height: 50px;
+		height: 50%;
 	}
 
 	&.h-xxs {
-		height: 100px;
+		height: 100%;
 	}
 
 	&.h-xs {
-		height: 150px;
+		height: 150%;
 	}
 
 	&.h-md {
-		height: 1200px;
+		height: 1200%;
 	}
 
 	&.h-lg {
@@ -660,6 +663,12 @@ input {
 	.margin {
 		margin: 2rem 0 2rem 0;
 	}
+
+	// Variantes de tamanio
+	&.xs {
+		height: 20px;
+	}
+
 
 	// Variantes de longitud
 	&.w-xxs {

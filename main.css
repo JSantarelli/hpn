@@ -88,7 +88,7 @@ small {
   text-shadow: 1px 1px 1px #000; }
 
 .border {
-  border-bottom: 2px solid 25%; }
+  border-bottom: 2px solid; }
   .border.blanco {
     border-color: white; }
   .border.magenta {
@@ -240,11 +240,13 @@ small {
     border-top-left-radius: 50px;
     border-bottom-left-radius: 50px; }
   .btn.xxxs {
-    width: 1rem; }
+    height: 5px; }
   .btn.xxs {
-    width: 1.5rem; }
+    height: 10px; }
   .btn.xs {
-    width: 2.5rem; }
+    height: 20px; }
+  .btn.sm {
+    height: 10px; }
   .btn.md {
     width: 5rem; }
   .btn.lg {
@@ -370,31 +372,33 @@ hr {
   object-fit: cover;
   z-index: 2; }
 
-.img.w-xxxs {
-  width: 50px; }
-.img.w-xxs {
-  width: 100px; }
-.img.w-xs {
-  width: 150px; }
+.img.xxxs {
+  width: 12.5%;
+  height: 12.5%; }
+.img.xxs {
+  width: 200px;
+  height: 200px; }
+.img.xs {
+  width: 35%;
+  height: 35%; }
 .img.md {
-  width: 50%;
-  height: 50%; }
-.img.w-lg {
-  width: 1250px; }
-.img.w-xl {
-  width: 1300px; }
-.img.w-xxl {
-  width: 1350px; }
-.img.w-xxxl {
-  height: 1500px; }
+  width: 50%; }
+.img.lg {
+  width: 60%; }
+.img.xl {
+  width: 85%; }
+.img.xxl {
+  width: 100%; }
+.img.xxxl {
+  height: 100vh; }
 .img.h-xxxs {
-  height: 50px; }
+  height: 50%; }
 .img.h-xxs {
-  height: 100px; }
+  height: 100%; }
 .img.h-xs {
-  height: 150px; }
+  height: 150%; }
 .img.h-md {
-  height: 1200px; }
+  height: 1200%; }
 .img.h-lg {
   height: 1250px; }
 .img.h-xl {
@@ -413,6 +417,8 @@ input {
   height: 100%; }
   input .margin {
     margin: 2rem 0 2rem 0; }
+  input.xs {
+    height: 20px; }
   input.w-xxs {
     width: 10%; }
   input.w-xs {
@@ -603,7 +609,7 @@ body {
 .full {
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: 15% 1fr 10%;
+  grid-template-rows: 10% 1fr 10%;
   height: 100vh;
   /* Servicio */ }
   .full.home {
@@ -613,31 +619,11 @@ body {
     grid-row: 1;
     background-color: white;
     display: grid;
-    grid-template-columns: repeat(12, 1fr);
-    grid-template-rows: 1;
+    grid-template-rows: 25% 75%;
     height: 100%; }
-    .full .hpn-header .hpn-container-logo {
-      grid-column: 1 / 4;
-      display: flex;
-      align-items: center;
-      padding: 0.5rem; }
-      .full .hpn-header .hpn-container-logo .logo {
-        align-self: center; }
-    .full .hpn-header .hpn-container-menu {
-      background-color: white;
-      grid-column: 4 / 12;
-      display: flex;
-      flex-direction: row;
-      justify-content: space-between;
-      height: 100%; }
-      .full .hpn-header .hpn-container-menu .btn {
-        align-self: center;
-        color: #2c4794; }
-    .full .hpn-header .hpn-container-search {
-      background-color: #e3007e;
-      grid-column: 12 / -1; }
     .full .hpn-header .hpn-topbar {
-      grid-column: 1 / -1;
+      grid-column: 1;
+      grid-row: 1;
       display: flex;
       justify-content: space-around;
       flex-direction: row;
@@ -656,6 +642,33 @@ body {
           align-items: center; }
           .full .hpn-header .hpn-topbar .hpn-topbar-subcontainer .hpn-element-txt.sm {
             width: 25%; }
+    .full .hpn-header .hpn-navbar {
+      grid-row: 2;
+      grid-column: 1 / -1;
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      grid-template-rows: 1; }
+      .full .hpn-header .hpn-navbar .hpn-container-logo {
+        grid-column: 1 / 4;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 0.5rem; }
+        .full .hpn-header .hpn-navbar .hpn-container-logo .logo {
+          align-self: center; }
+      .full .hpn-header .hpn-navbar .hpn-container-menu {
+        background-color: white;
+        grid-column: 4 / 12;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        height: 100%; }
+        .full .hpn-header .hpn-navbar .hpn-container-menu .btn {
+          align-self: center;
+          color: #2c4794; }
+      .full .hpn-header .hpn-navbar .hpn-container-search {
+        background-color: #e3007e;
+        grid-column: 12 / -1; }
   .full .hpn-home-primer-scroll {
     grid-row: 2;
     display: grid;
@@ -715,7 +728,13 @@ body {
     .full #segundo-scroll.hpn-home-segundo-scroll .hpn-home-sidebar {
       background-color: purple;
       grid-column: 1 / 4;
-      grid-row: 1; }
+      grid-row: 1;
+      padding: 3rem 3rem 0 3rem; }
+      .full #segundo-scroll.hpn-home-segundo-scroll .hpn-home-sidebar > .hpn-container-titulo {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        height: 100%; }
     .full #segundo-scroll.hpn-home-segundo-scroll .hpn-home-faq {
       background-color: lightgoldenrodyellow;
       grid-column: 4 / 9;

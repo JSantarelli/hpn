@@ -20,7 +20,7 @@ body {
 	height: 100vh;
 
 	&.home {
-		grid-template-rows: 10% 90%;
+		grid-template-rows: 15% 85%;
 	}
 
 	// Layout | Header
@@ -75,19 +75,22 @@ body {
 				justify-content: center;
 				align-items: center;
 				padding: 0.5rem;
+				background: url("assets/svg/hpn-marca-h.svg");
+				background-repeat: no-repeat;
 	
 				.logo {
 					align-self: center;
 				}
 			}
 	
-			.hpn-container-menu {
+			nav.hpn-container-menu {
 				background-color: white;
 				grid-column: 4 / 12;
 				display: flex;
 				flex-direction: row;
 				justify-content: space-between;
 				height: 100%;
+				padding: 0 2rem 0 2rem;
 	
 				.btn {
 					align-self: center;
@@ -143,6 +146,7 @@ body {
 		}
 
 		.hpn-bottombar {
+			border-bottom: solid 1px gray;
 			grid-column: 1 / -1;
 			grid-row: 2;
 			display: grid;
@@ -184,39 +188,41 @@ body {
 		grid-column: 1 / -1;
 		display: grid;
 		grid-template-columns: repeat(12, 1fr);
-		grid-template-rows: 1fr;
+		grid-template-rows: 750px;
 		grid-gap: 0;
 		// height: 100%;
 
-		.hpn-home-sidebar {
-			background-color: purple;
-			grid-column: 1 / 4;
-			grid-row: 1;
-			padding: 3rem 3rem 0 3rem;
+		#sidebar, #faq, #contacto {
+			display: flex;
+			justify-content: flex-start;
+			flex-direction: column;
+			min-height: 20rem;
+			padding: 3rem;
 
-			>.hpn-container-titulo {
+			.hpn-bloque-titulo {
 				display: flex;
+				min-height: fit-content;
 				flex-direction: column;
-				justify-content: space-around;
-				height: 100%;
+				justify-content: space-between;
 			}
+		}
+
+		.hpn-home-sidebar {
+			background-color: $hpn-cyan;
+			grid-column: 1 / 4;
+			grid-row: 1 / -1;
 		}
 	
 		.hpn-home-faq {
-			background-color: lightgoldenrodyellow;
+			background-color: white;
 			grid-column: 4 / 9;
-			grid-row: 1;
+			grid-row: 1 / -1;
 		}
 	
 		.hpn-home-contacto {
-			background-color: darkblue;
+			background-color: $hpn-azul-oscuro;
 			grid-column: 9 / -1;
-			grid-row: 1 / 2;
-			display: flex;
-			justify-content: space-around;
-			flex-direction: column;
-			min-height: 20rem;
-			padding: 5rem;
+			grid-row: 1 / -1;
 		}
 	}
 }
@@ -421,7 +427,6 @@ footer.hpn-footer {
 
 			/* Header */
 			.hpn-header {
-				background-color: lightblue;
 				grid-column: 1 / -1!important;
 				grid-row: 1!important;
 				display: grid;
@@ -429,13 +434,14 @@ footer.hpn-footer {
 				grid-template-rows: 1;
 
 				.hpn-container-logo {
-					background-color: rebeccapurple;
-					grid-column: 1 / 3!important;
+					background: url("assets/svg/hpn-marca-responsive.svg")!important;
+					background-repeat: no-repeat!important;
+					grid-column: 1 / 4!important;
 				}
 
 				.hpn-container-menu {
 					background-color: darkcyan;
-					grid-column: 3 / -1!important;
+					grid-column: 4 / -1!important;
 					display: flex;
 					flex-direction: row;
 					justify-content: space-between;
@@ -525,9 +531,7 @@ footer.hpn-footer {
 					background-color: $hpn-magenta;
 					width: 35%;
 				}
-				
 			}
-
 
 			// Bottombar
 			.hpn-bottombar {

@@ -258,7 +258,7 @@ small {
 }
 
 .prefix {
-	font-size: 2rem;
+	font-size: 0.75rem;
 	font-weight: 700;
 	text-transform: uppercase;
 }
@@ -285,36 +285,6 @@ small {
 	font-weight: 700;
 }
 
-.badge {
-	color: white;
-	font-size: 12px;
-	text-transform: uppercase;
-
-	&.bg-azul {
-		background-color: $hpn-azul;
-	}
-	
-	&.bg-azul-oscuro {
-		background-color: $hpn-azul-oscuro;
-	}
-	
-	&.bg-celeste {
-		background-color: $hpn-celeste;
-	}
-	
-	&.bg-magenta {
-		background-color: $hpn-magenta;
-	}
-	
-	&.bg-rojo {
-		background-color: $hpn-rojo;
-	}
-	
-	&.bg-verde {
-		background-color: $hpn-verde;
-	}
-}
-
 /* -------------------------------------
 # Elementos
 -------------------------------------*/
@@ -322,14 +292,11 @@ small {
 // Botones
 .container-input-btn {
 	display: flex;
-	max-height: 3rem;
+	flex-direction: row;
+	max-height: 2rem;
 }
 
-.btn {
-	font-size: 1rem;
-	font-weight: 500;
-	line-height: 1;
-	padding: 0.75em;
+button {
 
 	&.rounded {
 		border-radius: 50px;
@@ -344,46 +311,6 @@ small {
 		border-top-left-radius: 50px;
 		border-bottom-left-radius: 50px;
 	}
-
-	// Boton - Variantes dimensiones
-
-		&.xxxs {
-			height: 5px;
-		}
-
-		&.xxs {
-			height: 10px;
-		}
-
-		&.xs {
-			height: 20px;
-		}
-
-		&.sm {
-			height: 10px;
-		}
-
-		&.md {
-			width: 5rem;
-		}
-
-		&.lg {
-		
-			width: 7.5rem;
-		}
-
-		&.xl {
-			width: 10rem;
-		}
-
-		&.xxl {
-			width: 15rem;
-		}
-
-		&.xxxl {
-			width: 25rem;
-		}
-
 
 	// Boton - Variantes cromaticas
 	&.magenta {
@@ -436,7 +363,7 @@ hr {
 	}
 	
 	&.xs {
-		width: 20%;
+		width: 15px;
 	}
 	
 	&.sm {
@@ -455,7 +382,6 @@ hr {
 		width: 100%;
 		
 	}
-
 }
 
 // HPN Banner
@@ -500,10 +426,6 @@ hr {
 .hpn-card-bloque-texto {
 	display: inline-block;
 	align-self: center;
-}
-
-.margin-left {
-	margin-left: 1rem;
 }
 
 // Card - imagenes
@@ -573,44 +495,48 @@ hr {
 	z-index: 2;
 	}
 
-.img {
+img {
 // Img - Variantes dimensiones
 	&.xxxs {
-		width: 12.5%;
-		height: 12.5%;
+		width: 20px;
+		height: 20px;
 	}
 
 	&.xxs {
-		width: 200px;
-		height: 200px;
+		width: 40px;
+		height: 40px;
 	}
 
 	&.xs {
-		width: 35%;
-		height: 35%;
+		width: 60px;
+		height: 60px;
 	}
 
 	&.md {
-		width: 50%;
+		width: 100%;
+		// height: 100%;
 	}
 
 	&.lg {
-		width: 60%;
+		width: 80px;
+		height: 80px;	
 	}
 
 	&.xl {
-		width: 85%;
+		width: 250px;
 	}
 
 	&.xxl {
-		width: 100%;
+		width: 80px;
+		height: 80px;	
 	}
 
 	&.xxxl {
-		height: 100vh;
-	}
+		width: 80px;
+		height: 80px;
+		}
 
-	// Largo
+	// Altura
 	&.h-xxxs {
 		height: 50%;
 	}
@@ -646,7 +572,7 @@ hr {
 
 // Img - Variantes formales
 	&.rounded {
-		border-radius: 15%;
+		border-radius: 25px;
 	}
 
 	&.circular {
@@ -654,19 +580,131 @@ hr {
 	}
 }
 
-// HPN - Inputs
-input {
+// HPN - Accordion
+[hpn-accordion] {
+	.tab {
+		position: relative;
+		margin-bottom: 1px;
+		width: 100%;
+		color: $hpn-azul;
+		overflow: hidden;
+	  }
+
+	  input {
+		// position: absolute;
+		opacity: 0;
+		z-index: -1;
+	  }
+
+	  label {
+		position: relative;
+		display: block;
+		// padding: 0 0 0 1em;
+		font-weight: bold;
+		line-height: 3;
+		cursor: pointer;
+	  }
+
+	  .tab-content {
+		max-height: 0;
+		overflow: hidden;
+		color: $hpn-gris;
+		-webkit-transition: max-height .35s;
+		-o-transition: max-height .35s;
+		transition: max-height .35s;
+	  }
+	
+	  .tab-content p {
+		// margin: 1em;
+	  }
+	  /* :checked */
+	  input:checked ~ .tab-content {
+		max-height: 10em;
+	  }
+	  /* Icon */
+	  label::after {
+		position: absolute;
+		right: 0;
+		top: 0;
+		display: block;
+		width: 3em;
+		height: 3em;
+		line-height: 3;
+		text-align: center;
+		-webkit-transition: all .35s;
+		-o-transition: all .35s;
+		transition: all .35s;
+	  }
+	  input[type=checkbox] + label::after {
+		content: "+";
+	  }
+	  input[type=radio] + label::after {
+		content: "\25BC";
+	  }
+	  input[type=checkbox]:checked + label::after {
+		transform: rotate(315deg);
+	  }
+	  input[type=radio]:checked + label::after {
+		transform: rotateX(180deg);
+	  }	
+}
+  
+
+// HPN - Inputs/Buttons
+.container-inputs {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	height: 100%;
+}
+
+%base {
 	align-self: center;
 	height: 100%;
-
-	// Variantes posicionamiento
-	.margin {
-		margin: 2rem 0 2rem 0;
+	border-radius: 0px;
+	border: none;
+	box-shadow: none;
 	}
+
+	input {
+		@extend %base;
+		background-color: $hpn-celeste-claro;
+		color: $hpn-azul;
+		font-style: italic;
+		font-weight: 500;
+	}
+
+	button {
+		@extend %base;
+		color: white;
+		:active {
+			border: solid 2px $hpn-magenta;
+		}
+	}
+
+input,button,.container-input-btn {
+	// Variantes posicionamiento
+
 
 	// Variantes de tamanio
 	&.xs {
-		height: 20px;
+		height: 25px;
+	}
+
+	&.sm {
+		height: 25px;
+	}
+
+	&.md {
+		height: 50px;
+	}
+
+	&.lg {
+		height: 75px;
+	}
+
+	&.xl {
+		height: 100px;
 	}
 
 
@@ -719,7 +757,7 @@ input {
 	}
 	
 	&.h-xl {
-		height: 100px;
+		height: 200px;
 		
 	}
 
@@ -733,8 +771,38 @@ input {
 /*--------------------------------------------------------------
 # VARIANTES GLOBALES
 --------------------------------------------------------------*/
+// Margenes
+.margin {
+	margin: 15px;
+}
+
+.margin-top {
+	margin-top: 25px; 
+}
+
+.margin-right {
+	margin-right: 25px; 
+}
+
+.margin-bottom {
+	margin-bottom: 25px; 
+}
+
+.margin-left {
+	margin-left: 25px; 
+}
+
+.separate {
+	margin: 10px 0 10px 0;
+}
+
+// Formales
 .rounded {
 	border-radius: 50px;
+}
+
+.rounded-25 {
+	border-radius: 25px;
 }
 
 .rounded-right {
@@ -745,6 +813,11 @@ input {
 .rounded-left {
 	border-top-left-radius: 50px;
 	border-bottom-left-radius: 50px;
+}
+
+// Tipograficas
+.txt-bold {
+	font-weight: bolder;
 }
 
 .text-gris {
@@ -801,6 +874,81 @@ input {
 
 	}
 
+
+	.celeste {
+		.borde {
+			border: solid 1px $hpn-celeste; 
+		}
+
+		&.fondo {
+			background: $hpn-celeste;
+		}
+
+		.titulo {
+			color: $hpn-celeste;
+		}
+
+		.texto {
+			color: $hpn-celeste;
+		}
+	}
+  
+	.celeste-claro {
+		.borde {
+			border: solid 1px $hpn-celeste-claro; 
+		}
+
+		&.fondo {
+			background: $hpn-celeste-claro;
+		}
+
+		.titulo {
+			color: $hpn-celeste-claro;
+		}
+
+		.texto {
+			color: $hpn-celeste-claro;
+		}
+	}
+
+	.cyan {
+		.borde {
+			border: solid 1px $hpn-cyan; 
+		}
+
+		&.fondo {
+			background: $hpn-cyan;
+		}
+
+		.titulo {
+			color: $hpn-cyan;
+		}
+
+		.texto {
+			color: $hpn-cyan;
+		}
+	}
+  
+	.magenta {
+
+		.borde {
+			border: solid 1px $hpn-magenta; 
+		}
+
+		&.fondo {
+			background: $hpn-magenta;
+		}
+
+		.titulo {
+			color: $hpn-magenta;
+		}
+
+		.texto {
+			color: $hpn-magenta;
+		}
+
+	}
+
 /*--------------------------------------------------------------
 # Tipografia
 --------------------------------------------------------------*/
@@ -817,6 +965,7 @@ input {
 	}
 	h4 {
 		font-size: 1em;
+		margin: 1rem 0 1rem 0;
 	}
 	h5 {
 		font-size: 0.75em;
@@ -851,7 +1000,9 @@ input {
 .hpn-badge {
 	align-self: center;
 	border-radius: 25px;
+	color: white;
 	font-size: 0.75rem;
+	font-weight: 500;
 	text-transform: uppercase;
 	padding: 0.25rem 0.5rem;
 	margin-right: 0.5rem;
@@ -861,20 +1012,40 @@ input {
 		border: solid 2px;
 	}
 
+	// Variantes cromaticas
 	&.verde {
 		border-color: $hpn-verde;
 		color: $hpn-verde;
 	}
 	&.magenta {
 		background-color: $hpn-magenta;
-		color: white;
+	}
+
+	&.bg-azul {
+		background-color: $hpn-azul;
+	}
+	
+	&.bg-azul-oscuro {
+		background-color: $hpn-azul-oscuro;
+	}
+	
+	&.bg-celeste {
+		background-color: $hpn-celeste;
+	}
+	
+	&.bg-magenta {
+		background-color: $hpn-magenta;
+	}
+	
+	&.bg-rojo {
+		background-color: $hpn-rojo;
+	}
+	
+	&.bg-verde {
+		background-color: $hpn-verde;
 	}
 }
 
-.hpn-titulo {
-	// font-size: 3rem;
-	// font-weight: 100;
-}
 
 .hpn-subtitulo {
 	// font-size: 1.5rem;
@@ -960,10 +1131,6 @@ div[class*="titulo"] {
 		padding-top: 25%;
 	}
 
-}
-
-.margin-left {
-	margin-right: 0.25rem;
 }
 
 /* ------------------------------------------------------------

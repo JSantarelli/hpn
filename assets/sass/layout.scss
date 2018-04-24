@@ -1,6 +1,11 @@
 /*--------------------------------------------------------------
 # Layouting
 --------------------------------------------------------------*/
+
+@import "layout/_sector";
+@import "layout/_noticia";
+@import "layout/_listado";
+
 html {
 	font-family: 'Source Sans Pro';
 }
@@ -16,8 +21,10 @@ body {
 .full {
 	display: grid;
 	grid-template-columns: 1fr;
-	grid-template-rows: 10% 1fr 10%;
+	grid-template-rows: 15% 1fr 10%;
 	height: 100vh;
+
+@media screen and (min-width: 1025px) {
 
 	&.home {
 		grid-template-rows: 15% 85%;
@@ -25,6 +32,7 @@ body {
 
 	// Layout | Header
 	.hpn-header {
+		border-bottom: solid 1px gray;
 		grid-column: 1 / -1;
 		grid-row: 1;
 		background-color: white;
@@ -75,8 +83,10 @@ body {
 				justify-content: center;
 				align-items: center;
 				padding: 0.5rem;
-				background: url("assets/svg/hpn-marca-h.svg");
-				background-repeat: no-repeat;
+
+				.hpn-logo-mobile {
+					display: none;
+				}
 	
 				.logo {
 					align-self: center;
@@ -227,137 +237,7 @@ body {
 	}
 }
 
-	// Layout | Seccion
-	/* Servicio */
-	.hpn-container-servicio {
-		grid-column: 1 / -1;
-		grid-row: 3;
-		display: grid;
-		grid-template-columns: repeat(6, 1fr);
-		grid-template-rows: 2fr;
-		height: 100vh; 
-
-		.hpn-container-titulo {
-			grid-column: 1 / 3;
-			grid-row: 1;
-			background-color: $hpn-cyan;
-			display: flex;
-			flex-direction: column;
-			justify-content: space-around;	
-			padding: 8rem 6rem 6rem 6rem;
-			text-align: center;
-			align-items: center;
-		}
-
-		.hpn-container-servicios {
-			grid-column: 3 /-1;
-			grid-row: 1;
-			padding: 3rem;
-			max-height: 100%;
-			overflow-y: scroll;
-		}
-	}
-
-	// Layout | Noticia
-	.hpn-container-noticia {
-		grid-column: 1 / -1;
-		display: grid;
-		grid-template-columns: repeat(6, 1fr);
-		grid-template-rows: 2fr;
-		height: 100vh;
-
-
-		.hpn-container-titulo {
-			grid-column: 1 / 3;
-			grid-row: 1;
-			background-color: $hpn-cyan;
-			display: flex;
-			flex-direction: column;
-			justify-content: space-around;
-			padding: 3rem 3rem 6rem 3rem;
-			text-align: center;
-		}
-
-		.hpn-container-data {
-			grid-column: 3 / 3;
-			grid-row: 1;
-			background-color: $hpn-celeste;
-		}
-
-		.hpn-container-nota {
-			grid-column: 4 /-1;
-			grid-row: 1;
-			padding: 3rem;
-			max-height: 100%;
-			overflow-y: scroll;
-		}
-	}
-	// Layout | Listado
-	// Listado (resultados de busqueda, concursos)
-	.hpn-listado {
-		grid-row: 2;
-		grid-column: 1 / -1;
-		display: grid;
-		grid-template-columns: repeat(12, 1fr);
-		grid-template-rows: 15% 15% 1fr;
-		height: 100vh;
-		
-		.hpn-subheader-container {
-			background-color: $hpn-azul;
-			grid-column: 1 / -1;
-			grid-row: 1;
-			display: flex;
-			padding: 2rem;
-		}
-
-	// Item listado
-		.hpn-list-item {
-			padding: 1rem;
-		}
-
-		// Item listado - Tipografia
-		.hpn-container-subtitulo {
-			display: flex;
-			flex-direction: row;
-			justify-content: space-between;
-			padding: 2rem;
-
-			&.principal {
-				background-color: $hpn-cyan;
-				grid-column: 1 / 9;
-				grid-row: 2;
-			}
-
-			&.sidebar {
-				grid-column: 9 / -1;
-				grid-row: 2;
-				background-color: $hpn-rojo;
-			}
-		}
-
-		ul.hpn-sidebar-listado {
-			background-color: $hpn-celeste;
-			grid-column: 9 / -1;
-			grid-row: 3;
-			overflow-y: scroll;
-			display: flex;
-			flex-direction: column;
-			justify-content: flex-start;
-			align-content: center;
-			list-style: none;
-
-				li.hpn-list-item {
-					background-color: $hpn-verde;
-					height: 1rem;
-					display: flex;
-					border: solid 2px white;
-					justify-content: space-between;
-					align-items: center;
-					padding: 2rem;
-				}
-			}
-		}
-	}
+}
 
 
 	// Layout | Cards
@@ -393,6 +273,8 @@ body {
 		}
 	}
 
+
+
 	// Layout |	Mapa 
 
 	// Layout | Upload
@@ -410,7 +292,8 @@ footer.hpn-footer {
 	grid-template-rows: 1;
 	background-color: black;
 	height: auto;
-	padding: 3rem;
+	padding: 1rem;
+	}
 }
 
 /* ------------------------------------------------------------
@@ -425,42 +308,57 @@ footer.hpn-footer {
 			// grid-template-rows: 10% 1fr;
 			// height: 100vh;
 
+			&.home {
+				grid-template-rows: 7% 93%;
+			}
+
 			/* Header */
 			.hpn-header {
 				grid-column: 1 / -1!important;
 				grid-row: 1!important;
+				background-color: white;
 				display: grid;
-				grid-template-columns: repeat(12, 1fr); 
-				grid-template-rows: 1;
-
-				.hpn-container-logo {
-					background: url("assets/svg/hpn-marca-responsive.svg")!important;
-					background-repeat: no-repeat!important;
-					grid-column: 1 / 4!important;
-				}
-
-				.hpn-container-menu {
-					background-color: darkcyan;
-					grid-column: 4 / -1!important;
-					display: flex;
-					flex-direction: row;
-					justify-content: space-between;
-					height: 100%;
-					overflow: hidden;
-
-					.btn {
-						display: none;
-					}
-				}
-
-				.hpn-container-search {
-					display: none;
-				}
+				grid-template-rows: 1fr;
+				height: 100%;
 
 				.hpn-topbar {
 					display: none;	
 				}	
 
+				.hpn-navbar {
+					display: grid;
+					grid-template-columns: repeat(12, 1fr)!important; 
+					grid-template-rows: 1!important;
+					
+					.hpn-container-logo {
+						grid-column: 1 / 4!important;
+						display: flex;
+						justify-content: center;
+						align-items: center;
+						padding: 0.25rem;	
+					
+						.hpn-logo-desktop {
+							display: none;
+						}
+					}
+	
+					.hpn-container-menu {
+						grid-column: 4 / -1!important;
+						display: flex;
+						flex-direction: row;
+						justify-content: space-between;
+						height: 100%;
+						overflow: hidden;
+	
+						.btn {
+							display: none;
+						}
+					}
+	
+					.hpn-container-search {
+						display: none;
+					}
+				}
 
 			// Tabs
 			.hpn-seccion-footer {
@@ -487,7 +385,7 @@ footer.hpn-footer {
 				grid-column: 1 / -1!important;
 				grid-row: 1!important;
 				display: grid;
-				grid-template-rows: 1;
+				grid-template-rows: 3!important;
 				grid-template-columns: repeat(12, 1fr); 
 				grid-gap: 2px;
 				
@@ -495,19 +393,19 @@ footer.hpn-footer {
 				.hpn-banner-01 {
 					background-color: blue;
 					grid-column: 1 / -1!important;
-					grid-row: 1 / 2!important;
+					grid-row: 1 / 3!important;
 				}
 				
 				.hpn-banner-02 {
 					background-color: cyan;
 					grid-column: 1 / 7!important;
-					grid-row: 2 / 3!important;
+					grid-row: 3 / 3!important;
 				}
 				
 				.hpn-banner-03 {
 					background-color: lightblue;
 					grid-column: 7 / -1!important;
-					grid-row: 2 / 3!important;
+					grid-row: 3 / 3!important;
 				}
 			}
 
@@ -530,6 +428,14 @@ footer.hpn-footer {
 				.hpn-search-icon {
 					background-color: $hpn-magenta;
 					width: 35%;
+					display: flex;
+					justify-content: center;
+					align-content: center;
+					align-items: center;
+
+					>.icon {
+						align-self: center;
+					}
 				}
 			}
 
@@ -537,17 +443,10 @@ footer.hpn-footer {
 			.hpn-bottombar {
 				grid-column: 1 / -1!important;
 				grid-row: 3!important;
+				display: grid;
 				grid-template-columns: repeat(12, 1fr)!important; 
 				grid-template-rows: 1!important;
 				height: 100%;
-		
-				.hpn-card-titulo {
-					display: none!important;
-				}
-
-				p {
-					display: none!important;
-				}
 		
 				.card-01 {
 					display: none!important;

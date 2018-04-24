@@ -402,24 +402,11 @@ hr {
 		position: absolute;
 		width: 85%;
 		left: 5%;
-		top: 50%;
+		top: 35%;
 		z-index: 4;
 		}
 	}
 
-@media screen and (min-width: 320px) and (max-width: 1024px) {
-	
-	[class^="hpn-banner-img-"]
-		>[class^="hpn-banner-bloque-texto"] {
-			color: white;
-			text-align: center;
-			position: absolute;
-			width: 75%;
-			// left: 5%;
-			top: 50%;
-			z-index: 4;
-			}
-}
 
 
 /* HPN Card */
@@ -432,8 +419,6 @@ hr {
 .hpn-card-img {
 	align-self: center;
 	object-fit: cover;
-	height: 5rem;
-	width: 5rem;
 	position: relative;
 	display: flex;
 
@@ -493,33 +478,29 @@ hr {
 	height: 100%;
 	object-fit: cover;
 	z-index: 2;
+	mix-blend-mode: multiply;
 	}
 
 img {
 // Img - Variantes dimensiones
 	&.xxxs {
 		width: 20px;
-		height: 20px;
 	}
 
 	&.xxs {
 		width: 40px;
-		height: 40px;
 	}
 
 	&.xs {
 		width: 60px;
-		height: 60px;
 	}
 
 	&.md {
-		width: 100%;
-		// height: 100%;
+		width: 75px;
 	}
 
 	&.lg {
 		width: 80px;
-		height: 80px;	
 	}
 
 	&.xl {
@@ -527,13 +508,11 @@ img {
 	}
 
 	&.xxl {
-		width: 80px;
-		height: 80px;	
+		width: 300px;
 	}
 
 	&.xxxl {
 		width: 80px;
-		height: 80px;
 		}
 
 	// Altura
@@ -975,14 +954,6 @@ input,button,.container-input-btn {
 	}
 }
 
-// Responsive
-@media screen and (min-width: 320px) and (max-width: 1024px) {
-	.hpn-container-titulo {
-		.hpn-titulo {
-			font-size: 2rem;
-		}
-	}
-}
 .uppercase {
 	text-transform: uppercase;
 }
@@ -1046,6 +1017,11 @@ input,button,.container-input-btn {
 	}
 }
 
+.hpn-container-titulo {
+	.hpn-titulo {
+		font-size: 3.5rem;
+	}
+}
 
 .hpn-subtitulo {
 	// font-size: 1.5rem;
@@ -1136,12 +1112,55 @@ div[class*="titulo"] {
 /* ------------------------------------------------------------
 #RESPONSIVENESS
 ------------------------------------------------------------ */
-@media screen and (min-width:320px) and (max-width:1024px) {
-	.hpn-banner-bloque-texto {
-		text-align: center;
+
+@media screen and (min-width: 320px) and (max-width: 1024px) {
+	// Banner
+	.hpn-container-titulo {
+		.hpn-titulo {
+			font-size: 1.35rem;
+		}
+	}
+
+	[class^="hpn-banner-img-"] {
+		
+		>[class^="hpn-banner-bloque-texto"] {
+			color: rgb(17, 14, 14);
+			text-align: center;
+			position: absolute;
+			width: 75%;
+			// left: 5%;
+			top: 50%;
+			z-index: 4;
+			}
+	}
 
 	.hpn-subtitulo {
 		display: none;
 	}
+
+	// Cards
+	[class^="card-"] {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-content: center;
+
+		.hpn-card-bloque-texto {
+			align-self: center;
+			
+			.hpn-card-titulo {
+				font-size: 1rem;
+				text-align: center;
+			}
+
+			.hpn-card-texto {
+				display: none;				
+			}	
+		}
+
+		.hpn-icon {
+			align-self: center;
+		}
 	}
-}
+
+	}

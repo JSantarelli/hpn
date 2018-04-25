@@ -451,7 +451,8 @@ hr {
 	font-size: 1.5rem;
 }
 
-.hpn-card-subtitulo {
+.hpn
+-card-subtitulo {
 	font-size: 1.25rem;
 	font-weight: 900;
 }
@@ -469,7 +470,7 @@ hr {
 
 // HPN - Imagenes
 .hpn-banner-img-secundaria {
-	// height: 100%;
+	height: 100%;
 	object-fit: cover;
 	z-index: 2;
 }
@@ -498,6 +499,7 @@ img {
 	&.md {
 		width: 75px;
 	}
+
 
 	&.lg {
 		width: 80px;

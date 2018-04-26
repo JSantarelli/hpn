@@ -141,19 +141,21 @@ body {
 				grid-column: 1 / 9;
 				grid-row: 1 / 3;
 				position: relative;
-				background: linear-gradient(0deg, rgba(0,0,0,0.65) 0%,rgba(0,0,0,0) 50%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+				background: $gradient;
 			}
 			
 			.hpn-banner-02 {
 				background-color: cyan;
 				grid-column: 9 / -1;
 				grid-row: 1;
+				background: $gradient;
 			}
 			
 			.hpn-banner-03 {
 				background-color: lightblue;
 				grid-column: 9 / -1;
 				grid-row: 2;
+				background: $gradient;
 			}
 		}
 
@@ -302,7 +304,7 @@ footer.hpn-footer {
 #RESPONSIVENESS
 ------------------------------------------------------------ */
 
-	@media screen and (min-width: 320px) and (max-width: 1024px) {
+	@media screen and (max-width: 1024px) {
 		
 		.full {
 			display: grid;
@@ -337,7 +339,7 @@ footer.hpn-footer {
 						display: flex;
 						justify-content: center;
 						align-items: center;
-						padding: 0.25rem;	
+						padding: 0.15rem;	
 					
 						.hpn-logo-desktop {
 							display: none;
@@ -393,19 +395,18 @@ footer.hpn-footer {
 				
 				// Subdivision Banner
 				.hpn-banner-01 {
-					background-color: blue;
 					grid-column: 1 / -1!important;
 					grid-row: 1 / 3!important;
 				}
 				
 				.hpn-banner-02 {
-					background-color: cyan;
+					background-color: $hpn-magenta;
 					grid-column: 1 / 7!important;
 					grid-row: 3 / 3!important;
 				}
 				
 				.hpn-banner-03 {
-					background-color: lightblue;
+					background-color: $hpn-violeta;
 					grid-column: 7 / -1!important;
 					grid-row: 3 / 3!important;
 				}

@@ -15,6 +15,7 @@ Tags: minimalista
 /*--------------------------------------------------------------
 # HPN - Colores
 --------------------------------------------------------------*/
+/* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
 @import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro");
 /*--------------------------------------------------------------
 >>> INDICE:
@@ -311,17 +312,18 @@ hr {
   font-size: 7rem;
   font-weight: 700; }
 
-.hpn-banner-img-secundaria {
-  height: 100%;
-  object-fit: cover;
-  z-index: 2; }
-
 .hpn-banner-img-principal {
   height: 100%;
-  object-fit: cover;
-  z-index: 2;
+  width: 100%;
   mix-blend-mode: multiply; }
 
+.hpn-banner-img-secundaria {
+  height: 100%;
+  width: 100%;
+  mix-blend-mode: multiply; }
+
+img .cover {
+  object-fit: cover; }
 img.xxxs {
   width: 20px; }
 img.xxs {
@@ -612,23 +614,25 @@ input.h-xl, button.h-xl, .container-input-btn.h-xl {
   width: fit-content; }
   .hpn-badge.outline {
     border: solid 2px; }
-  .hpn-badge.verde {
-    border-color: #00b9b1;
-    color: #00b9b1; }
+    .hpn-badge.outline.verde {
+      border-color: #00b9b1;
+      color: #00b9b1; }
   .hpn-badge.magenta {
     background-color: #e3007e; }
-  .hpn-badge.bg-azul {
+  .hpn-badge.azul {
     background-color: #2c4794; }
-  .hpn-badge.bg-azul-oscuro {
+  .hpn-badge.azul-oscuro {
     background-color: #243163; }
-  .hpn-badge.bg-celeste {
+  .hpn-badge.celeste {
     background-color: #84cef0; }
-  .hpn-badge.bg-magenta {
+  .hpn-badge.magenta {
     background-color: #e3007e; }
-  .hpn-badge.bg-rojo {
+  .hpn-badge.rojo {
     background-color: #cb0053; }
-  .hpn-badge.bg-verde {
+  .hpn-badge.verde {
     background-color: #00b9b1; }
+  .hpn-badge.cyan {
+    background-color: #00a1df; }
 
 .hpn-container-titulo .hpn-titulo {
   font-size: 3.5rem; }
@@ -926,16 +930,17 @@ body {
           grid-column: 1 / 9;
           grid-row: 1 / 3;
           position: relative;
-          background: linear-gradient(0deg, rgba(0, 0, 0, 0.65) 0%, rgba(0, 0, 0, 0) 50%);
-          /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */ }
+          background: linear-gradient(0deg, rgba(0, 0, 0, 0.65) 0%, rgba(0, 0, 0, 0) 50%); }
         .full .hpn-home-primer-scroll .hpn-banner .hpn-banner-02 {
           background-color: cyan;
           grid-column: 9 / -1;
-          grid-row: 1; }
+          grid-row: 1;
+          background: linear-gradient(0deg, rgba(0, 0, 0, 0.65) 0%, rgba(0, 0, 0, 0) 50%); }
         .full .hpn-home-primer-scroll .hpn-banner .hpn-banner-03 {
           background-color: lightblue;
           grid-column: 9 / -1;
-          grid-row: 2; }
+          grid-row: 2;
+          background: linear-gradient(0deg, rgba(0, 0, 0, 0.65) 0%, rgba(0, 0, 0, 0) 50%); }
       .full .hpn-home-primer-scroll .hpn-bottombar {
         border-bottom: solid 1px gray;
         grid-column: 1 / -1;
@@ -1024,7 +1029,7 @@ body {
 /* ------------------------------------------------------------
 #RESPONSIVENESS
 ------------------------------------------------------------ */
-@media screen and (min-width: 320px) and (max-width: 1024px) {
+@media screen and (max-width: 1024px) {
   .full {
     display: grid;
     grid-template-columns: 1fr;
@@ -1049,7 +1054,7 @@ body {
           display: flex;
           justify-content: center;
           align-items: center;
-          padding: 0.25rem; }
+          padding: 0.15rem; }
           .full .hpn-header .hpn-navbar .hpn-container-logo .hpn-logo-desktop {
             display: none; }
         .full .hpn-header .hpn-navbar .hpn-container-menu {
@@ -1084,15 +1089,14 @@ body {
       grid-template-columns: repeat(12, 1fr);
       grid-gap: 2px; }
       .hpn-home-primer-scroll .hpn-banner .hpn-banner-01 {
-        background-color: blue;
         grid-column: 1/-1 !important;
         grid-row: 1/3 !important; }
       .hpn-home-primer-scroll .hpn-banner .hpn-banner-02 {
-        background-color: cyan;
+        background-color: #e3007e;
         grid-column: 1/7 !important;
         grid-row: 3/3 !important; }
       .hpn-home-primer-scroll .hpn-banner .hpn-banner-03 {
-        background-color: lightblue;
+        background-color: #662480;
         grid-column: 7/-1 !important;
         grid-row: 3/3 !important; }
     .hpn-home-primer-scroll .hpn-middlebar {

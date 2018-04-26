@@ -469,20 +469,25 @@ hr {
 // HPN Listados
 
 // HPN - Imagenes
-.hpn-banner-img-secundaria {
-	height: 100%;
-	object-fit: cover;
-	z-index: 2;
-}
-
 .hpn-banner-img-principal {
 	height: 100%;
-	object-fit: cover;
-	z-index: 2;
+	width: 100%;
 	mix-blend-mode: multiply;
 	}
 
+.hpn-banner-img-secundaria {
+	height: 100%;
+	width: 100%;
+	mix-blend-mode: multiply;
+}
+
 img {
+
+.cover {
+	object-fit: cover;
+}	
+
+
 // Img - Variantes dimensiones
 	&.xxxs {
 		width: 20px;
@@ -983,39 +988,45 @@ input,button,.container-input-btn {
 
 	&.outline {
 		border: solid 2px;
+
+		&.verde {
+			border-color: $hpn-verde;
+			color: $hpn-verde;
+		}
 	}
 
 	// Variantes cromaticas
-	&.verde {
-		border-color: $hpn-verde;
-		color: $hpn-verde;
-	}
 	&.magenta {
 		background-color: $hpn-magenta;
 	}
 
-	&.bg-azul {
+	&.azul {
 		background-color: $hpn-azul;
 	}
 	
-	&.bg-azul-oscuro {
+	&.azul-oscuro {
 		background-color: $hpn-azul-oscuro;
 	}
 	
-	&.bg-celeste {
+	&.celeste {
 		background-color: $hpn-celeste;
 	}
 	
-	&.bg-magenta {
+	&.magenta {
 		background-color: $hpn-magenta;
 	}
 	
-	&.bg-rojo {
+	&.rojo {
 		background-color: $hpn-rojo;
 	}
 	
-	&.bg-verde {
+	&.verde {
 		background-color: $hpn-verde;
+	}
+
+		
+	&.cyan {
+		background-color: $hpn-cyan;
 	}
 }
 

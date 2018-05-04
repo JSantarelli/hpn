@@ -1,0 +1,41 @@
+@import '../global-variables';
+
+$light-bg: #e0e0e0;
+$light-hl: #bdbdbd;
+$light-fg: #212121;
+
+%bg-and-fg-light {
+    background-color: white;
+    color: $light-fg;
+}
+
+.hpn-menu-light {
+    @extend %bg-and-fg-light;
+
+    .dropdown {
+        ul {
+            @extend %bg-and-fg-light;
+        }
+    }
+
+    .active {
+        background-color: $light-hl;
+    }
+
+    .hpn-item {
+        &:hover {
+            background-color: $light-hl;
+        }
+    }
+
+    .hpn-hamburger {
+        span {
+            background-color: $light-fg;
+
+            &::before,
+            &::after {
+                background-color: $light-fg;
+            }
+        }
+    }
+}

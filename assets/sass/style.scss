@@ -35,6 +35,12 @@ small {
 	font-size: 0.5em;
 }
 
+// Links
+a {
+	text-decoration: none;
+	color: inherit;
+}
+
 // Variantes de tamaño
 .txt-xxxs {
 	font-size: 0.75rem;
@@ -393,7 +399,7 @@ hr {
 		position: relative;
 		z-index: 3;
 		// Degrade
-		background: linear-gradient(0deg, rgba(0,0,0,0.65) 0%,rgba(0,0,0,0) 50%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+		background: $gradient;
 	}
 
 	[class^="hpn-banner-bloque-texto"] {
@@ -402,7 +408,7 @@ hr {
 		position: absolute;
 		width: 85%;
 		left: 5%;
-		top: 35%;
+		top: 55%;
 		z-index: 4;
 		}
 	}
@@ -470,7 +476,7 @@ hr {
 
 // HPN - Imagenes
 .hpn-banner-img-principal {
-	height: 100%;
+	height: 100%;	
 	width: 100%;
 	mix-blend-mode: multiply;
 	}
@@ -483,7 +489,7 @@ hr {
 
 img {
 
-.cover {
+&.cover {
 	object-fit: cover;
 }	
 
@@ -757,6 +763,166 @@ input,button,.container-input-btn {
 /*--------------------------------------------------------------
 # VARIANTES GLOBALES
 --------------------------------------------------------------*/
+// Tipografia - Secciones (Servicios, noticias)
+.hpn-container-badges {
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+}
+
+.hpn-badge {
+	align-self: center;
+	border-radius: 25px;
+	color: white;
+	font-size: 0.75rem;
+	font-weight: 500;
+	text-transform: uppercase;
+	padding: 0.25rem 0.5rem;
+	margin-right: 0.5rem;
+	width: fit-content;
+
+	&.outline {
+		border: solid 2px;
+
+		&.verde {
+			border-color: $hpn-verde;
+			color: $hpn-verde;
+		}
+	}
+
+	// Variantes cromaticas
+	&.magenta {
+		background-color: $hpn-magenta;
+	}
+
+	&.azul {
+		background-color: $hpn-azul;
+	}
+	
+	&.azul-oscuro {
+		background-color: $hpn-azul-oscuro;
+	}
+	
+	&.celeste {
+		background-color: $hpn-celeste;
+	}
+	
+	&.magenta {
+		background-color: $hpn-magenta;
+	}
+	
+	&.rojo {
+		background-color: $hpn-rojo;
+	}
+	
+	&.verde {
+		background-color: $hpn-verde;
+	}
+
+		
+	&.cyan {
+		background-color: $hpn-cyan;
+	}
+}
+
+
+.uppercase {
+	text-transform: uppercase;
+}
+
+.hpn-container-titulo {
+	.hpn-titulo {
+		font-size: 3.5rem;
+	}
+}
+
+.hpn-subtitulo {
+	// font-size: 1.5rem;
+	// font-weight: 500;
+}
+
+.hpn-bajada {
+	font-size: 1.25rem;
+	font-weight: lighter;
+	color: white;
+	text-shadow: #111 5px;
+}
+
+.hpn-text {
+	font-size: 1.25rem;
+	line-height: 2rem;
+}
+
+
+// Variantes cromaticas
+div[class*="titulo"] {
+
+	font-family: 'Source Sans Pro';
+
+	&.azul {
+		color: $hpn-azul;
+	}
+
+	&.azul-oscuro {
+		color: $hpn-azul-oscuro;
+	}
+	
+	&.magenta {
+		color: $hpn-magenta;
+	}
+
+	&.celeste {
+		color: $hpn-celeste;
+	}
+}
+
+
+.hpn-listado-titulo {
+	align-self: center;
+	font-size: 2.5rem;
+	font-weight: lighter;
+}
+
+// Iconos
+.hpn-icon-container {
+	display: flex;
+
+	&.horizontal {
+		flex-direction: column;
+	}
+
+	&.vertical {
+		flex-direction: row;
+	}
+}
+
+.hpn-icon {
+	align-self: center;
+
+	&.lg {
+		font-size: 4rem;
+	}
+	
+	
+	&.magenta {
+		-webkit-text-fill-color: $hpn-magenta;
+	}
+
+	&.cyan {
+		-webkit-text-fill-color: $hpn-cyan;
+	}
+
+	&.celeste {
+		-webkit-text-fill-color: $hpn-celeste;
+	}
+
+	&.baseline {
+		padding-top: 25%;
+	}
+
+}
+
+
 // Margenes
 .margin {
 	margin: 15px;
@@ -932,248 +1098,5 @@ input,button,.container-input-btn {
 		.texto {
 			color: $hpn-magenta;
 		}
-
-	}
-
-/*--------------------------------------------------------------
-# Tipografia
---------------------------------------------------------------*/
-// Headings
-@media screen and (min-width: 320px) and (max-width: 1024px) {
-	h1 {
-		font-size: 2em;
-	}
-	h2 {
-		font-size: 1.5em;
-	}
-	h3 {
-		font-size: 1.25em;
-	}
-	h4 {
-		font-size: 1em;
-		margin: 1rem 0 1rem 0;
-	}
-	h5 {
-		font-size: 0.75em;
-	}
-	h6 {
-		font-size: 0.5em;
-	}
-}
-
-.uppercase {
-	text-transform: uppercase;
-}
-
-
-// Tipografia - Secciones (Servicios, noticias)
-
-
-.hpn-container-badges {
-	display: flex;
-	justify-content: flex-start;
-	align-items: center;
-}
-
-.hpn-badge {
-	align-self: center;
-	border-radius: 25px;
-	color: white;
-	font-size: 0.75rem;
-	font-weight: 500;
-	text-transform: uppercase;
-	padding: 0.25rem 0.5rem;
-	margin-right: 0.5rem;
-	width: fit-content;
-
-	&.outline {
-		border: solid 2px;
-
-		&.verde {
-			border-color: $hpn-verde;
-			color: $hpn-verde;
-		}
-	}
-
-	// Variantes cromaticas
-	&.magenta {
-		background-color: $hpn-magenta;
-	}
-
-	&.azul {
-		background-color: $hpn-azul;
-	}
-	
-	&.azul-oscuro {
-		background-color: $hpn-azul-oscuro;
-	}
-	
-	&.celeste {
-		background-color: $hpn-celeste;
-	}
-	
-	&.magenta {
-		background-color: $hpn-magenta;
-	}
-	
-	&.rojo {
-		background-color: $hpn-rojo;
-	}
-	
-	&.verde {
-		background-color: $hpn-verde;
-	}
-
-		
-	&.cyan {
-		background-color: $hpn-cyan;
-	}
-}
-
-.hpn-container-titulo {
-	.hpn-titulo {
-		font-size: 3.5rem;
-	}
-}
-
-.hpn-subtitulo {
-	// font-size: 1.5rem;
-	// font-weight: 500;
-}
-
-.hpn-bajada {
-	font-size: 1.25rem;
-	font-weight: lighter;
-	color: white;
-	text-shadow: #111 5px;
-}
-
-.hpn-text {
-	font-size: 1.25rem;
-	line-height: 2rem;
-}
-
-
-// Variantes cromaticas
-div[class*="titulo"] {
-
-	font-family: 'Source Sans Pro';
-
-	&.azul {
-		color: $hpn-azul;
-	}
-
-	&.azul-oscuro {
-		color: $hpn-azul-oscuro;
-	}
-	
-	&.magenta {
-		color: $hpn-magenta;
-	}
-
-	&.celeste {
-		color: $hpn-celeste;
-	}
-}
-
-
-.hpn-listado-titulo {
-	align-self: center;
-	font-size: 2.5rem;
-	font-weight: lighter;
-}
-
-// Iconos
-.hpn-icon-container {
-	display: flex;
-
-	&.horizontal {
-		flex-direction: column;
-	}
-
-	&.vertical {
-		flex-direction: row;
-	}
-}
-
-.hpn-icon {
-	align-self: center;
-
-	&.lg {
-		font-size: 4rem;
-	}
-	
-	
-	&.magenta {
-		-webkit-text-fill-color: $hpn-magenta;
-	}
-
-	&.cyan {
-		-webkit-text-fill-color: $hpn-cyan;
-	}
-
-	&.celeste {
-		-webkit-text-fill-color: $hpn-celeste;
-	}
-
-	&.baseline {
-		padding-top: 25%;
-	}
-
-}
-
-/* ------------------------------------------------------------
-#RESPONSIVENESS
------------------------------------------------------------- */
-
-@media screen and (min-width: 320px) and (max-width: 1024px) {
-	// Banner
-	.hpn-container-titulo {
-		.hpn-titulo {
-			font-size: 1.35rem;
-		}
-	}
-
-	[class^="hpn-banner-img-"] {
-		
-		>[class^="hpn-banner-bloque-texto"] {
-			color: rgb(17, 14, 14);
-			text-align: center;
-			position: absolute;
-			width: 75%;
-			// left: 5%;
-			top: 50%;
-			z-index: 4;
-			}
-	}
-
-	.hpn-subtitulo {
-		display: none;
-	}
-
-	// Cards
-	[class^="card-"] {
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		align-content: center;
-
-		.hpn-card-bloque-texto {
-			align-self: center;
-			
-			.hpn-card-titulo {
-				font-size: 1rem;
-				text-align: center;
-			}
-
-			.hpn-card-texto {
-				display: none;				
-			}	
-		}
-
-		.hpn-icon {
-			align-self: center;
-		}
-	}
 
 	}

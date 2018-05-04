@@ -1,10 +1,13 @@
 /*--------------------------------------------------------------
 # Layouting
 --------------------------------------------------------------*/
-
+// Secciones
 @import "layout/_sector";
 @import "layout/_noticia";
 @import "layout/_listado";
+
+// Responsive
+@import "layout/responsive/_mobile";
 
 html {
 	font-family: 'Source Sans Pro';
@@ -32,6 +35,7 @@ body {
 
 	// Layout | Header
 	.hpn-header {
+		// align-items: center;
 		border-bottom: solid 1px gray;
 		grid-column: 1 / -1;
 		grid-row: 1;
@@ -41,13 +45,14 @@ body {
 		height: 100%;
 
 		.hpn-topbar {
+			background-color: $hpn-azul;
+			color: white;
+			padding: 0 1.25rem;
+			display: flex;
 			grid-column: 1;
 			grid-row: 1 ;
-			display: flex;
-			justify-content: space-around;
+			justify-content: space-between;
 			flex-direction: row;
-			color: white;
-			background-color: $hpn-azul;
 
 			.hpn-topbar-subcontainer {
 				display: flex;
@@ -70,6 +75,16 @@ body {
 			}
 		}
 
+		// Logo HPN
+		.hpn-logo-desktop {
+			width: 23vw;
+		}
+
+		.hpn-logo-mobile {
+			display: none;
+		}
+
+
 		.hpn-navbar {
 			grid-row: 2;
 			grid-column: 1 / -1;
@@ -84,10 +99,6 @@ body {
 				align-items: center;
 				padding: 0.5rem;
 
-				.hpn-logo-mobile {
-					display: none;
-				}
-	
 				.logo {
 					align-self: center;
 				}
@@ -96,15 +107,28 @@ body {
 			nav.hpn-container-menu {
 				background-color: white;
 				grid-column: 4 / 12;
-				display: flex;
-				flex-direction: row;
-				justify-content: space-between;
 				height: 100%;
 				padding: 0 2rem 0 2rem;
-	
-				.btn {
-					align-self: center;
-					color: $hpn-azul;
+
+				& ul {
+					display: flex;
+					flex-direction: row;
+					justify-content: space-between;
+					list-style: none;
+					
+					li.nav-item {
+						align-self: center;
+						color: $hpn-azul;
+						font-size: 1rem;
+						text-transform: uppercase;
+
+						&:hover {
+							color: $hpn-magenta;
+						&:visited {
+							color: $hpn-azul-oscuro;
+							}
+						}
+					}
 				}
 			}
 	
@@ -115,14 +139,12 @@ body {
 		}
 	}
 
-
 	// Layout | Home
 	.hpn-home-primer-scroll {
 		grid-row: 2;
 		display: grid;
 		grid-template-columns: repeat(12, 1fr);
 		grid-template-rows: 80% 20%;
-		grid-gap: 0;
 		height: 100%;
 		width: 100%;
 
@@ -142,6 +164,7 @@ body {
 				grid-row: 1 / 3;
 				position: relative;
 				background: $gradient;
+				max-height: 68vh;
 			}
 			
 			.hpn-banner-02 {
@@ -149,6 +172,7 @@ body {
 				grid-column: 9 / -1;
 				grid-row: 1;
 				background: $gradient;
+				max-height: 36vh;
 			}
 			
 			.hpn-banner-03 {
@@ -156,6 +180,7 @@ body {
 				grid-column: 9 / -1;
 				grid-row: 2;
 				background: $gradient;
+				max-height: 36vh;
 			}
 		}
 
@@ -290,7 +315,7 @@ body {
 
 footer.hpn-footer {
 	grid-column: 1 / -1;
-	grid-row: 3;
+	// grid-row: 3;
 	display: grid;
 	grid-template-columns: repeat(12, 1fr); 
 	grid-template-rows: 1;
@@ -299,191 +324,5 @@ footer.hpn-footer {
 	padding: 1rem;
 	}
 }
-
-/* ------------------------------------------------------------
-#RESPONSIVENESS
------------------------------------------------------------- */
-
-	@media screen and (max-width: 1024px) {
-		
-		.full {
-			display: grid;
-			grid-template-columns: 1fr;
-			// grid-template-rows: 10% 1fr;
-			// height: 100vh;
-
-			&.home {
-				grid-template-rows: 7% 93%;
-			}
-
-			/* Header */
-			.hpn-header {
-				grid-column: 1 / -1!important;
-				grid-row: 1!important;
-				background-color: white;
-				display: grid;
-				grid-template-rows: 1fr;
-				height: 100%;
-
-				.hpn-topbar {
-					display: none;	
-				}	
-
-				.hpn-navbar {
-					display: grid;
-					grid-template-columns: repeat(12, 1fr)!important; 
-					grid-template-rows: 1!important;
-					
-					.hpn-container-logo {
-						grid-column: 1 / 4!important;
-						display: flex;
-						justify-content: center;
-						align-items: center;
-						padding: 0.15rem;	
-					
-						.hpn-logo-desktop {
-							display: none;
-						}
-					}
-	
-					.hpn-container-menu {
-						grid-column: 4 / -1!important;
-						display: flex;
-						flex-direction: row;
-						justify-content: space-between;
-						height: 100%;
-						overflow: hidden;
-	
-						.btn {
-							display: none;
-						}
-					}
-	
-					.hpn-container-search {
-						display: none;
-					}
-				}
-
-			// Tabs
-			.hpn-seccion-footer {
-				// grid-row: 3;
-				background-color: $hpn-magenta;
-				position: absolute;
-				bottom: 0%;
-				width: 100%;
-			}
-		}
-
-			}
-
-		.hpn-home-primer-scroll {
-			display: grid;
-			grid-template-columns: repeat(12, 1fr)!important;
-			grid-template-rows: auto 15% 15%!important;
-			grid-gap: 0;
-			height: 100%;
-			width: 100%;
-
-			// Banner
-			.hpn-banner {
-				grid-column: 1 / -1!important;
-				grid-row: 1!important;
-				display: grid;
-				grid-template-rows: 3!important;
-				grid-template-columns: repeat(12, 1fr); 
-				grid-gap: 2px;
-				
-				// Subdivision Banner
-				.hpn-banner-01 {
-					grid-column: 1 / -1!important;
-					grid-row: 1 / 3!important;
-				}
-				
-				.hpn-banner-02 {
-					background-color: $hpn-magenta;
-					grid-column: 1 / 7!important;
-					grid-row: 3 / 3!important;
-				}
-				
-				.hpn-banner-03 {
-					background-color: $hpn-violeta;
-					grid-column: 7 / -1!important;
-					grid-row: 3 / 3!important;
-				}
-			}
-
-			// middlebar
-			.hpn-middlebar {
-				background-color: transparent;
-				grid-column: 1 / -1!important;
-				grid-row: 2!important;
-				grid-template-columns: repeat(12, 1fr)!important; 
-				grid-template-rows: 1!important;
-				display: flex;
-				flex-direction: row;
-				justify-content: space-between;
-
-				.hpn-search-input {
-					background-color: $hpn-blanco;
-					width: 65%;
-				}
-				
-				.hpn-search-icon {
-					background-color: $hpn-magenta;
-					width: 35%;
-					display: flex;
-					justify-content: center;
-					align-content: center;
-					align-items: center;
-
-					>.icon {
-						align-self: center;
-					}
-				}
-			}
-
-			// Bottombar
-			.hpn-bottombar {
-				grid-column: 1 / -1!important;
-				grid-row: 3!important;
-				display: grid;
-				grid-template-columns: repeat(12, 1fr)!important; 
-				grid-template-rows: 1!important;
-				height: 100%;
-		
-				.card-01 {
-					display: none!important;
-				}
-			
-				.card-02 {
-					grid-column: 1 / 5!important;
-					grid-row: 1!important;
-					background-color: $hpn-azul;
-				}
-			
-				.card-03 {
-					grid-column: 5 / 9!important;
-					grid-row: 1!important;
-					background-color: $hpn-rojo;
-				}
-			
-				.card-04 {
-					grid-column: 9 / -1!important;
-					grid-row: 1!important;
-					background-color: $hpn-celeste;
-				}
-			}
-		}
-	
-		#segundo-scroll {
-			&.hpn-home-segundo-scroll {
-				display: none!important;
-			}
-		}
-
-		footer.hpn-footer {
-			display: none!important;
-		}
-	}
 
 

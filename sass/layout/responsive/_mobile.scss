@@ -1,0 +1,355 @@
+/* ------------------------------------------------------------
+#RESPONSIVENESS
+------------------------------------------------------------ */
+
+@media screen and (max-width: 1024px) {
+		
+	.full {
+		display: grid;
+		grid-template-columns: 1fr;
+		// grid-template-rows: 10% 1fr;
+		height: 100vh;
+
+		&.home {
+			grid-template-rows: 7% 93%;
+		}
+
+		/* Header */
+		.hpn-header {
+			align-items: center;
+			grid-column: 1 / -1!important;
+			grid-row: 1!important;
+			background-color: white;
+			display: grid;
+			grid-template-rows: 1fr;
+			height: 100%;
+
+			.hpn-topbar {
+				display: none;	
+			}
+
+			// Logo HPN 
+			.hpn-logo-desktop {
+				display: none;
+			}
+
+			.hpn-logo-mobile {
+				width: 17vw;
+			}
+
+			.hpn-navbar {
+				display: grid;
+				grid-template-columns: repeat(12, 1fr)!important; 
+				grid-template-rows: 1!important;
+				
+				.hpn-container-logo {
+					grid-column: 1 / 4!important;
+					display: flex;
+					justify-content: center;
+					align-items: center;
+					padding: 0.15rem;	
+					
+				}
+
+				.hpn-container-menu {
+					grid-column: 4 / 12!important;
+					height: 100%;
+					overflow: hidden;
+					padding: 0.25rem;
+
+					& ul {
+						display: flex;
+						flex-direction: row;
+						justify-content: space-between;
+						list-style: none;
+						
+						li.nav-item {
+							align-self: center;
+							color: $hpn-azul;
+							font-size: 1rem;
+							text-transform: uppercase;
+	
+							&:hover {
+								color: $hpn-magenta;
+							&:visited {
+								color: $hpn-azul-oscuro;
+								}
+							}
+						}
+					}
+				}
+
+				.hpn-container-search {
+					display: none;
+				}
+			}
+
+		// Tabs
+		.hpn-seccion-footer {
+			// grid-row: 3;
+			background-color: $hpn-magenta;
+			position: absolute;
+			bottom: 0%;
+			width: 100%;
+		}
+	}
+
+		}
+
+	.hpn-home-primer-scroll {
+		display: grid;
+		grid-template-columns: repeat(12, 1fr)!important;
+		grid-template-rows: auto 15% 15%!important;
+		grid-gap: 0;
+		height: 100%;
+		width: 100%;
+
+		// Banner
+		.hpn-banner {
+			grid-column: 1 / -1!important;
+			grid-row: 1!important;
+			display: grid;
+			grid-template-rows: 3!important;
+			grid-template-columns: repeat(12, 1fr); 
+			grid-gap: 2px;
+			
+			// Subdivision Banner
+			.hpn-banner-01 {
+				grid-column: 1 / -1!important;
+				grid-row: 1 / 3!important;
+			}
+			
+			.hpn-banner-02 {
+				background-color: $hpn-magenta;
+				grid-column: 1 / 7!important;
+				grid-row: 3 / 3!important;
+			}
+			
+			.hpn-banner-03 {
+				background-color: $hpn-violeta;
+				grid-column: 7 / -1!important;
+				grid-row: 3 / 3!important;
+			}
+		}
+
+		// middlebar
+		.hpn-middlebar {
+			background-color: transparent;
+			grid-column: 1 / -1!important;
+			grid-row: 2!important;
+			grid-template-columns: repeat(12, 1fr)!important; 
+			grid-template-rows: 1!important;
+			display: flex;
+			flex-direction: row;
+			justify-content: space-between;
+
+			.hpn-search-input {
+				background-color: $hpn-blanco;
+				width: 65%;
+			}
+			
+			.hpn-search-icon {
+				background-color: $hpn-magenta;
+				width: 35%;
+				display: flex;
+				justify-content: center;
+				align-content: center;
+				align-items: center;
+
+				>.icon {
+					align-self: center;
+				}
+			}
+		}
+
+		// Bottombar
+		.hpn-bottombar {
+			grid-column: 1 / -1!important;
+			grid-row: 3!important;
+			display: grid;
+			grid-template-columns: repeat(12, 1fr)!important; 
+			grid-template-rows: 1!important;
+			height: 100%;
+	
+			.card-01 {
+				display: none!important;
+			}
+		
+			.card-02 {
+				grid-column: 1 / 5!important;
+				grid-row: 1!important;
+				background-color: $hpn-azul;
+			}
+		
+			.card-03 {
+				grid-column: 5 / 9!important;
+				grid-row: 1!important;
+				background-color: $hpn-rojo;
+			}
+		
+			.card-04 {
+				grid-column: 9 / -1!important;
+				grid-row: 1!important;
+				background-color: $hpn-celeste;
+			}
+		}
+	}
+
+	#segundo-scroll {
+		&.hpn-home-segundo-scroll {
+			display: none!important;
+		}
+	}
+
+	footer.hpn-footer {
+		display: none!important;
+	}
+
+
+
+/*--------------------------------------------------------------
+# Tipografia
+--------------------------------------------------------------*/
+// Headings
+@media screen and (max-width: 768px) {
+	h1 {
+		font-size: 2em;
+	}
+	h2 {
+		font-size: 1.5em;
+	}
+	h3 {
+		font-size: 1em;
+	}
+	h4 {
+		font-size: 1em;
+		margin: 1rem 0 1rem 0;
+	}
+	h5 {
+		font-size: 0.75em;
+	}
+	h6 {
+		font-size: 0.5em;
+	}
+}
+
+// Headings
+@media screen and (min-width: 769px) and (max-width: 1023px) {
+	h1 {
+		font-size: 2.25em;
+	}
+	h2 {
+		font-size: 1.75em;
+	}
+	h3 {
+		font-size: 1.5em;
+	}
+	h4 {
+		font-size: 1.25em;
+		margin: 1rem 0 1rem 0;
+	}
+	h5 {
+		font-size: 1em;
+	}
+	h6 {
+		font-size: 0.75em;
+	}
+}
+
+/* ------------------------------------------------------------
+#RESPONSIVENESS
+------------------------------------------------------------ */
+
+	// Banner
+	.hpn-banner {
+		[class^="hpn-banner-0"]	{
+			display: flex;
+			flex-direction: column;
+			justify-content: flex-end;
+			position: relative;
+			z-index: 3;
+			// Degrade
+			background: linear-gradient(0deg, rgba(0,0,0,0.65) 0%,rgba(0,0,0,0) 50%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+		}
+	
+		[class^="hpn-banner-bloque-texto"] {
+			color: white;
+			text-align: left;
+			position: absolute;
+			width: 85%;
+			left: 5%;
+			top: 45%;
+			z-index: 4;
+			}
+		}
+
+	.hpn-container-titulo {
+		.hpn-titulo {
+			font-size: 1.35rem;
+		}
+	}
+
+	.hpn-subtitulo {
+		display: none;
+	}
+
+	// Cards
+	[class^="card-"] {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-content: center;
+
+		.hpn-card-bloque-texto {
+			align-self: center;
+			
+			.hpn-card-titulo {
+				font-size: 1rem;
+				text-align: center;
+			}
+
+			.hpn-card-texto {
+				display: none;				
+			}	
+		}
+
+		.hpn-icon {
+			align-self: center;
+		}
+	}
+
+
+	// Banner
+	.hpn-banner {
+		[class^="hpn-banner-0"]	{
+			display: flex;
+			flex-direction: column;
+			justify-content: flex-end;
+			position: relative;
+			z-index: 3;
+			// Degrade
+			background: linear-gradient(0deg, rgba(0,0,0,0.65) 0%,rgba(0,0,0,0) 50%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+		}
+	
+		%hpn-bloque-texto {
+			color: white;
+			text-align: left;
+			position: absolute;
+			width: 85%;
+		}
+
+		[class^="hpn-banner-bloque-texto"] {
+			@extend %hpn-bloque-texto;
+			left: 5%;
+			top: 30%;
+			z-index: 4;
+			}
+		}
+
+		h5.hpn-subtitulo {
+			font-size: 1.5rem;
+			font-weight: 300;
+		}
+
+}
+

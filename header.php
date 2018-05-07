@@ -1,26 +1,32 @@
+<?php
+/**
+ * The header for our theme
+ *
+ * This is the template that displays all of the <head> section and everything up until <div id="content">
+ *
+ * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
+ *
+ * @package HPN
+ */
+
+?>
 <!DOCTYPE html>
-<html>
-<!-- Header -->
-    <head>  
-        <meta charset="utf-8">
-        <meta http-equiv="Content-Type" content="text/html">
-        
-        <title>HPN</title>
-        <!-- Tell the browser to be responsive to screen width -->
-        <meta name="viewport" content="width=device-width, user-scalable=no">
-        <!-- Theme style -->
-        <?php wp_enqueue_style( 'main', get_template_directory_uri() . '/main.css',false,'1.1','all'); ?>
+<html <?php language_attributes(); ?>>
+<head>
+	<meta charset="<?php bloginfo( 'charset' ); ?>">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="profile" href="http://gmpg.org/xfn/11">
         <!-- Iconos HPN -->
         <link rel="stylesheet" href="./wp-content/themes/hpn/assets/icons/css/materialdesignicons.css">
         <!-- Font HPN -->
         <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
-        <!-- WP Head -->
-        <?php wp_head(); ?>
-    </head>
-    <body class="full home">
-    <!-- Header -->
-    <header id="header" class="hpn-header">
-        <div class="hpn-topbar">
+	<?php wp_head(); ?>
+</head>
+
+<body class="full home" <?php body_class(); ?>>
+	<header id="header" class="hpn-header">
+	<!-- Topbar -->
+	<div class="hpn-topbar">
             <!-- Datos de contacto -->
             <div class="hpn-topbar-subcontainer">
                 <!-- Mail -->
@@ -63,19 +69,31 @@
                 </div>
             </div>            
         </div>
-        <!-- Navbar -->
-        <div class="luxbar luxbar-default">
-                <input type="checkbox" id="luxbar-checkbox" class="luxbar-checkbox">
-                <div class="luxbar-menu luxbar-menu-light">
-                    <ul class="luxbar-navigation">
-                        <li class="luxbar-header">
-                            <a class="" href="https://hospitalneuquen.org.ar"><img class="hpn-logo-desktop" src="./wp-content/themes/hpn/assets/svg/hpn-marca-h.svg" alt=""></a>
-                            <a class="" href="https://hospitalneuquen.org.ar"><img class="hpn-logo-mobile" src="./wp-content/themes/hpn/assets/svg/hpn-marca-responsive.svg" alt="" class="logo hpn-logo-mobile"></a>
-                            <label class="luxbar-hamburger luxbar-hamburger-doublespin" for="luxbar-checkbox"> <span></span> </label>
-                        </li>
-                        <li><?php wp_list_pages(array('title_li' => '', 'exclude' => 4)); ?></li> 
-                    </ul>
-                </div>
-            </div>
 
-    </header>
+		<!-- Logo HPN -->
+
+        <!-- Navbar -->
+		<nav class="luxbar luxbar-default">
+			<input type="checkbox" id="luxbar-checkbox" class="luxbar-checkbox">
+			<div class="luxbar-menu luxbar-menu-light">
+				<ul class="luxbar-navigation">
+					<li class="luxbar-header">
+						<a class="" href="https://hospitalneuquen.org.ar"><img class="hpn-logo-desktop" src="./wp-content/themes/hpn/assets/svg/hpn-marca-h.svg" alt=""></a>
+						<a class="" href="https://hospitalneuquen.org.ar"><img class="hpn-logo-mobile" src="./wp-content/themes/hpn/assets/svg/hpn-marca-responsive.svg" alt="" class="logo hpn-logo-mobile"></a>
+						<!-- <?php the_custom_logo();
+							if ( is_front_page() && is_home() ) : ?>
+								<h1><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+							<?php else : ?>
+								<p><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
+							<?php endif;
+							$description = get_bloginfo( 'description', 'display' );
+							if ( $description || is_customize_preview() ) : ?>
+								<p class="site-description"><?php echo $description; /* WPCS: xss ok. */ ?></p>
+						<?php endif; ?> -->
+						<label class="luxbar-hamburger luxbar-hamburger-doublespin" for="luxbar-checkbox"> <span></span> </label>
+					</li>
+					<li class="hpn-nav-item"><?php wp_nav_menu( array( 'theme_location' => 'menu-1', 'menu_id' => 'primary-menu',) ); ?></li> 
+				</ul>
+			</div>
+		</nav>
+	</header><!-- #masthead -->

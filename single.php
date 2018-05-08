@@ -77,5 +77,5 @@ get_header(); /* Template Name: Noticia */ ?>
 	</section>
 
 <?php
-// get_sidebar();
+get_sidebar();
 get_footer();

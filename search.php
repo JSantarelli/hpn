@@ -7,45 +7,46 @@
  * @package HPN
  */
 
-get_header(); ?>
+get_header(); /* Template Name: Buscador */ ?>
 
-	<section id="primary" class="content-area">
-		<main id="main" class="site-main">
+	<section class="hpn-listado">
+		<main id="" class="">
 
 		<?php
 		if ( have_posts() ) : ?>
 
-			<header class="page-header">
-				<h1 class="page-title"><?php
+			<header class="">
+				<h1 class="hpn-subheader-container"><?php
 					/* translators: %s: search query. */
-					printf( esc_html__( 'Search Results for: %s', 'hpn' ), '<span>' . get_search_query() . '</span>' );
+					printf( esc_html__( 'Resultados: %s', 'hpn' ), '<span>' . get_search_query() . '</span>' );
 				?></h1>
 			</header><!-- .page-header -->
 
-			<?php
-			/* Start the Loop */
-			while ( have_posts() ) : the_post();
+			<section class="hpn-container-listado">
+				<?php
+					/* Start the Loop */
+					while ( have_posts() ) : the_post();
 
-				/**
-				 * Run the loop for the search to output the results.
-				 * If you want to overload this in a child theme then include a file
-				 * called content-search.php and that will be used instead.
-				 */
-				get_template_part( 'template-parts/content', 'search' );
+						/**
+						 * Run the loop for the search to output the results.
+						 * If you want to overload this in a child theme then include a file
+						 * called content-search.php and that will be used instead.
+						 */
+						get_template_part( 'template-parts/content', 'search' );
 
-			endwhile;
+					endwhile;
 
-			the_posts_navigation();
+					the_posts_navigation();
 
-		else :
+				else :
 
-			get_template_part( 'template-parts/content', 'none' );
+					get_template_part( 'template-parts/content', 'none' );
 
-		endif; ?>
-
+				endif; ?>
+			</section>
 		</main><!-- #main -->
 	</section><!-- #primary -->
 
 <?php
-get_sidebar();
-get_footer();
+// get_sidebar();
+// get_footer();

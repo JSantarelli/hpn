@@ -92,7 +92,9 @@
 						<?php endif; ?> -->
 						<label class="luxbar-hamburger luxbar-hamburger-doublespin" for="luxbar-checkbox"> <span></span> </label>
 					</li>
-					<li class="hpn-nav-item"><?php wp_nav_menu( array( 'theme_location' => 'menu-1', 'menu_id' => 'primary-menu',) ); ?></li> 
+					<li class="hpn-nav-item"><?php wp_nav_menu( array( 'theme_location' => 'menu-1', 'menu_id' => 'primary-menu',) ); ?></li>
+                    <li class="rounded-left w-xl h-sm"><?php get_search_form(); ?></li>
+                    <!-- <button type="submit" value="Buscar" class="rounded-right magenta h-sm mdi mdi-github-circle mdi-18px"></button></li> -->
 				</ul>
 			</div>
 		</nav>

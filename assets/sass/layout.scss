@@ -2,7 +2,7 @@
 # Layouting
 --------------------------------------------------------------*/
 // Secciones
-@import "layout/_sector";
+@import "layout/_seccion";
 @import "layout/_noticia";
 @import "layout/_listado";
 
@@ -103,38 +103,34 @@ body {
 					align-self: center;
 				}
 			}
-	
-			nav.hpn-container-menu {
-				background-color: white;
-				grid-column: 4 / 12;
-				height: 100%;
-				padding: 0 2rem 0 2rem;
 
-				& ul {
-					display: flex;
-					flex-direction: row;
-					justify-content: space-between;
-					list-style: none;
-					
-					li.nav-item {
-						align-self: center;
-						color: $hpn-azul;
-						font-size: 1rem;
-						text-transform: uppercase;
-
-						&:hover {
-							color: $hpn-magenta;
-						&:visited {
-							color: $hpn-azul-oscuro;
-							}
-						}
-					}
-				}
-			}
-	
 			.hpn-container-search {
 				background-color: $hpn-magenta;
 				grid-column: 12 / -1;
+			}
+		}
+
+		nav {
+			height: 100%;
+			& ul {
+				display: flex;
+				flex-direction: row;
+				justify-content: space-between;
+				list-style: none;
+				
+				li.hpn-nav-item {
+					align-self: center;
+					color: $hpn-azul;
+					font-size: 1rem;
+					text-transform: uppercase;
+
+					&:hover {
+						color: $hpn-magenta;
+					&:visited {
+						color: $hpn-azul-oscuro;
+						}
+					}
+				}
 			}
 		}
 	}
@@ -269,41 +265,6 @@ body {
 }
 
 
-	// Layout | Cards
-	ul.hpn-container-listado {
-		overflow-y: scroll;
-		display: grid;
-		grid-gap: 0.25rem;
-		padding: 0;
-		list-style: none;
-		margin: 0;
-
-		&.horizontal {
-			grid-column: 1 / 9;
-			grid-template-columns: repeat(2, 1fr);
-			grid-template-rows: repeat(10, 1fr);
-
-			.hpn-list-item {
-				background-color: $hpn-violeta;
-				height: 20rem;		
-			}
-		}
-
-		&.vertical {
-			grid-column: 9 / -1;
-			grid-row: 3;
-			grid-template-columns: repeat(1, 1fr);
-			grid-template-rows: repeat(10, 1fr);
-
-			.hpn-list-item {
-				background-color: $hpn-violeta;
-				height: auto;
-			}
-		}
-	}
-
-
-
 	// Layout |	Mapa 
 
 	// Layout | Upload
@@ -320,6 +281,7 @@ footer.hpn-footer {
 	grid-template-columns: repeat(12, 1fr); 
 	grid-template-rows: 1;
 	background-color: black;
+	color: white;
 	height: auto;
 	padding: 1rem;
 	}

@@ -33,7 +33,7 @@
             <?php $posts = query_posts('cat=223');
             if (have_posts()) : while (have_posts()) : the_post(); ?>   
             <div class="hpn-banner-03">
-                <img class="hpn-banner-img-secundaria cover" src="<?php the_post_thumbnail(); ?>
+                <img class="hpn-banner-img-secundaria cover" src="<?php the_post_thumbnail(); ?>"
                 <div class="hpn-banner-bloque-texto">
                     <div class="hpn-badge cyan"><?php the_category(', ') ?></div>
                     <h3 class="hpn-titulo blanco shadow"><?php the_title(); ?></h3>
@@ -100,7 +100,7 @@
                 <hr class="border blanco xs separate"></hr>
                 <h5 class="txt-xxs txt-blanco">Bajada lateral a varias lineas. m cati soluta molestias iure facere dolorum adipisci eum? Sae</h5>
                 <div class="container-input-btn margin-top sm">    
-                    <input class="rounded-left w-xl h-sm"></input>
+                    <input type="search" class="rounded-left w-xl h-sm"></input>
                     <button class="rounded-right magenta h-sm mdi mdi-github-circle mdi-18px"></button>
                 </div>
             </div>

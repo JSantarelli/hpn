@@ -27,34 +27,13 @@ get_header(); /* Template Name: Seccion */ ?>
 				</div>
 		</article>
 		<article id="nota" class="hpn-container-nota">
-				<!-- Boton edicion entrada al estar loguedo-->
-				<?php if ( get_edit_post_link() ) : ?>
-						<?php
-							edit_post_link(
-								sprintf(
-									wp_kses(
-										/* translators: %s: Name of current post. Only visible to screen readers */
-										__( 'Edit <span class="screen-reader-text">%s</span>', 'hpn' ),
-										array(
-											'span' => array(
-												'class' => array(),
-											),
-										)
-									),
-									get_the_title()
-								),
-								'<button class="rounded magenta xl w-xl h-sm txt-xxs txt-bold uppercase">',
-								'</button>'
-							);
-						?>
-						
-				<?php  endif; ?>
 
-				<div class="hpn-text text-gris"><?php the_content(); ?></div>
-				<?php endwhile; else: ?>
-				<p><?php _e('La pagina solicitada no existe'); ?></p>
-				<?php endif; ?>
+			<?php get_template_part( 'template-parts/content', 'page' ); ?>
+
 		</article>
+		<?php endwhile; else: ?>
+		<p><?php _e('La pagina solicitada no existe'); ?></p>
+		<?php endif; ?>
 	</section>
 
 <?php

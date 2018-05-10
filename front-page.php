@@ -8,7 +8,7 @@
             <div class="hpn-banner-01">
                 <img class="hpn-banner-img-principal cover" src="<?php the_post_thumbnail(); ?>
                 <div class="hpn-banner-bloque-texto">
-                    <div class="hpn-badge magenta"><?php the_category(', ') ?></div>
+                    <div class="hpn-badge bg-magenta"><?php the_category(', ') ?></div>
                     <h1 class="hpn-titulo blanco shadow"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h1>
                     <h5 class="hpn-subtitulo blanco lighter shadow"><?php the_excerpt(); ?></h5>
                 </div>
@@ -17,30 +17,20 @@
             wp_reset_query(); ?>
 
             <!-- Noticias secundarias -->
-            <?php $posts = query_posts('cat=220');
-            if (have_posts()) : while (have_posts()) : the_post(); ?>   
+            <?php $second_query = new WP_Query('cat=220'); // exclude category
+                $i = 1;
+                while($second_query->have_posts()) : $second_query->the_post(); ?> 
             <div class="hpn-banner-02">
                 <img class="hpn-banner-img-secundaria cover" src="<?php the_post_thumbnail(); ?>
                 <div class="hpn-banner-bloque-texto">
-                    <div class="hpn-badge verde"><?php the_category(', ') ?></div>
+                    <div class="hpn-badge bg-verde"><?php the_category(', ') ?></div>
                     <h3 class="hpn-titulo blanco shadow"><?php the_title(); ?></h3>
                 </div> 
             </div>
-            <?php endwhile; endif;
-            wp_reset_query(); ?>
+            <?php $i++; endwhile;
+             wp_reset_query(); 
+            ?>
 
-            <!-- Noticias tercera -->
-            <?php $posts = query_posts('cat=223');
-            if (have_posts()) : while (have_posts()) : the_post(); ?>   
-            <div class="hpn-banner-03">
-                <img class="hpn-banner-img-secundaria cover" src="<?php the_post_thumbnail(); ?>"
-                <div class="hpn-banner-bloque-texto">
-                    <div class="hpn-badge cyan"><?php the_category(', ') ?></div>
-                    <h3 class="hpn-titulo blanco shadow"><?php the_title(); ?></h3>
-                </div>
-            </div>
-            <?php endwhile; endif;
-            wp_reset_query(); ?>
         </div>
 
         <!-- Middlebar -->

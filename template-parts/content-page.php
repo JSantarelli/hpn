@@ -9,26 +9,20 @@
 
 ?>
 
-<!-- Boton edicion entrada al estar loguedo-->
-<?php if ( get_edit_post_link() ) : ?>
-		<?php
-			edit_post_link(
-				sprintf(
-					wp_kses(
-						/* translators: %s: Name of current post. Only visible to screen readers */
-						__( 'Edit <span class="screen-reader-text">%s</span>', 'hpn' ),
-						array(
-							'span' => array(
-								'class' => array(),
-							),
-						)
-					),
-					get_the_title()
-				),
-				'<button class="rounded magenta xl w-xl h-sm txt-xxs txt-bold uppercase">',
-				'</button>'
-			);
-		?>
-		
-<?php  endif; ?>
-<div class="hpn-text text-gris"><?php the_content(); ?></div>
+
+
+	<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
+		<div class="hpn-container-titulo-img">
+				<img class="hpn-banner-img-principal cover" src=<?php the_post_thumbnail(); ?>
+				<div class="mask azul-oscuro"></div>
+				<div class="hpn-container-titulo">
+					<h3 class="hpn-titulo shadow txt bold txt-blanco"><?php the_title();?></h3>
+					<hr class="blanco xs"></hr>
+				</div>
+		</div>
+		<div id="nota" class="hpn-container-nota">
+			<p class="hpn-text text-gris"><?php the_content(); ?></p>
+		</div>
+		<?php endwhile; else: ?>
+		<p><?php _e('La pagina solicitada no existe'); ?></p>
+	<?php endif; ?>

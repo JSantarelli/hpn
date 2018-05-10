@@ -35,10 +35,17 @@ small {
 	font-size: 0.5em;
 }
 
+p {
+	font-size: 1.35rem;
+	line-height: 2rem;
+}
+
 // Links
-a {
+a, ul, li {
 	text-decoration: none;
 	color: inherit;
+	list-style: none;
+	margin: inherit;
 }
 
 // Variantes de tamaño
@@ -446,33 +453,6 @@ hr {
 	}
 }
 
-// Card - Tipografía
-.hpn-card-prefix {
-	font-size: 1rem;
-	font-weight: 700;
-	text-transform: uppercase;
-}
-
-.hpn-card-titulo {
-	font-size: 1.5rem;
-}
-
-.hpn
--card-subtitulo {
-	font-size: 1.25rem;
-	font-weight: 900;
-}
-
-.hpn-card-texto {
-	font-size: 1rem;
-}
-
-.hpn-card-numero {
-	font-size: 7rem; 
-	font-weight: 700;
-}
-
-// HPN Listados
 
 // HPN - Imagenes
 .hpn-banner-img-principal {
@@ -482,7 +462,7 @@ hr {
 	}
 
 .hpn-banner-img-secundaria {
-	height: 100%;
+	height: 34vh;
 	width: 100%;
 	mix-blend-mode: multiply;
 }
@@ -496,7 +476,7 @@ img,.hpn-img {
 
 // Img - Variantes dimensiones
 	&.w-xxxs {
-		width: 2vw;
+		width: 100px;
 	}
 
 	&.w-xxs {
@@ -534,7 +514,7 @@ img,.hpn-img {
 
 	// Altura
 	&.h-xxxs {
-		height: 50%;
+		height: 100px;
 	}
 
 	&.h-xxs {
@@ -804,7 +784,6 @@ input,button,.container-input-btn {
 	font-weight: 500;
 	text-transform: uppercase;
 	padding: 0.25rem 0.5rem;
-	margin-right: 0.5rem;
 	width: fit-content;
 
 	&.outline {
@@ -817,36 +796,36 @@ input,button,.container-input-btn {
 	}
 
 	// Variantes cromaticas
-	&.magenta {
+	&.bg-magenta {
 		background-color: $hpn-magenta;
 	}
 
-	&.azul {
+	&.bg-azul {
 		background-color: $hpn-azul;
 	}
 	
-	&.azul-oscuro {
+	&.bg-azul-oscuro {
 		background-color: $hpn-azul-oscuro;
 	}
 	
-	&.celeste {
+	&.bg-celeste {
 		background-color: $hpn-celeste;
 	}
 	
-	&.magenta {
+	&.bg-magenta {
 		background-color: $hpn-magenta;
 	}
 	
-	&.rojo {
+	&.bg-rojo {
 		background-color: $hpn-rojo;
 	}
 	
-	&.verde {
+	&.bg-verde {
 		background-color: $hpn-verde;
 	}
 
 		
-	&.cyan {
+	&.bg-cyan {
 		background-color: $hpn-cyan;
 	}
 }

@@ -5,6 +5,8 @@
 @import "layout/_seccion";
 @import "layout/_noticia";
 @import "layout/_listado";
+@import "layout/_card";
+@import "layout/_default";
 
 // Responsive
 @import "layout/responsive/_mobile";
@@ -166,18 +168,18 @@ body {
 			.hpn-banner-02 {
 				background-color: cyan;
 				grid-column: 9 / -1;
-				grid-row: 1;
+				// grid-row: 1 / 1;
 				background: $gradient;
-				max-height: 36vh;
+				max-height: 34vh;
 			}
 			
-			.hpn-banner-03 {
-				background-color: lightblue;
-				grid-column: 9 / -1;
-				grid-row: 2;
-				background: $gradient;
-				max-height: 36vh;
-			}
+			// .hpn-banner-03 {
+			// 	background-color: lightblue;
+			// 	grid-column: 9 / -1;
+			// 	grid-row: 2;
+			// 	background: $gradient;
+			// 	max-height: 36vh;
+			// }
 		}
 
 		.hpn-bottombar {

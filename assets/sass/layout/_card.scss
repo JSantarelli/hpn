@@ -1,0 +1,41 @@
+// Card - Tipografía
+.hpn-content-card {
+	display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr ));
+}
+
+.hpn-card-container {
+	display: flex;
+	flex-direction: column;
+	padding: 2rem;
+	justify-content: space-between;
+	align-items: center;
+	max-width: 300px;
+	max-height: 600px;
+	box-shadow: grey 3px 3px 2px 0.5;
+	text-align: center;
+}
+
+.hpn-card-prefix {
+	font-size: 1rem;
+	font-weight: 700;
+	text-transform: uppercase;
+}
+
+.hpn-card-titulo {
+	font-size: 1.5rem;
+}
+
+.card-subtitulo {
+	font-size: 1.25rem;
+	font-weight: 900;
+}
+
+.hpn-card-texto {
+	font-size: 1rem;
+}
+
+.hpn-card-numero {
+	font-size: 7rem; 
+	font-weight: 700;
+}

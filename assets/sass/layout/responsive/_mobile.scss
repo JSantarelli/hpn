@@ -121,15 +121,22 @@
 			
 			.hpn-banner-02 {
 				background-color: $hpn-magenta;
-				grid-column: 1 / 7!important;
+				// grid-column: 1 / 7!important;
 				grid-row: 3 / 3!important;
+				width: 50vw;
+
+				.hpn-banner-img-secundaria {
+					height: 100%;
+					width: 100%;
+					mix-blend-mode: multiply;
+				}
 			}
 			
-			.hpn-banner-03 {
-				background-color: $hpn-violeta;
-				grid-column: 7 / -1!important;
-				grid-row: 3 / 3!important;
-			}
+			// .hpn-banner-03 {
+			// 	background-color: $hpn-violeta;
+			// 	grid-column: 7 / -1!important;
+			// 	grid-row: 3 / 3!important;
+			// }
 		}
 
 		// middlebar
@@ -231,6 +238,11 @@
 	h6 {
 		font-size: 0.5em;
 	}
+
+	p {
+		font-size: 1rem;
+		line-height: 1.75rem;
+	}
 }
 
 // Headings
@@ -253,6 +265,11 @@
 	}
 	h6 {
 		font-size: 0.75em;
+	}
+
+	p {
+		font-size: 1rem;
+		line-height: 1.75rem;
 	}
 }
 
@@ -284,8 +301,8 @@
 		}
 
 	.hpn-container-titulo {
-		.hpn-titulo {
-			font-size: 1.35rem;
+		h3.hpn-titulo {
+			font-size: 5vw;
 		}
 	}
 

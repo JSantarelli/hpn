@@ -35,7 +35,7 @@
 
 		<?php elseif ( is_search() ) : ?>
 
-			<p><?php esc_html_e( 'Sorry, but nothing matched your search terms. Please try again with some different keywords.', 'hpn' ); ?></p>
+			<p><?php esc_html_e( 'Nada encontrado.', 'hpn' ); ?></p>
 			<?php
 				// get_search_form();
 

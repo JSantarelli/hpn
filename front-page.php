@@ -17,9 +17,8 @@
             wp_reset_query(); ?>
 
             <!-- Noticias secundarias -->
-            <?php $second_query = new WP_Query('cat=220'); // exclude category
-                $i = 1;
-                while($second_query->have_posts()) : $second_query->the_post(); ?> 
+            <?php $secundaria = new WP_Query('cat=220&posts_per_page=2');
+               while ($secundaria->have_posts()) : $secundaria->the_post(); ?> 
             <div class="hpn-banner-02">
                 <img class="hpn-banner-img-secundaria cover" src="<?php the_post_thumbnail(); ?>
                 <div class="hpn-banner-bloque-texto">
@@ -27,7 +26,7 @@
                     <h3 class="hpn-titulo blanco shadow"><?php the_title(); ?></h3>
                 </div> 
             </div>
-            <?php $i++; endwhile;
+            <?php endwhile;
              wp_reset_query(); 
             ?>
 
@@ -43,113 +42,40 @@
         </div>
 
         <!-- Bottombar -->
-        <div class="hpn-bottombar">
-            <div class="card-01 azul-oscuro">
-                <div class="hpn-card-bloque-texto">
-                    <div class="hpn-card-titulo txt-blanco">HPN titulo</div>
-                    <p class="hpn-card-texto txt-blanco">Este es un texto con la clase hpn-card-text</p>
-                </div>
-            </div>
-            <div class="card-02 azul">
-                <div class="hpn-card-img magenta">
-                    <div class="hpn-icon magenta mdi mdi-github-circle mdi-48px"></div>
-                </div>
-                <div class="hpn-card-bloque-texto">
-                    <div class="hpn-card-titulo txt-negro">HPN titulo</div>
-                    <p class="hpn-card-texto txt-negro">Este es un texto con la clase hpn-card-text</p>
-                </div>
-            </div>
-            <div class="card-03 verde">
-                <div class="hpn-card-img cyan">
-                    <div class="hpn-icon cyan mdi mdi-github-circle mdi-48px"></div>
-                </div>
-                <div class="hpn-card-bloque-texto">
-                    <div class="hpn-card-titulo txt-negro">HPN titulo</div>
-                    <p class="hpn-card-texto txt-negro">Este es un texto con la clase hpn-card-text</p>
-                </div>
-            </div>
-            <div class="card-04 rojo">
-                <div class="hpn-card-img verde">
-                    <div class="hpn-icon verde mdi mdi-github-circle mdi-48px"></div>
-                </div>
-                <div class="hpn-card-bloque-texto">
-                    <div class="hpn-card-titulo txt-negro">HPN titulo</div>
-                    <p class="hpn-card-texto txt-negro">Este es un texto con la clase hpn-card-text</p>
-                </div>
-            </div>
-        </div>
-    </section>
+        <?php get_template_part( 'template-parts/home/home', 'bottombar' ); ?>
 
-    <!-- Segundo Scroll -->
+    </section>
     <section id="segundo-scroll" class="hpn-home-segundo-scroll">
+    <!-- Segundo Scroll -->
     <!-- Guias -->
     <div id="sidebar" class="hpn-home-sidebar">
+    <?php $repositorio = 6472; 
+        $post_id_6472 = get_post($repositorio);
+        $titulo = $post_id_6472->post_title;
+        $content = $post_id_6472->post_content;
+        $image = the_post_thumbnail($post_id_6472);
+        ?>
             <div class="hpn-bloque-titulo margin-bottom">
-                <h6 class="prefix magenta">Vias de contacto</h6>
-                <h4 class="txt-blanco">Titulo lateral a tres lineas o mas</h4>
+                <h6 class="prefix celeste">Repositorio digital</h6>
+                <h4 class="txt-blanco"><?php echo($titulo); ?></h4>
                 <hr class="border blanco xs separate"></hr>
-                <h5 class="txt-xxs txt-blanco">Bajada lateral a varias lineas. m cati soluta molestias iure facere dolorum adipisci eum? Sae</h5>
+                <h5 class="txt-xxs txt-blanco"><?php echo($content); ?></h5>
                 <div class="container-input-btn margin-top sm">    
                     <input type="search" class="rounded-left w-xl h-sm"></input>
-                    <button class="rounded-right magenta h-sm mdi mdi-github-circle mdi-18px"></button>
+                    <button class="rounded-right magenta h-sm mdi mdi-file-find mdi-18px"></button>
                 </div>
             </div>
             <div class="container-inputs separate">
-                <img alt="guias" class="md celeste fondo rounded" scr="">
+                <img alt="guias" class="md celeste fondo rounded" scr="<?php echo($image)?>">
             </div>
         </div>
+        
         <!-- FAQ -->
         <div id="faq" class="hpn-home-faq">
-            <div class="hpn-bloque-titulo margin-bottom">
-                <h6 class="prefix magenta">Vias de contacto</h6>
-                <h4 class="txt-negro">Preguntas frecuentes</h4>
-                <hr class="border cyan xs separate"></hr>
-                <h5 class="txt-xxs txt-negro">Bajada lateral a varias lineas. m cati soluta molestias iure facere dolorum adipisci eum? Sae</h5>
-            </div>
-            <div class="container-inputs separate">
-                <!-- Accordion -->
-                <div hpn-accordion class="tab">
-                    <input id="tab-one" type="checkbox" name="tabs">
-                    <label for="tab-one">Pregunta 1</label>
-                    <div class="tab-content">
-                    <p>Lorem ipsum cati soluta molestias iure facere dolorum adipisci eum? Saepe, itaque.</p>
-                    </div>
-                </div>
-                <!-- Accordion -->
-                <div hpn-accordion class="tab">
-                        <input id="tab-two" type="checkbox" name="tabs">
-                        <label for="tab-two">Pregunta 2</label>
-                        <div class="tab-content">
-                        <p>Lorem ipsum cati soluta molestias iure facere dolorum adipisci eum? Saepe, itaque.</p>
-                        </div>
-                    </div>
-                <!-- Accordion -->
-                <div hpn-accordion class="tab">
-                    <input id="tab-three" type="checkbox" name="tabs">
-                    <label for="tab-three">Pregunta 3</label>
-                    <div class="tab-content">
-                    <p>Lorem ipsum cati soluta molestias iure facere dolorum adipisci eum? Saepe, itaque.</p>
-                    </div>
-                </div>
-                <!-- Accordion -->
-                <div hpn-accordion class="tab">
-                        <input id="tab-two" type="checkbox" name="tabs">
-                        <label for="tab-two">Pregunta 2</label>
-                        <div class="tab-content">
-                        <p>Lorem ipsum cati soluta molestias iure facere dolorum adipisci eum? Saepe, itaque.</p>
-                        </div>
-                    </div>
-                <!-- Accordion -->
-                <div hpn-accordion class="tab">
-                    <input id="tab-three" type="checkbox" name="tabs">
-                    <label for="tab-three">Pregunta 3</label>
-                    <div class="tab-content">
-                    <p>Lorem ipsum cati soluta molestias iure facere dolorum adipisci eum? Saepe, itaque.</p>
-                    </div>
-                </div>
-            </div>
+           <?php get_template_part( 'template-parts/home/home', 'faqs' ); ?>
         </div>
-    
+
+        <!-- Formulario Contact Form 7 (plugin) -->
         <div id="contacto" class="hpn-home-contacto">
             <div class="hpn-bloque-titulo margin-bottom">
                 <h6 class="prefix magenta">Vias de contacto</h6>

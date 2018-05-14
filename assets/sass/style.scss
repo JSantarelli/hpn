@@ -46,6 +46,19 @@ a, ul, li {
 	color: inherit;
 	list-style: none;
 	margin: inherit;
+
+	&.menu-item {
+		margin: 0 5px;
+
+		&:hover {
+			color: $hpn-magenta;
+			}
+
+		&:visited {
+			color: $hpn-azul-oscuro;
+			}
+	}
+
 }
 
 // Variantes de tamaño
@@ -592,6 +605,8 @@ img,.hpn-img {
 	
 	  .tab-content p {
 		// margin: 1em;
+		font-size: 1rem;
+		line-height: 1.25rem;
 	  }
 	  /* :checked */
 	  input:checked ~ .tab-content {
@@ -842,9 +857,9 @@ input,button,.container-input-btn {
 	}
 }
 
-.hpn-subtitulo {
-	// font-size: 1.5rem;
-	// font-weight: 500;
+.hpn-subtitulo p {
+	font-size: 1.25rem;
+    line-height: 1.75rem;
 }
 
 .hpn-bajada {
@@ -904,7 +919,7 @@ div[class*="titulo"] {
 
 .hpn-icon {
 	align-self: center;
-
+	
 	&.lg {
 		font-size: 4rem;
 	}

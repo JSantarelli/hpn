@@ -1,7 +1,7 @@
 <div class="hpn-bottombar">
             <div class="card-01 azul-oscuro">
                 <div class="hpn-card-bloque-texto">
-                    <div class="hpn-card-titulo txt-blanco"><?php $my_id = 6481; $post_id_6481 = get_post($my_id); $titulo = $post_id_6481->post_title; echo $titulo;?></div>
+                    <div class="hpn-card-titulo txt-blanco"><?php $my_id = 6481; $post_id_6481 = get_post($my_id); $titulo = $post_id_6481->post_title; ?><a href="<?php the_permalink($post_id_6481); ?>"><?php echo($titulo); ?></a></div>
                     <p class="hpn-card-texto txt-blanco"><?php $content = $post_id_6481->post_content; echo $content;?></p>
                 </div>
             </div>
@@ -10,7 +10,7 @@
                     <div class="hpn-icon magenta mdi mdi-hospital mdi-48px"></div>
                 </div>
                 <div class="hpn-card-bloque-texto">
-                    <div class="hpn-card-titulo txt-negro"><?php $my_id = 6466; $post_id_6466 = get_post($my_id); $titulo = $post_id_6466->post_title; echo $titulo;?></div>
+                    <div class="hpn-card-titulo txt-negro"><?php $my_id = 6466; $post_id_6466 = get_post($my_id); $titulo = $post_id_6466->post_title; ?><a href="<?php the_permalink($post_id_6466); ?>"><?php echo($titulo); ?></a></div>
                     <p class="hpn-card-texto txt-negro"><?php $content = $post_id_6466->post_content; echo $content;?></p>
                 </div>
             </div>
@@ -19,7 +19,7 @@
                     <div class="hpn-icon cyan mdi mdi-school mdi-48px"></div>
                 </div>
                 <div class="hpn-card-bloque-texto">
-                    <div class="hpn-card-titulo txt-negro"><?php $my_id = 6468; $post_id_6468 = get_post($my_id); $titulo = $post_id_6468->post_title; echo $titulo;?></div>
+                    <div class="hpn-card-titulo txt-negro"><?php $my_id = 6468; $post_id_6468 = get_post($my_id); $titulo = $post_id_6468->post_title; ?><a href="<?php the_permalink($post_id_6468); ?>"><?php echo($titulo); ?></a></div>
                     <p class="hpn-card-texto txt-negro"><?php $content = $post_id_6468->post_content; echo $content;?></p>
                 </div>
             </div>
@@ -28,7 +28,7 @@
                     <div class="hpn-icon verde mdi mdi-heart-outline mdi-48px"></div>
                 </div>
                 <div class="hpn-card-bloque-texto">
-                    <div class="hpn-card-titulo txt-negro"><?php $my_id = 6470; $post_id_6470 = get_post($my_id); $titulo = $post_id_6470->post_title; echo $titulo;?></div>
+                    <div class="hpn-card-titulo txt-negro"><?php $my_id = 6470; $post_id_6470 = get_post($my_id); $titulo = $post_id_6470->post_title; ?><a href="<?php the_permalink($post_id_6470); ?>"><?php echo($titulo); ?></a></div>
                     <p class="hpn-card-texto txt-negro"><?php $content = $post_id_6470->post_content; echo $content;?></p>
                 </div>
             </div>

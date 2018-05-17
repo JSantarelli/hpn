@@ -47,26 +47,26 @@
     </section>
     <section id="segundo-scroll" class="hpn-home-segundo-scroll">
     <!-- Segundo Scroll -->
-    <!-- Guias -->
+    <!-- Repositorio digital -->
     <div id="sidebar" class="hpn-home-sidebar">
     <?php $repositorio = 6472; 
         $post_id_6472 = get_post($repositorio);
         $titulo = $post_id_6472->post_title;
         $content = $post_id_6472->post_content;
-        $image = the_post_thumbnail($post_id_6472);
+        $image = get_the_post_thumbnail($post_id_6472);
         ?>
             <div class="hpn-bloque-titulo margin-bottom">
                 <h6 class="prefix celeste">Repositorio digital</h6>
-                <h4 class="txt-blanco"><?php echo($titulo); ?></h4>
+                <h4 class="txt-blanco"><a href="<?php the_permalink($post_id_6472); ?>"><?php echo($titulo); ?></a></h4>
                 <hr class="border blanco xs separate"></hr>
                 <h5 class="txt-xxs txt-blanco"><?php echo($content); ?></h5>
-                <div class="container-input-btn margin-top sm">    
+                <div class="container-input-btn margin-top-25 sm">    
                     <input type="search" class="rounded-left w-xl h-sm"></input>
                     <button class="rounded-right magenta h-sm mdi mdi-file-find mdi-18px"></button>
                 </div>
             </div>
             <div class="container-inputs separate">
-                <img alt="guias" class="md celeste fondo rounded" scr="<?php echo($image)?>">
+                <img alt="guias" class="md h-sm w-xs center" scr="<?php echo($image);?>
             </div>
         </div>
         
@@ -77,7 +77,7 @@
 
         <!-- Formulario Contact Form 7 (plugin) -->
         <div id="contacto" class="hpn-home-contacto">
-            <div class="hpn-bloque-titulo margin-bottom">
+            <div class="hpn-bloque-titulo margin-bottom-25">
                 <h6 class="prefix magenta">Vias de contacto</h6>
                 <h4 class="txt-blanco">Consulta rápida</h4>
                 <hr class="border cyan xs separate"></hr>

@@ -32,40 +32,40 @@
                 <!-- Mail -->
                 <div class="hpn-element-txt">
                     <img src="" alt="" class="hpn-icon">
-                    <h6 class="txt-bold margin-left">hola@hospitalneuquen.org.ar</h6>
+                    <h6 class="txt-bold margin-left-25">hola@hospitalneuquen.org.ar</h6>
                 </div>
                 <!-- Direccion -->
                 <div class="hpn-element-txt">
                     <img src="" alt="" class="hpn-icon">
-                    <h6 class="txt-bold margin-left">Buenos Aires 450</h6>
+                    <h6 class="txt-bold margin-left-25">Buenos Aires 450</h6>
                 </div>
                 <!-- Telefono -->
                 <div class="hpn-element-txt">
                     <img src="" alt="" class="hpn-icon">
-                    <h6 class="txt-bold margin-left">(299) 442-3154 | (299) 53654334</h6>
+                    <h6 class="txt-bold margin-left-25">(299) 442-3154 | (299) 53654334</h6>
                 </div>
             </div>
             <!-- Numeros de emergencia -->
             <div class="hpn-topbar-subcontainer rounded fondo azul-oscuro">
                 <div class="hpn-element-txt sm">
                     <h5 class="txt-xs txt-cyan txt-bold">112</h5>
-                    <h6 class="txt-blanco txt-bold margin-left">fnskfnas fndks</h6>
+                    <h6 class="txt-blanco txt-bold margin-left-12">fnskfnas fndks</h6>
                 </div>
                 <div class="hpn-element-txt sm">
                     <h5 class="txt-xs txt-cyan txt-bold">432</h5>
-                    <h6 class="txt-blanco txt-bold margin-left">dnaslkdnas</h6>
+                    <h6 class="txt-blanco txt-bold margin-left-12">dnaslkdnas</h6>
                 </div>
                 <div class="hpn-element-txt sm">
                     <h5 class="txt-xs txt-cyan txt-bold">123</h5>
-                    <h6 class="txt-blanco txt-bold margin-left">dknsalkdnas</h6>
+                    <h6 class="txt-blanco txt-bold margin-left-12">dknsalkdnas</h6>
                 </div>
             </div>
             <!-- Redes sociales -->
             <div class="hpn-topbar-subcontainer ">
                 <div class="hpn-icon-container">
-                    <div class="hpn-icon" alt="" class=""><i class="mdi mdi-github-circle mdi-18px"></i></div>
-                    <div class="hpn-icon" alt="" class=""><i class="mdi mdi-twitter-circle mdi-18px"></i></div>
-                    <div class="hpn-icon" alt="" class=""><i class="mdi mdi-twitter-circle mdi-18px"></i></div>
+                    <div class="hpn-icon" alt="" class=""><i class="mdi mdi-github-circle mdi-18px margin-left-12"></i></div>
+                    <div class="hpn-icon" alt="" class=""><i class="mdi mdi-twitter-circle mdi-18px margin-left-12"></i></div>
+                    <div class="hpn-icon" alt="" class=""><i class="mdi mdi-twitter-circle mdi-18px margin-left-12"></i></div>
                 </div>
             </div>            
         </div>
@@ -78,8 +78,8 @@
 			<div class="luxbar-menu luxbar-menu-light">
 				<ul class="luxbar-navigation">
 					<li class="luxbar-header">
-						<a class="" href="https://hospitalneuquen.org.ar"><img class="hpn-logo-desktop" src="./wp-content/themes/hpn/assets/svg/hpn-marca-h.svg" alt=""></a>
-						<a class="" href="https://hospitalneuquen.org.ar"><img class="hpn-logo-mobile" src="./wp-content/themes/hpn/assets/svg/hpn-marca-responsive.svg" alt="" class="logo hpn-logo-mobile"></a>
+						<a class="" href="https://localhost/hpn"><img class="hpn-logo-desktop" src="http://localhost/hpn/wp-content/themes/hpn/assets/svg/hpn-marca-h.svg" alt=""></a>
+						<a class="" href="https://localhost/hpn"><img class="hpn-logo-mobile" src="http://localhost/hpn/wp-content/themes/hpn/assets/svg/hpn-marca-responsive.svg" alt="" class="logo hpn-logo-mobile"></a>
 						<!-- <?php the_custom_logo();
 							if ( is_front_page() && is_home() ) : ?>
 								<h1><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>

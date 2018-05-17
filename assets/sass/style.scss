@@ -219,11 +219,20 @@ a, ul, li {
 // Variantes de posicionamiento
 .right {
 	float: right;
+	text-align: right;
+	align-self: flex-end;
+}
+
+.center {
+	float: center;
+	text-align: center;
+	align-self: center;
 }
 
 .left {
 	float: left;
 	text-align: left;
+	align-self: flex-start;
 }
 
 
@@ -371,6 +380,10 @@ hr {
 		border-color: white;
 	}
 
+	&.gris {
+		border-color: $hpn-gris;
+	}
+
 	&.magenta {
 		border-color: $hpn-magenta;
 	}
@@ -482,6 +495,7 @@ hr {
 
 img,.hpn-img {
 
+
 &.cover {
 	object-fit: cover;
 }	
@@ -489,74 +503,79 @@ img,.hpn-img {
 
 // Img - Variantes dimensiones
 	&.w-xxxs {
-		width: 100px;
+		width: 50px;
 	}
 
 	&.w-xxs {
-		width: 4vw;
+		width: 100px;
 	}
 
 	&.w-xs {
-		width: 6vw;
+		width: 200px;
 	}
 
 	&.w-sm {
-		width: 8vw;
+		width: 300px;
 	}
 
 	&.w-md {
-		width: 100px;
+		width: 600px;
 	}
 
 
 	&.w-lg {
-		width: 8vw;
+		width: 800px;
 	}
 
 	&.w-xl {
-		width: 25vw;
+		width: 1000px;
 	}
 
 	&.w-xxl {
-		width: 30vw;
+		width: 1500px;
 	}
 
 	&.w-xxxl {
-		width: 8vw;
+		width: 100%;
 		}
 
 	// Altura
 	&.h-xxxs {
-		height: 100px;
+		height: 50px;
 	}
 
 	&.h-xxs {
-		height: 100%;
-	}
-
-	&.h-xs {
-		height: 150%;
-	}
-
-	&.h-md {
 		height: 100px;
 	}
 
+	&.h-xs {
+		height: 200px;
+	}
+
+	&.h-sm {
+		height: 300px;
+	}
+
+	&.h-md {
+		height: 600px;
+	}
+
+
 	&.h-lg {
-		height: 1250vw;
+		height: 800px;
 	}
 
 	&.h-xl {
-		height: 1300vw;
+		height: 1000px;
 	}
 
 	&.h-xxl {
-		height: 1350vw;
+		height: 1500px;
 	}
 
 	&.h-xxxl {
-		height: 1500vw;
-	}
+		height: 100%;
+		}
 	
 
 // Img - Variantes formales
@@ -945,25 +964,28 @@ div[class*="titulo"] {
 
 
 // Margenes
-.margin {
-	margin: 15px;
-}
+$left: 12 25 50 75 100 200 300;
+  @each $margin in $left {
+	.margin-left-#{$margin} {margin-left: #{$margin}px;} 
+	}
 
-.margin-top {
-	margin-top: 25px; 
-}
+$right: 25 50 75 100 200 300;
 
-.margin-right {
-	margin-right: 25px; 
-}
+@each $margin in $right {
+	.margin-right-#{$margin} {margin-right: #{$margin}px;} 
+	}
 
-.margin-bottom {
-	margin-bottom: 25px; 
-}
+$top: 25 50 75 100 200 300;
+  @each $margin in $top {
+	.margin-top-#{$margin} {margin-top: #{$margin}px;} 
+	}
 
-.margin-left {
-	margin-left: 25px; 
-}
+$bottom: 25 50 75 100 200 300;
+
+@each $margin in $bottom {
+	.margin-bottom-#{$margin} {margin-bottom: #{$margin}px;} 
+	}
+
 
 .separate {
 	margin: 10px 0 10px 0;

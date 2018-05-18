@@ -57,6 +57,22 @@
 			max-height: 100%;
 			overflow-y: scroll;
 		}
+
+		.hpn-nav-noticia {
+			display: flex;
+			flex-direction: row;
+			}
+
+			.hpn-nav-img-title {
+				display: flex;
+				flex-direction: column;
+				width: 50%;
+
+				img {
+					object-fit: cover;
+					background-position: center;
+				}
+			}
 	}
 
 /* ------------------------------------------------------------

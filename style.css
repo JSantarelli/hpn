@@ -902,6 +902,16 @@ div[class*="titulo"] {
     padding: 1rem;
     max-height: 100%;
     overflow-y: scroll; }
+  .hpn-container-noticia .hpn-nav-noticia {
+    display: flex;
+    flex-direction: row; }
+  .hpn-container-noticia .hpn-nav-img-title {
+    display: flex;
+    flex-direction: column;
+    width: 50%; }
+    .hpn-container-noticia .hpn-nav-img-title img {
+      object-fit: cover;
+      background-position: center; }
 
 /* ------------------------------------------------------------
 #RESPONSIVENESS

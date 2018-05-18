@@ -75,23 +75,34 @@ get_header(); /* Template Name: Noticia */ ?>
 				<h5 class="uppercase margin-top-50">Otras noticias</h5>
 				<hr class="xl magenta">
 
-
-				
 				<!-- Navegacion posteos -->
+				<div class="hpn-nav-noticia">
 				<?php					
-					$prevThumbnail = get_the_post_thumbnail( $prevPost->ID, array( 85, 85) );
-							
+					$prevThumbnail = get_the_post_thumbnail( $prevPost->ID, array( 100, 100) );	
 					$nextPost = get_next_post();
-					$nextThumbnail = get_the_post_thumbnail( $nextPost->ID, array( 85, 85) );
+					$nextThumbnail = get_the_post_thumbnail( $nextPost->ID, array( 100, 100) );
+					?>
 
-					previous_post_link( ''.$prevThumbnail.' %link', '%title' );
-					next_post_link( ''.$nextThumbnail.'%link', '%title' );
-				?>
+					<div class="hpn-nav-img-title">
+						<div class="">
+							<?php echo ($prevThumbnail); ?>
+						<h5 class="txt-bold"><?php previous_post_link( '%link', '%title' ); ?></h5>
+						</div>
+					</div>
+					
+					<div class="hpn-nav-img-title">
+						<div class="">
+							<?php echo ($nextThumbnail); ?>
+						</div>
+						<h5 class="txt-bold"><?php next_post_link( '%link', '%title' ); ?></h5>
+					</div>
+				</div>	
 
-				<?php endwhile; else: ?>
-				<p><?php _e('La pagina solicitada no existe'); ?></p>
+					<?php endwhile; else: ?>
+					<p><?php _e('La pagina solicitada no existe'); ?></p>
 
-				<?php endif; ?>
+					<?php endif; ?>
+				</div>
 		</article>
 	</section>
 

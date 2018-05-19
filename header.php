@@ -78,8 +78,8 @@
 			<div class="luxbar-menu luxbar-menu-light">
 				<ul class="luxbar-navigation">
 					<li class="luxbar-header">
-						<a class="" href="https://localhost/hpn"><img class="hpn-logo-desktop" src="http://localhost/hpn/wp-content/themes/hpn/assets/svg/hpn-marca-h.svg" alt=""></a>
-						<a class="" href="https://localhost/hpn"><img class="hpn-logo-mobile" src="http://localhost/hpn/wp-content/themes/hpn/assets/svg/hpn-marca-responsive.svg" alt="" class="logo hpn-logo-mobile"></a>
+						<a class="" href="https://localhost/hpn"><img class="hpn-logo-desktop" src="./wp-content/themes/hpn/assets/svg/hpn-marca-h.svg" alt=""></a>
+						<a class="" href="https://localhost/hpn"><img class="hpn-logo-mobile" src="./wp-content/themes/hpn/assets/svg/hpn-marca-responsive.svg" alt="" class="logo hpn-logo-mobile"></a>
 						<!-- <?php the_custom_logo();
 							if ( is_front_page() && is_home() ) : ?>
 								<h1><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>

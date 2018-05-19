@@ -3,7 +3,7 @@
     <section id="primer-scroll" class="hpn-home-primer-scroll">
         <!-- Banner -->
         <div class="hpn-banner">
-        <?php $posts = query_posts('cat=219');
+        <?php $posts = query_posts('category_name=principal');
             if (have_posts()) : while (have_posts()) : the_post(); ?>
             <div class="hpn-banner-01">
                 <img class="hpn-banner-img-principal cover" src="<?php the_post_thumbnail(); ?>
@@ -17,10 +17,10 @@
             wp_reset_query(); ?>
 
             <!-- Noticias secundarias -->
-            <?php $secundaria = new WP_Query('cat=220&posts_per_page=2');
+            <?php $secundaria = new WP_Query('category_name=secundaria&posts_per_page=2');
                while ($secundaria->have_posts()) : $secundaria->the_post(); ?> 
             <div class="hpn-banner-02">
-                <img class="hpn-banner-img-secundaria cover" src="<?php the_post_thumbnail(); ?>
+                <img class="hpn-banner-img-secundaria cover" src="<?php the_post_thumbnail(); ?>">
                 <div class="hpn-banner-bloque-texto">
                     <div class="hpn-badge bg-verde"><?php the_category(', ') ?></div>
                     <h3 class="hpn-titulo blanco shadow"><?php the_title(); ?></h3>
@@ -66,7 +66,7 @@
                 </div>
             </div>
             <div class="container-inputs separate">
-                <img alt="guias" class="md h-sm w-xs center" scr="<?php echo($image);?>
+                <img alt="guias" class="md h-sm w-xs center" scr="<?php echo($image);?>">
             </div>
         </div>
         

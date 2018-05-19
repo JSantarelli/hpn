@@ -2,9 +2,9 @@
 /*!
 Theme Name: HPN
 Theme URI: http://underscores.me/
-Author: Hospital Provincial Neuqu├®n
+Author: Hospital Provincial Neuquén
 Author URI: http://www.hospitalneuquen.org.ar/
-Description: Sitio oficial del Hospital Provincial de Neuqu├®n \"Dr. Eduardo Castro Rend├│n\"
+Description: Sitio oficial del Hospital Provincial de Neuquén \"Dr. Eduardo Castro Rendón\"
 Version: 1.0.0
 License: GNU General Public License v2 or later
 License URI: LICENSE
@@ -19,7 +19,7 @@ Tags: minimalista
 @import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro");
 /*--------------------------------------------------------------
 >>> INDICE:
-// 1. Tipograf├¡a
+// 1. Tipografía
 	a. Titulos, subtitulos...
 	b. Badges
 // 2. Elementos formales
@@ -1455,7 +1455,8 @@ body {
         grid-column: 1;
         grid-row: 1;
         justify-content: space-between;
-        flex-direction: row; }
+        flex-direction: row;
+        z-index: 4; }
         .full .hpn-header .hpn-topbar .hpn-topbar-subcontainer {
           display: flex;
           flex-direction: row;
@@ -1491,7 +1492,8 @@ body {
           background-color: #e3007e;
           grid-column: 12 / -1; }
       .full .hpn-header nav {
-        height: 100%; }
+        height: 100%;
+        background-color: white; }
         .full .hpn-header nav ul {
           display: flex;
           flex-direction: row;

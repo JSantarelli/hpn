@@ -6,7 +6,7 @@
 </div>
 <div class="container-inputs separate">
     <!-- Accordion -->
-    <?php $faqs = new WP_Query('cat=223');
+    <?php $faqs = new WP_Query('category_name=faqs&posts_per_page=5');
     $i = 1;
     if ($faqs->have_posts()) : while ($faqs->have_posts()): $faqs->the_post();
     ?> 

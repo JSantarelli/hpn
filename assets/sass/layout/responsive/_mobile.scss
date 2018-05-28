@@ -120,7 +120,7 @@
 			}
 			
 			.hpn-banner-02 {
-				background-color: $hpn-magenta;
+				// background-color: $hpn-magenta;
 				// grid-column: 1 / 7!important;
 				grid-row: 3 / 3!important;
 				width: 50vw;
@@ -150,9 +150,10 @@
 			flex-direction: row;
 			justify-content: space-between;
 
+
 			.hpn-search-input {
+				// style
 				background-color: $hpn-blanco;
-				width: 65%;
 			}
 			
 			.hpn-search-icon {
@@ -185,19 +186,25 @@
 			.card-02 {
 				grid-column: 1 / 5!important;
 				grid-row: 1!important;
-				background-color: $hpn-azul;
+				// Style
+				border: solid 1px gray;
+				// background-color: $hpn-azul;
 			}
 		
 			.card-03 {
 				grid-column: 5 / 9!important;
 				grid-row: 1!important;
-				background-color: $hpn-rojo;
+				// Style
+				border: solid 1px gray;
+				// background-color: $hpn-rojo;
 			}
-		
+			
 			.card-04 {
 				grid-column: 9 / -1!important;
 				grid-row: 1!important;
-				background-color: $hpn-celeste;
+				// Style
+				border: solid 1px gray;
+				// background-color: $hpn-celeste;
 			}
 		}
 	}

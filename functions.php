@@ -156,3 +156,22 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
 
+// Longitud titulos
+function max_title_length( $title ) {
+	$max = 50;
+	if( strlen( $title ) > $max ) {
+	return substr( $title, 0, $max ). " &hellip;";
+	} else {
+	return $title;
+	}
+}
+
+// Longitud excerpt
+function max_excerpt_length( $excerpt ) {
+	$max = 200;
+	if( strlen( $excerpt ) > $max ) {
+	return substr( $excerpt, 0, $max ). " &hellip;";
+	} else {
+	return $excerpt;
+	}
+}

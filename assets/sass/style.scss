@@ -706,6 +706,18 @@ form.search-form {
 		padding: 0.5rem;
 		};
 
+	input[home-mobile] {
+		@extend %base;
+		background-color: $hpn-celeste-claro;
+		color: $hpn-azul;
+		font-style: italic;
+		font-weight: 500;
+		font-size: 1.25rem;
+		padding: 0rem 1rem;
+		width: 100%;
+		z-index: -2;
+	}
+
 	button {
 		@extend %base;
 		color: white;

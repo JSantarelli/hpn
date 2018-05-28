@@ -226,6 +226,7 @@ body {
 		grid-gap: 0;
 		// height: 100%;
 
+
 		#sidebar, #faq, #contacto {
 			display: flex;
 			justify-content: flex-start;
@@ -238,6 +239,28 @@ body {
 				min-height: fit-content;
 				flex-direction: column;
 				justify-content: space-between;
+			}
+		}
+
+		#sidebar {
+			padding: 3rem 3rem 0 3rem;
+
+			.hpn-bloque-titulo {
+				display: flex;
+				min-height: fit-content;
+				flex-direction: column;
+				justify-content: flex-start;
+				height: 50%;
+			}
+			
+			.hpn-container-img {
+				display: flex;
+				justify-content: flex-end;
+				height: 50%;
+
+				img {
+					align-self: flex-end;
+				}
 			}
 		}
 

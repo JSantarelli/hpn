@@ -2,9 +2,9 @@
 /*!
 Theme Name: HPN
 Theme URI: http://underscores.me/
-Author: Hospital Provincial Neuqu├®n
+Author: Hospital Provincial Neuquén
 Author URI: http://www.hospitalneuquen.org.ar/
-Description: Sitio oficial del Hospital Provincial de Neuqu├®n \"Dr. Eduardo Castro Rend├│n\"
+Description: Sitio oficial del Hospital Provincial de Neuquén \"Dr. Eduardo Castro Rendón\"
 Version: 1.0.0
 License: GNU General Public License v2 or later
 License URI: LICENSE
@@ -19,7 +19,7 @@ Tags: minimalista
 @import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro");
 /*--------------------------------------------------------------
 >>> INDICE:
-// 1. Tipograf├¡a
+// 1. Tipografía
 	a. Titulos, subtitulos...
 	b. Badges
 // 2. Elementos formales
@@ -1505,16 +1505,33 @@ body {
       .full .hpn-header nav {
         height: 100%;
         background-color: white; }
-        .full .hpn-header nav ul {
+        .full .hpn-header nav ul#primary-menu.menu {
+          position: relative;
           display: flex;
           flex-direction: row;
           justify-content: space-between;
           list-style: none; }
-          .full .hpn-header nav ul li.hpn-nav-item {
+          .full .hpn-header nav ul#primary-menu.menu li.menu-item {
             align-self: center;
             color: #2c4794;
             font-size: 1rem;
-            text-transform: uppercase; }
+            text-transform: uppercase;
+            position: relative;
+            margin-top: 0.5rem;
+            padding: 0.5rem 0.25rem; }
+          .full .hpn-header nav ul#primary-menu.menu ul.sub-menu {
+            display: none; }
+          .full .hpn-header nav ul#primary-menu.menu :hover {
+            background-color: #e3e3e3; }
+            .full .hpn-header nav ul#primary-menu.menu :hover ul.sub-menu {
+              background-color: white;
+              position: absolute;
+              top: 1.75rem;
+              padding-left: 0px;
+              margin-left: 0px;
+              list-style: none;
+              list-style-type: none;
+              display: inline; }
     .full .hpn-home-primer-scroll {
       grid-row: 2;
       display: grid;
@@ -1582,20 +1599,6 @@ body {
           min-height: fit-content;
           flex-direction: column;
           justify-content: space-between; }
-      .full #segundo-scroll.hpn-home-segundo-scroll #sidebar {
-        padding: 3rem 3rem 0 3rem; }
-        .full #segundo-scroll.hpn-home-segundo-scroll #sidebar .hpn-bloque-titulo {
-          display: flex;
-          min-height: fit-content;
-          flex-direction: column;
-          justify-content: flex-start;
-          height: 50%; }
-        .full #segundo-scroll.hpn-home-segundo-scroll #sidebar .hpn-container-img {
-          display: flex;
-          justify-content: flex-end;
-          height: 50%; }
-          .full #segundo-scroll.hpn-home-segundo-scroll #sidebar .hpn-container-img img {
-            align-self: flex-end; }
       .full #segundo-scroll.hpn-home-segundo-scroll .hpn-home-sidebar {
         background-color: #00a1df;
         grid-column: 1 / 4;
